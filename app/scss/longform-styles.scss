@@ -1,0 +1,372 @@
+@import "values";
+
+article {
+  .headerSection,
+  .hero {
+    position: relative;
+    display: block;
+  }
+
+  .arc-ad-wrapper {
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
+
+    @include mobile {
+      margin-top: 30px !important;
+      margin-bottom: 30px !important;
+    }
+  }
+
+  .backgroundImage {
+    position: relative;
+    width: 100%;
+    height: 80%;
+    height: calc(100vh - 134px);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #000;
+
+    @include mobile {
+      height: 40%;
+      height: 40vh;
+      background-attachment: scroll;
+
+    }
+  }
+
+  .backgroundImageCredit {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 11px;
+    color: #ddd;
+    z-index: 1;
+    font-family: $philly-sans;
+
+    @include mobile {
+      bottom:unset;
+      top: calc(40vh - 20px);
+    }
+  }
+
+  .BackgroundImageCaption {
+    font-size: 13px;
+    color: #999;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: $philly-sans;
+  }
+
+  #backgroundImage-1 {
+    background-image: url("http://media.philly.com/storage/inquirer/projects/template-placeholder-headerimg2.jpg");
+    background-position: center;
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0) 50%,rgba(0,0,0,0.65) 100%);
+
+      @include mobile {
+        content: unset;
+      }
+    }
+  }
+
+  #backgroundImage-2 {
+    background-image: url("http://media.philly.com/storage/inquirer/projects/template-placeholder-headerimg.jpg");
+    background-position: center;
+    margin-top: 60px;
+    @include mobile {
+      margin-top: 30px;
+    };
+  }
+
+  .heroText {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80%;
+    height: calc(100vh - 134px);
+    color: #fff;
+    filter: drop-shadow(2px 1px 5px black);
+    padding-bottom: 10vh;
+    display: flex;
+    align-items: flex-end;
+    z-index: 2;
+    @include fontSmoothing;
+
+    div {
+      flex:1 1 100%;
+    }
+
+    @include mobile {
+      position: relative;
+      height: auto;
+      display: block;
+      bottom: unset;
+      padding-bottom: 20px;
+      filter: none;
+      color: #222;
+    }
+
+    h1 {
+      color: #fff;
+      padding: 20px 0 10px;
+      font-family: $philly-sans;
+      font-weight: 900;
+      letter-spacing: -2px;
+      line-height: normal;
+      font-size: 65px;
+
+      @include tablet {
+        font-size: 55px;
+      }
+      @include mobile {
+        color: #222;
+        font-size: 46px;
+        letter-spacing: -2px;
+      }
+    }
+
+    .subHead {
+      font-size: 26px;
+      font-weight: normal;
+      font-family: $philly-sans;
+
+      @include mobile {
+        font-size: 22px;
+      };
+    }
+  }
+
+  .bylineSection {
+    margin: 50px auto 40px;
+    font-family: $philly-sans;
+    @include mobile {
+      margin: 20px auto;
+    }
+
+    .byline {
+      line-height: 1.6;
+      color: #777;
+      font-size: 16px;
+      padding-bottom: 10px;
+    }
+
+    .dateline {
+      color: #777777;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+  }
+
+  .imagebreak {
+    margin: 40px 0 50px;
+    @include mobile {
+      margin: 18px 0 30px;
+
+      div {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+    }
+  }
+
+  .pull-right {
+    @include mobile {
+      padding: 15px 0 20px 0 !important;
+      margin: 0;
+    };
+  }
+
+  .centerFloat {
+    float: none !important;
+    margin: 50px auto;
+    @include mobile {
+      margin: 20px auto;
+    };
+  }
+
+  .largeRight {
+    @include BS-medium {
+      margin-right: -25%;
+      margin-left: 50px;
+      margin-bottom: 40px;
+    };
+  }
+
+  .dropCap {
+    float: left;
+    color: #222;
+    font-size: 59px;
+    padding-top: 18px;
+    padding-right: 8px;
+    font-weight: 100;
+    padding-left: 3px;
+    font-family: $philly-serif;
+  }
+
+  .col p {
+    margin-bottom: 1.25em;
+    font-size: 18px;
+    line-height: 1.9em;
+    @include fontSmoothing;
+
+    a {
+      cursor: pointer;
+      color: #0061A2;
+      box-shadow: inset -2px -5px 0 -2px #d5eeff;
+      transition: box-shadow 0.3s cubic-bezier(0.86, 0, 0.07, 1);
+
+      &:hover {
+        box-shadow: inset -2px -20px 0 -3px #d5eeff;
+        text-decoration: none;
+      }
+    }
+    @include mobile {
+      font-size: 16px;
+      line-height: 1.6rem;
+    };
+  }
+
+  .dropcap::first-letter {
+    font-family: $philly-serif;
+    font-style: normal;
+    line-height: 1;
+    font-size: 4em;
+    color: #3b3b3b;
+    display: block;
+    float: left;
+    margin: 0 0.3em -0.2em 0;
+  }
+
+  .emailSubscribeBox {
+    float: right;
+    max-width: 250px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    background: #eee;
+    padding: 15px;
+    @include mobile {
+      float: none;
+      max-width: 100%;
+      margin-left: 0;
+    };
+
+    p.subscribeText {
+      font-family: $philly-sans;
+      line-height: 1.4em;
+      font-size: 1em;
+      margin-bottom: 10px;
+
+      strong {
+        font-size: 1.1em;
+        font-weight: 900;
+        display: block;
+        margin-bottom: 10px;
+      }
+    }
+
+    button {
+      color: white;
+      font-size: 15px;
+      background: $philly-red;
+      font-weight: 700;
+      border-radius: 3px;
+      padding: 6px 10px;
+      border: none;
+      font-family: $philly-sans;
+      cursor: pointer;
+    }
+  }
+
+  .left-pullquote {
+    width: 48%;
+    margin-right: 5%;
+    margin-bottom: 1.25rem;
+    float: left;
+    position: relative;
+    @include BS-medium {
+      margin-left: -12%;
+    }
+    @include tablet {
+      margin-left: 15px;
+    };
+    @include mobile {
+      margin: 0;
+      width: 100%;
+      margin: 0;
+      padding: 15px;
+    };
+
+    .quotetext {
+      padding-top: 10px;
+      font-size: 1.65rem;
+      line-height: 1.2;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .quotesource {
+      text-transform: uppercase;
+      font-weight: 100;
+      padding-top: 10px;
+    }
+
+    svg {
+      width: 20px;
+      fill: $philly-red;
+      transform: rotate(45deg);
+      position: absolute;
+      left: -20px;
+      top: -20px;
+      @include mobile {
+        left: -5px;
+        top: -5px;
+      };
+    }
+  }
+
+  .creditSection {
+    line-height: 1.5em;
+    font-size: 14px;
+    color: #444;
+    border-top: 3px solid #eee;
+    padding: 20px 15px;
+  }
+
+  .creditSection .col {
+    -webkit-columns: 200px 3;
+    -moz-columns: 200px 3;
+    columns: 200px 3;
+  }
+
+  .creditSection .credititem {
+    -webkit-column-break-inside: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    font-size: 14px;
+    line-height: normal;
+    line-height: 1.5em;
+    font-family: "Sentinel SSm A", "Sentinel SSm B", "Sentinel", "Times New Roman", serif;
+  }
+
+  .containerPhotoCredit {
+    color: #888;
+    font-size: 11px;
+    font-style: italic;
+    margin-top: 0px;
+    position: relative;
+    text-align: right;
+  }
+
+  .containerPhotoCaption {
+    color: #888;
+    font-size: 12px;
+  }
+}

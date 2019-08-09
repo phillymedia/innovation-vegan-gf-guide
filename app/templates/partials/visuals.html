@@ -1,0 +1,79 @@
+{% macro quote(quote = "", credit = "") %}
+<div class="left-pullquote">
+    <div class="inner-text">
+        <div class="quotetext">
+            &ldquo;{{quote}}&rdquo;
+        </div>
+        <div class="quotesource">
+            – {{credit}}
+        </div>
+    </div>
+    <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9 0l22.6 22.6c9.4 9.4 9.4 24.6 0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6 0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9 0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>
+</div>
+{% endmacro %}
+
+{% macro inline(url = "", credit = "", caption = "") %}
+    <div class="imagebreak">
+        <img class="img-fluid" alt="" width="100%" src="{{url}}">
+        <div class="containerPhotoCredit">{{credit}}</div>
+        {% if caption %}
+            <div class="containerPhotoCaption">{{caption}}</div>
+        {% endif %}
+    </div>
+{% endmacro %}
+
+{% macro fullwidth(url = "", credit = "", caption = "") %}
+</div>
+</div>
+<div class="row" alignment="true">
+<div class="col-md-12 col col-md-offset-0" alignment="true">
+    <div class="imagebreak">
+        <div class="img-fluid">
+            <img class="img-fluid" src="{{url}}" alt="" width="100%/">
+            <div class="containerPhotoCredit" alignment="true">{{credit}}</div>
+            <div class="containerPhotoCaption" alignment="true">{{caption}}</div>
+        </div>
+    </div>
+</div>
+</div>
+<div class="row" alignment="true">
+<div class="col-md-8 col col-md-offset-2" alignment="true">
+{% endmacro %}
+
+{% macro pullright(url = "", credit = "", caption = "") %}
+    <div class="imagebreak">
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 pull-right">
+            <img class="img-fluid" src="{{url}}" alt="" width="100%/">
+            <div class="containerPhotoCredit" alignment="true">{{credit}}</div>
+            <div class="containerPhotoCaption" alignment="true">{{caption}}</div>
+        </div>
+    </div>
+
+{% endmacro %}
+
+{% macro pullrightlarge(url = "", credit = "", caption = "") %}
+<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 pull-right largeRight"><img class="img-fluid" src="{{url}}" alt="" width="100%/">
+<div class="containerPhotoCredit" alignment="true">{{credit}}</div>
+<div class="containerPhotoCaption" alignment="true">{{caption}}</div>
+</div>
+
+{% endmacro %}
+
+{% macro vertical(url = "", credit = "", caption = "") %}
+</div>
+</div>
+<div class="row fullimage">
+<div class="col-md-offset-1 col-md-10 col">
+    <div class="imagebreak verticalImg">
+        <img class="img-fluid" alt="" width="100%" src="{{url}}">
+        <div class="containerPhotoCredit">{{credit}}</div>
+        {% if caption %}
+            <div class="containerPhotoCaption">{{caption}}</div>
+        {% endif %}
+        <!-- <div class="containerPhotoCaption">{{caption}}</div> -->
+    </div>
+</div>
+</div>
+<div class="row" alignment="true">
+<div class="col-md-8 col col-md-offset-2" alignment="true">
+{% endmacro %}

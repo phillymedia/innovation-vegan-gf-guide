@@ -1,0 +1,114 @@
+// // .bg-grey-light {
+// //     @include tablet {
+// //         display: none !important;
+// //     }
+// // }
+// //
+// // #top {
+// //     display: none !important;
+// // }
+// //
+// // #right-rail {
+// //     display: none !important;
+// // }
+// //
+// // #well {
+// //     flex: 1 1 100% !important;
+// //     max-width: 100% !important;
+// //
+// //     /* .pb-f-article-author, .pb-f-article-comments {
+// //         max-width: 800px;
+// //         margin-left: auto;
+// //         margin-right: auto;
+// //     } */
+// //
+// //
+// //     div[data-display-type="inline"] {
+// //         margin: 30px auto;
+// //         display: block;
+// //     }
+// //
+// //     .pb-feature {
+// //         &:not(.pb-f-article-body) {
+// //             max-width: 900px;
+// //             margin: auto;
+// //             padding: 10px 15px;
+// //         }
+// //     }
+// //
+// //     .card-content {
+// //         padding: 0;
+// //     }
+// // }
+// //
+// // .pb-f-utilities-lead-art, .pb-f-article-share-bar, .pb-f-test-html-box {
+// //     display: none !important;
+// // }
+// //
+// // #share-bar-docked, #share-bar-inline {
+// //     display: none !important;
+// // }
+//
+// .container.flex-grid {
+//     max-width: 100% !important;
+//     width: 100% !important;
+//     padding-left: 0;
+//     padding-right: 0;
+// }
+/* .pb-f-article-author {
+    display: none;
+} */
+/* .pb-f-ads-arcads {
+    display:none !important;
+} */
+/* .pb-f-article-body {
+    div[data-type="text"] {
+        display: none;
+    }
+}
+
+.i-amphtml-standalone {
+    .pb-f-article-body {
+        div[data-type="text"] {
+            display: block important;
+        }
+    }
+} */
+div[data-type="text"],
+div[data-type="header"] {
+    max-width: 900px;
+    margin: auto;
+    padding: 10px 15px;
+}
+
+.article__content_lf .card .card-content .element.element-rawhtml img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+.long-form-body-container {
+    max-width: none;
+    padding: 0;
+
+    .card-content {
+        padding: 0 !important;
+    }
+}
+
+.container {
+    max-width: none;
+}
+
+.card.paragraph-spacing .card-content {
+    padding: 0;
+}
+
+.spaced.spaced-top.spaced-xl {
+    margin-top: 0;
+}
+.pb-f-article-comments {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}

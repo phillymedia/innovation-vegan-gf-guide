@@ -1,0 +1,26 @@
+{
+  "westphilly": {
+    "name": "west philly",
+    "order": 6
+  },
+  "centercityrittenhouse": {
+    "name": "center city/rittenhouse",
+    "order": 3
+  },
+  "northernlibertiesfishtown": {
+    "name": "northern liberties/fishtown",
+    "order": 1
+  },
+  "southphilly": {
+    "name": "south philly",
+    "order": 5
+  },
+  "springgardenfairmount": {
+    "name": "spring garden/fairmount",
+    "order": 2
+  },
+  "washingtonsquaresouthstreet": {
+    "name": "washington square/south street",
+    "order": 4
+  }
+}

@@ -1,0 +1,140 @@
+<div class = 'body-wrapper'>
+<div class="restaurant-wrapper" >
+
+  <div class="filter-section" id = "filter-section"> <!--The Javascript goes through all filters in the doc and appends them to this section-->
+    <div class="filter-title">FILTERS:</div>
+  </div>
+
+<div class = "neighborhood-section" id = "neighborhood-section">
+  <div class = 'hood-title'>JUMP TO A NEIGHBORHOOD: </div>
+  <div class = "neighborhood-list">
+  </div>
+</div>
+
+
+
+  <div class="restaurant-list" id = "restaurant-list">
+    {% for neighborhood, neighborlist in neighborlist | groupby("Neighborhood") %}
+     <!--<div id="mapid" style = "height:180px;"></div>-->
+
+    <!--Language used to add variables to HTML is called nunjucks-->
+   <!--archie is json object with restaurant data from the Archie doc-->
+
+        <div class = 'neighborhood-box' id = '{{neighborhood|replace( r/[^a-z0-9]/gi , "")}}'>
+          <span><h3 class="neighborhood-name" >{{neighborhood}}</h3></span>
+        </div>
+        {% for item in neighborlist %}
+
+        <div class="list-item" id='{{item.Name|replace( r/[^a-z0-9]/gi , "" )}}'>
+        <div class ="intro">
+        <div class="r-name">
+          <a href="{{item.Website}}" target="_blank">{{item.Name}}</a>
+        </div>
+        <div class = 'intro-info'>
+          <div class = "contact-info">
+          {% if item.Address %}<a class = 'address' target = '_blank' href="{{item.DirectionsLink}}">{{item.Address}}</a>{% endif %}
+          {% if item.Phone %} | <a href="tel:{{item.PhoneLink}}">{{item.Phone}}</a>{% endif %}
+          {% if item.Price %} | {{item.Price}}{% endif %}
+          <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class = 'address' target = '_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
+          {% if item.Phone2 %} | <a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
+
+
+          </div>
+
+          {% if item.Filters %}
+          <!--what does the data=filter thing do?-->
+          <div class="r-filters" data-filter="{% for f in item.Filters.split(',') %}{{f}} {% endfor %}">
+
+            {% for f in item.Filters.split(',') %}
+            <li class = '{{f|replace( " " , "")}}'>{{f}}</li>
+            {% endfor %}
+
+          </div>
+          {% endif %}
+        </div>
+
+
+        </div>
+
+        <div class="float-right">
+
+          <div class="img-wrapper">
+            {% if item.photos[0]['url'] %}
+                <img src="{{item.photos[0]['url']}}" alt="">
+            {% endif %}
+         </div>
+
+        <div class="img-credit">
+
+          {% if item.photos[0]['caption'] %}
+            {{item.photos[0]['caption']}}
+          {% endif %}
+
+          {% if item.photos[0]['photographer'] and item.photos[0]['credit'] %}
+              ({{item.photos[0]['photographer']}} // {{item.photos[0]['credit']}})
+          {% endif %}
+          {% if item.photos[0]['photographer'] and not item.photos[0]['credit']%}
+              ({{item.photos[0]['photographer']}})
+          {% endif %}
+          {% if (not item.photos[0]['photographer']) and (item.photos[0]['credit'])%}
+              ({{item.photos[0]['credit']}})
+          {% endif %}
+        </div>
+        </div>
+
+        <div class="r-gofor">
+          <strong>Go for</strong>{{item.Go_for}}
+        </div>
+
+        <br>
+        <div class="r-dishes">
+          <strong>Dishes to try</strong>{{item.Dishes_to_try}}
+        </div>
+
+        {% if item.text %}
+        <div class="r-text">
+          <strong>The lowdown</strong>
+          {% for text in item.text %}
+          <p>{{text.value}}</p>
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        <br>
+        <div class="r-note">
+          <strong>A tip</strong>{{item.Something_to_note}}
+        </div>
+
+
+
+        <div class="contact-section">
+
+          {% if item.Menu %}<a class = 'menu button' href="{{item.Menu}}" target="_blank">See Menu</a>{% endif %}
+
+            <a class = 'jump button' href='#filter-section'> Jump to Top </a>
+
+        </div>
+
+
+        <div class="clear-this">
+        </div>
+
+
+
+        </div>
+
+
+
+        {% endfor %}
+    {% endfor %}
+
+
+  </div>
+  
+</div>
+
+<!-- Make sure you put this AFTER Leaflet's CSS
+<script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
+  integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
+  crossorigin=""></script>-->
+</div>

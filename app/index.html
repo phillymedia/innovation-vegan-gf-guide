@@ -1,0 +1,28 @@
+<!--removeIf(production)-->
+{% include "./shell/top.html" ignore missing %}
+<!--endRemoveIf(production)-->
+
+{% include "partials/stylesheets.html" %}
+<!--build:css css/styles.css -->
+<link rel="stylesheet" href="css/styles.css">
+<!--endbuild-->
+
+{% include "main-body.html" ignore missing %}
+
+
+
+<!-- <script>
+    $('#right-rail').remove();
+</script> -->
+
+{% include "partials/script-links.html" %}
+
+<!--build:js js/main.js -->
+<script src="js/main.js"></script>
+<!-- endbuild -->
+
+
+<!--removeIf(production)-->
+
+{% include "./shell/bottom.html" ignore missing %}
+<!--endRemoveIf(production)-->
