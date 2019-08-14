@@ -152,17 +152,17 @@
       "credit": "Staff",
       "photographer": "BAYLISS WAGNER",
       "caption": "Tiramisu cupcake, a special that day, at Sweet Freedom Bakery in South Philly on July 27.",
-      "confirmed vegan or gf or dairy-free dish?": "",
+      "": "",
       "photo id": "RCHXSWF7IRGO3OOLBPJ5OPX2UU"
     },
     {
-      "name": "P.S. and Co.",
+      "name": "P.S. & Co.",
       "id": "",
       "url": "https://www.inquirer.com/resizer/FyCM1aUHX0dv8ZaiYsI1eOtOGds=/arc-anglerfish-arc2-prod-pmn/GXCTIKPWUVD3TA6FR635DJJ77E.jpg",
       "credit": "Staff Photographer",
       "photographer": "HEATHER KHALIFA",
       "caption": "The organic vegan and gluten free breakfast tacos are photographed at P.S. & Co. in Rittenhouse Square on Thursday, Aug. 08, 2019.",
-      "confirmed vegan or gf or dairy-free dish?": "gluten free, vegan",
+      "": "",
       "photo id": "GXCTIKPWUVD3TA6FR635DJJ77E"
     },
     {
@@ -172,7 +172,7 @@
       "credit": "Staff Photographer",
       "photographer": "TIM TAI",
       "caption": "The vegan hemp pasta pignoli is pictured at Barra Rossa in Center City Philadelphia on Thursday, Aug. 8, 2019.",
-      "confirmed vegan or gf or dairy-free dish?": "gluten free, vegan",
+      "": "",
       "photo id": "RFXROHSDPJAQVMWELELQXQF2EM"
     },
     {
@@ -182,7 +182,7 @@
       "credit": "Staff Photographer",
       "photographer": "HEATHER KHALIFA",
       "caption": "The Fusilli Primavera is photographed at Giorgio On Pine in Center City, Philadelphia on Thursday, Aug. 08, 2019.",
-      "confirmed vegan or gf or dairy-free dish?": "gluten free",
+      "": "",
       "photo id": "Z2V2KJFVANAKXHYQ2T3PKAONPY"
     },
     {},
@@ -252,7 +252,7 @@
       "credit": "Tattooed Mom",
       "photographer": "ELIJAH SNYDER-VIDMAR",
       "caption": "A vegan cajun blackened \"chicken\" burger from Tattooed Mom in South Philly.",
-      "confirmed vegan or gf or dairy-free dish?": "vegan",
+      "": "",
       "photo id": "PDCIHW7Z4VBGPBJNC4XKIKJ6N4"
     },
     {
@@ -262,7 +262,7 @@
       "credit": "Tattooed Mom",
       "photographer": "ELIJAH SNYDER-VIDMAR",
       "caption": "A vegan pickled fried \"chicken\" burger from Tattooed Mom in South Philadelphia.",
-      "confirmed vegan or gf or dairy-free dish?": "vegan",
+      "": "",
       "photo id": "KCZGAQJLHVGKPCXR3PQXUK7YPY"
     },
     {
@@ -271,8 +271,7 @@
       "url": "https://www.inquirer.com/resizer/L4mBySzPJGiJrha-DuwToRFfjno=/arc-anglerfish-arc2-prod-pmn/public/DM6E6EQTHBAFPPBCYIGWAALGUQ.jpg",
       "credit": "Staff Photographer",
       "photographer": "RON TARVER",
-      "caption": "The Buffalo Bella sandwich with sweet potato fries at HipCityVeg in Center City.",
-      "confirmed vegan or gf or dairy-free dish?": "confirmed vegan"
+      "caption": "The Buffalo Bella sandwich with sweet potato fries at HipCityVeg in Center City."
     },
     {},
     {
@@ -282,7 +281,7 @@
       "credit": "Hipcityveg",
       "photographer": "HIPCITYVEG",
       "caption": "HipCityVeg's vegan smokehouse burger.",
-      "confirmed vegan or gf or dairy-free dish?": "vegan",
+      "": "",
       "photo id": "GQUTC5JHJVARDJHO7VDDGMKDDY"
     },
     {
@@ -292,7 +291,7 @@
       "credit": "Hipcityveg",
       "photographer": "HIPCITYVEG",
       "caption": "HipCityVeg's Smokey Sweet Chick'n Wrap — 100% vegan.",
-      "confirmed vegan or gf or dairy-free dish?": "vegan",
+      "": "",
       "photo id": "YKGTHBSSNZEJPPEWXUMXFQKOKI"
     },
     {
@@ -301,8 +300,7 @@
       "url": "https://www.inquirer.com/resizer/P6aNB85cYkowNB9wfXPAONsybJE=/arc-anglerfish-arc2-prod-pmn/public/XFFAHCRX6NDDHPV4I5IT7QF5OM.jpg",
       "credit": "-",
       "photographer": "???",
-      "caption": "HipCityVeg - 127 S 18th St., 214 S. 40th St. (215-278-7605) hipcityveg.com -  A Philly cheesesteak (vegan). ",
-      "confirmed vegan or gf or dairy-free dish?": "confirmed vegan"
+      "caption": "HipCityVeg - 127 S 18th St., 214 S. 40th St. (215-278-7605) hipcityveg.com -  A Philly cheesesteak (vegan). "
     }
   ]
 }

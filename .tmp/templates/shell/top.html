@@ -1,0 +1,5805 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <!--bayliss's addition, the leaflet api-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+  <link rel="icon" href="https://media.inquirer.com/designimages/favicon.ico" />
+  <link rel="apple-touch-icon-precomposed" sizes="57x57" href="https://media.inquirer.com/designimages/apple-touch-icon-57x57-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://media.inquirer.com/designimages/apple-touch-icon-76x76-precomposed.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://media.inquirer.com/designimages/apple-touch-icon-60x60-precomposed@2x.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://media.inquirer.com/designimages/apple-touch-icon-76x76-precomposed@2x.png" />
+  <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://media.inquirer.com/designimages/apple-touch-icon-60x60-precomposed@3x.png" />
+  <link rel="icon" sizes="192x192" href="https://media.inquirer.com/designimages/touch-icon-192x192.png" />
+  <link rel="apple-touch-icon-precomposed" href="https://media.inquirer.com/designimages/apple-touch-icon-precomposed.png" />
+  <link rel="apple-touch-icon" href="https://media.inquirer.com/designimages/apple-touch-icon.png" />
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title>2019_07_restaurant_cards</title>
+
+  <script>
+    window.scrollUser = false;
+  </script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      color: #222
+    }
+
+    a {
+      text-decoration: none
+    }
+
+    * {
+      box-sizing: border-box
+    }
+
+    figure {
+      margin: 0
+    }
+
+    hr {
+      height: 2px;
+      border: 0
+    }
+
+    body {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale
+    }
+
+    .ad-300x90 {
+      min-height: 90px;
+      min-width: 300px
+    }
+
+    .ad-300x250 {
+      min-height: 250px;
+      min-width: 300px
+    }
+
+    .ad-300x600 {
+      min-height: 600px;
+      min-width: 300px
+    }
+
+    .ad-970x90 {
+      min-height: 90px;
+      min-width: 970px
+    }
+
+    .ad-728x90 {
+      min-height: 90px;
+      min-width: 728px
+    }
+
+    .ad-320x50 {
+      min-height: 50px;
+      min-width: 320px
+    }
+
+    .default-text,
+    p {
+      line-height: 1.44;
+      font-size: 18px;
+      letter-spacing: -.2px;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    p {
+      margin: 0
+    }
+
+    .cta {
+      line-height: 1;
+      font-size: 18px;
+      letter-spacing: normal
+    }
+
+    .cta.xl {
+      font-size: 26px
+    }
+
+    .cta.lg {
+      font-size: 22px
+    }
+
+    .cta.md {
+      font-size: 17px;
+      line-height: 19px
+    }
+
+    .cta.sm {
+      font-size: 14px
+    }
+
+    .preview-text,
+    .preview-text a {
+      line-height: 20px;
+      font-size: 16px;
+      letter-spacing: normal;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .preview-text a.small,
+    .preview-text.small {
+      line-height: 1.23;
+      letter-spacing: normal
+    }
+
+    .description,
+    .description a {
+      line-height: 19px;
+      font-size: 14px;
+      letter-spacing: normal;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .preview-text-search,
+    .preview-text-search a {
+      line-height: 19px;
+      font-size: 14px;
+      letter-spacing: normal;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .advertisement-text {
+      line-height: 1.78;
+      font-size: 9px;
+      letter-spacing: normal;
+      color: #999
+    }
+
+    .caption {
+      line-height: 1.5;
+      font-size: 16px;
+      letter-spacing: -.1px;
+      color: #222;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif
+    }
+
+    .section-widget-caption {
+      line-height: 19px;
+      font-size: 16px;
+      letter-spacing: normal;
+      color: #fff
+    }
+
+    .section-widget-caption.lg {
+      line-height: 26px;
+      font-size: 24px;
+      letter-spacing: normal
+    }
+
+    a {
+      color: #06a
+    }
+
+    a:active,
+    a:focus,
+    a:hover {
+      text-decoration: underline
+    }
+
+    a.no-text-decoration:hover {
+      text-decoration: none
+    }
+
+    a.hover-unchanged-color.active,
+    a.hover-unchanged-color.focus,
+    a.hover-unchanged-color:hover {
+      color: inherit
+    }
+
+    a.nav-link {
+      color: #222
+    }
+
+    a.nav-link.active,
+    a.nav-link.focus,
+    a.nav-link:hover {
+      color: #999;
+      text-decoration: none
+    }
+
+    a.wire-button-link {
+      color: #fff;
+      border: 1px solid #fff;
+      padding: 10px 50px;
+      border-radius: 3px;
+      font-size: 16px
+    }
+
+    a.wire-button-link.active,
+    a.wire-button-link.focus,
+    a.wire-button-link:hover {
+      color: #fff;
+      text-decoration: none
+    }
+
+    a.author-link {
+      font-size: 16px
+    }
+
+    a.author-link.active,
+    a.author-link.focus,
+    a.author-link:hover {
+      text-decoration: none
+    }
+
+    a.headline-link {
+      color: #222
+    }
+
+    a.headline-link.active,
+    a.headline-link.focus,
+    a.headline-link:hover {
+      text-decoration: underline
+    }
+
+    a.opinion-spotlight-story-link {
+      line-height: 22px;
+      font-size: 20px;
+      letter-spacing: -.1px;
+      color: #222
+    }
+
+    a.opinion-spotlight-story-link.active,
+    a.opinion-spotlight-story-link.focus,
+    a.opinion-spotlight-story-link:hover {
+      text-decoration: underline;
+      color: #222
+    }
+
+    a.opinion-spotlight-author-link {
+      line-height: 18px;
+      font-size: 18px;
+      letter-spacing: -.1px;
+      color: #999;
+      word-break: break-word
+    }
+
+    a.opinion-spotlight-author-link.active,
+    a.opinion-spotlight-author-link.focus,
+    a.opinion-spotlight-author-link:hover {
+      text-decoration: underline;
+      color: #999
+    }
+
+    a.classifieds-widget-link {
+      line-height: 40px;
+      font-size: 22px;
+      letter-spacing: -.3px;
+      color: #fff
+    }
+
+    a.classifieds-widget-link.active,
+    a.classifieds-widget-link.focus,
+    a.classifieds-widget-link:hover {
+      text-decoration: underline
+    }
+
+    a.search-bar-link {
+      line-height: 1;
+      font-size: 14px;
+      letter-spacing: 1;
+      color: #222
+    }
+
+    a.skip-link {
+      display: block;
+      z-index: 1;
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      left: -1000px;
+      top: -1000px;
+      white-space: nowrap;
+      padding: 10px;
+      background: #fff
+    }
+
+    a.skip-link:active,
+    a.skip-link:focus,
+    a.skip-link:hover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: auto;
+      width: auto;
+      overflow: hidden;
+      z-index: 2500000
+    }
+
+    .unstyled-link {
+      text-decoration: none
+    }
+
+    .unstyled-link.active,
+    .unstyled-link.focus,
+    .unstyled-link:hover {
+      text-decoration: none
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin: 0
+    }
+
+    h1 {
+      line-height: 1;
+      font-size: 30px;
+      letter-spacing: normal;
+      font-weight: 700;
+      color: #333
+    }
+
+    .h2,
+    h2 {
+      line-height: 1.08;
+      font-size: 24px;
+      letter-spacing: normal;
+      font-weight: 700;
+      color: #333
+    }
+
+    h3 {
+      line-height: 1.09;
+      font-size: 22px;
+      letter-spacing: normal;
+      font-weight: 700;
+      color: #333
+    }
+
+    h4 {
+      line-height: 1.13;
+      font-size: 16px;
+      letter-spacing: -.1px;
+      font-weight: 700;
+      color: #333
+    }
+
+    h5 {
+      line-height: 1.13;
+      font-size: 16px;
+      letter-spacing: -.1px;
+      font-weight: 700;
+      color: #333
+    }
+
+    h6 {
+      line-height: 1.13;
+      font-size: 16px;
+      letter-spacing: -.1px;
+      font-weight: 700;
+      color: #333
+    }
+
+    .h1.letter-spacing-05,
+    .h2.letter-spacing-05,
+    .h3.letter-spacing-05,
+    .h4.letter-spacing-05,
+    .h5.letter-spacing-05,
+    .h6.letter-spacing-05 {
+      letter-spacing: -.5px
+    }
+
+    .event-title {
+      line-height: 26px;
+      font-size: 18px;
+      letter-spacing: normal;
+      font-weight: 800
+    }
+
+    .list-header.large,
+    .recommender-header.large {
+      font-size: 22px
+    }
+
+    .list-header.xl,
+    .recommender-header.xl {
+      font-size: 30px
+    }
+
+    .recommender-header {
+      line-height: 1;
+      font-size: 14px;
+      letter-spacing: normal;
+      line-height: 1
+    }
+
+    .recommender-header.small {
+      font-size: 12px;
+      letter-spacing: .5px
+    }
+
+    .list-header {
+      line-height: 1.75;
+      font-size: 16px;
+      letter-spacing: normal
+    }
+
+    .list-header.small {
+      font-size: 16px
+    }
+
+    .breaking-headline {
+      color: #333;
+      line-height: 1;
+      font-size: 55px;
+      letter-spacing: -.3px
+    }
+
+    .breaking-headline:hover {
+      color: #666
+    }
+
+    .follow-bar-header {
+      line-height: 1;
+      font-size: 14px;
+      letter-spacing: -.07px
+    }
+
+    .follow-bar-header.follow-bar-header-dark {
+      color: #fff
+    }
+
+    .section-header {
+      line-height: 1;
+      font-size: 49px;
+      letter-spacing: normal
+    }
+
+    .section-widget-header {
+      line-height: 25px;
+      font-size: 24px;
+      letter-spacing: normal;
+      color: #fff
+    }
+
+    .section-widget-header.lg {
+      font-size: 30px
+    }
+
+    .author-header {
+      line-height: 1;
+      font-size: 50px;
+      letter-spacing: normal
+    }
+
+    .topic-header {
+      line-height: 1;
+      font-size: 50px;
+      letter-spacing: normal;
+      text-transform: capitalize
+    }
+
+    .rating-header {
+      line-height: 1;
+      font-size: 20px;
+      letter-spacing: normal
+    }
+
+    .opinion-spotlight-header {
+      line-height: 1;
+      font-size: 30px;
+      letter-spacing: -.5px;
+      color: #222
+    }
+
+    .sub-header {
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .sub-header .h1 {
+      font-size: 36px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    .sub-header .h2 {
+      font-size: 28px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    .sub-header .h3 {
+      font-size: 24px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    .sub-header .h4 {
+      font-size: 20px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    .sub-header .h5 {
+      font-size: 18px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    .sub-header .h6 {
+      font-size: 16px;
+      color: #222;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: normal
+    }
+
+    h1.detail-content {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: -.1px;
+      line-height: 1;
+      color: #222
+    }
+
+    .h2.consistent-topper {
+      line-height: 1.3
+    }
+
+    .standard-subtitle {
+      color: #666;
+      font-weight: 400;
+      letter-spacing: -.1px;
+      padding-top: 10px
+    }
+
+    .img-container {
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw
+    }
+
+    .img-container.full-width {
+      width: 100vw
+    }
+
+    div .image-xs,
+    img .image-xs {
+      width: 40px
+    }
+
+    div .image-sm,
+    img .image-sm {
+      width: 70px
+    }
+
+    div .image-md,
+    img .image-md {
+      width: 40%
+    }
+
+    div .image-lg,
+    img .image-lg {
+      width: 50%
+    }
+
+    div .image-full,
+    img .image-full {
+      width: 100%
+    }
+
+    .img-gradient {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to bottom, transparent, transparent, transparent, #222 100%)
+    }
+
+    .img-section-widget-default {
+      background-image: url(/pb/resources/images/section-widget-default-image.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-color: #666
+    }
+
+    .img-author {
+      width: 60px;
+      height: 60px
+    }
+
+    .img-author-block {
+      height: 150px;
+      width: 150px
+    }
+
+    .img-author-block img {
+      position: absolute;
+      bottom: 0;
+      right: 0
+    }
+
+    .img-float-left {
+      width: 300px;
+      margin: auto
+    }
+
+    .original-img div.img-container {
+      left: 0;
+      right: 0;
+      margin-left: 0;
+      margin-right: 0
+    }
+
+    .original-img div.img-container.full-width {
+      width: 100%
+    }
+
+    .card hr {
+      margin: 0
+    }
+
+    .card hr.side-margins {
+      margin: 0 20px
+    }
+
+    .card hr.with-margins {
+      margin: 5px 20px
+    }
+
+    .card .card-header {
+      max-height: 40px;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 12px;
+      letter-spacing: .5px;
+      line-height: 12px
+    }
+
+    .card .card-content {
+      padding: 20px
+    }
+
+    .card .card-content figure {
+      max-width: 100%
+    }
+
+    .card .card-content .element.element-rawhtml img {
+      width: 100%;
+      max-width: 718px;
+      height: unset
+    }
+
+    .card .card-content .element.element-rawhtml iframe {
+      width: 100%
+    }
+
+    .card .card-content .wider {
+      width: 45vw;
+      margin-left: 50%
+    }
+
+    .card .card-content .wider>div {
+      width: 90vw;
+      margin-left: -100%;
+      text-align: center
+    }
+
+    .card .card-content .wider>div>iframe,
+    .card .card-content .wider>div>img {
+      max-width: 100%
+    }
+
+    .card .card-content.card-content-no-gutter {
+      padding-left: 0;
+      padding-right: 0
+    }
+
+    .card .card-content.card-content-no-top-gutter {
+      padding-top: 0;
+      padding-bottom: 0
+    }
+
+    .card .card-content.card-content-hide-top-gutter {
+      padding-top: 0
+    }
+
+    .card .card-content.card-content-hide-bottom-gutter {
+      padding-bottom: 0
+    }
+
+    .card .card-content.card-content-half-vertical {
+      padding: 10px 20px
+    }
+
+    .card .card-content.no-card-mobile {
+      padding: 0
+    }
+
+    .card .card-content.search-result-row .card-media {
+      width: 120px
+    }
+
+    .card .card-content.search-result-row .text-container {
+      flex: 3
+    }
+
+    .card .card-content.search-result-row .headline-link {
+      letter-spacing: -.3px;
+      line-height: 1.1
+    }
+
+    .card .card-blockquote {
+      padding: 0 16px
+    }
+
+    .card.card-shadowed {
+      box-shadow: 0 1px 5px #eee
+    }
+
+    .events-card {
+      padding: 0
+    }
+
+    .events-card .card-content .event-headline {
+      line-height: 1.11;
+      font-size: 18px;
+      letter-spacing: normal
+    }
+
+    .events-card .card-content .event-date {
+      line-height: 1.25;
+      font-size: 16px;
+      letter-spacing: normal
+    }
+
+    .events-card .card-content .event-poster {
+      max-height: 122px;
+      max-width: 180px
+    }
+
+    .events-card .card-content .event-host {
+      line-height: 1.36;
+      font-size: 14px;
+      letter-spacing: normal
+    }
+
+    .feed-header {
+      margin: 0 20px
+    }
+
+    .feed-header.feed-header-no-bottom-spacing {
+      margin-bottom: 0
+    }
+
+    .confidential-tips {
+      padding: 0
+    }
+
+    .confidential-tips .card-content {
+      min-height: 100px
+    }
+
+    .confidential-tips .card-content .card-description {
+      line-height: 1.06;
+      font-size: 14px;
+      letter-spacing: -.1px;
+      color: #333
+    }
+
+    .section-spotlight {
+      padding: 0 20px
+    }
+
+    .section-spotlight .flex-grid-section-spotlight {
+      flex-basis: 100%
+    }
+
+    .section-spotlight hr {
+      margin: 0 20px
+    }
+
+    .section-spotlight h3:hover,
+    .section-spotlight h5:hover {
+      color: #fff
+    }
+
+    .section-spotlight .spotlight.lead-story .card-content {
+      flex-direction: column-reverse;
+      padding: 0
+    }
+
+    .section-spotlight .spotlight.lead-story .card-content .text-container {
+      padding: 15px 20px
+    }
+
+    .section-spotlight .spotlight.lead-story .card-content .card-media {
+      margin: 0;
+      min-height: 1px
+    }
+
+    .section-spotlight .spotlight.lead-story hr {
+      margin: 0
+    }
+
+    .card-side-margins {
+      margin: 0 20px
+    }
+
+    .card.card-article .card-content {
+      padding: 20px 20px 0
+    }
+
+    .card.paragraph-spacing .card-content {
+      padding: 10px 20px
+    }
+
+    .place-description {
+      font-size: 18px;
+      line-height: 24px;
+      letter-spacing: -.1px
+    }
+
+    a.place-headline {
+      font-size: 24px;
+      letter-spacing: -.1px
+    }
+
+    .btn {
+      background-color: #222;
+      border: 1px solid #999;
+      border-radius: 2px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 13px;
+      height: 25px;
+      line-height: 1.23;
+      padding: 4px 10px;
+      text-align: center;
+      transform: none;
+      width: 80px;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif
+    }
+
+    .btn .icon-transform {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .btn .gallery-expand:before {
+      content: url(/pb/resources/images/expand-icon.svg);
+      filter: invert(60%);
+      width: 18px;
+      display: block
+    }
+
+    .btn .expand-button:before {
+      content: url(/pb/resources/images/simple-plus-white.svg);
+      width: 27px;
+      display: block
+    }
+
+    .btn .shrink-button:before {
+      content: url(/pb/resources/images/simple-minus-white.svg);
+      width: 27px;
+      display: block
+    }
+
+    .btn .icon-x {
+      background-image: url(/pb/resources/images/simple-x.svg);
+      background-size: cover;
+      width: 16px;
+      height: 20px;
+      display: inline-block
+    }
+
+    .btn .icon-x.lightbox-close {
+      background-image: url(/pb/resources/images/simple-x-light.svg)
+    }
+
+    .btn .icon-menu:before {
+      content: url(//inquirer.com/pb/resources/images/hamburger-menu.svg);
+      width: 19px;
+      display: block
+    }
+
+    .btn.btn-light {
+      background-color: #fff;
+      color: #222
+    }
+
+    .btn.disable-hover-btn {
+      pointer-events: none
+    }
+
+    .btn.login-btn {
+      padding: 4px 0;
+      width: 68px;
+      border-radius: 3px
+    }
+
+    .btn.login-btn:hover {
+      background-color: #666;
+      color: #fff
+    }
+
+    .btn.login-btn.subscribe-btn {
+      width: auto
+    }
+
+    .btn.caption-btn {
+      background-color: rgba(0, 0, 0, .75);
+      height: 40px;
+      width: 40px
+    }
+
+    .btn.menu-btn {
+      height: 16px;
+      width: 16px;
+      border: none;
+      padding: 0;
+      border-radius: 0
+    }
+
+    .btn.slider-btn {
+      top: calc(50% - 20px);
+      z-index: 9
+    }
+
+    .btn.expand-btn {
+      font-size: 18px;
+      height: 20px;
+      width: 20px;
+      border: none
+    }
+
+    .btn.follow-btn {
+      padding: 0;
+      border: none;
+      background-color: rgba(0, 0, 0, 0);
+      color: #666;
+      width: auto;
+      height: auto;
+      font-size: 12px
+    }
+
+    .btn.follow-btn:active,
+    .btn.follow-btn:focus,
+    .btn.follow-btn:hover {
+      color: #666;
+      text-decoration: none
+    }
+
+    .btn.follow-btn:active span,
+    .btn.follow-btn:focus span,
+    .btn.follow-btn:hover span {
+      text-decoration: underline
+    }
+
+    .btn.follow-btn.follow-btn-dark,
+    .btn.follow-btn.follow-btn-dark:hover {
+      color: #fff
+    }
+
+    .btn.follow-btn>i.fa,
+    .btn.follow-btn>span {
+      margin-top: 3px;
+      margin-bottom: 3px;
+      vertical-align: middle
+    }
+
+    .btn.follow-btn>i.fa.spaced,
+    .btn.follow-btn>span.spaced {
+      margin-right: 5px
+    }
+
+    .btn.follow-btn.follow-btn-sm>i.fa {
+      font-size: 16px
+    }
+
+    .btn.follow-btn.follow-btn-sm>span {
+      font-size: 10px
+    }
+
+    .btn.subscribe-btn {
+      background-color: #c00;
+      border-radius: 3px;
+      min-width: 89px;
+      padding-left: 15px;
+      padding-right: 15px;
+      white-space: nowrap
+    }
+
+    .btn.subscribe-btn.lg {
+      height: 40px
+    }
+
+    .btn.subscribe-btn.md {
+      height: 34px
+    }
+
+    .btn.subscribe-btn:hover {
+      background-color: #666
+    }
+
+    .btn.full-width {
+      width: 100%
+    }
+
+    .btn.learn-more {
+      font-size: 16px;
+      height: 35px;
+      width: 140px
+    }
+
+    .btn.learn-more:hover {
+      background-color: #666;
+      color: #fff
+    }
+
+    .btn.load-more-btn {
+      height: 36px;
+      line-height: normal;
+      font-size: 18px;
+      letter-spacing: -.1px
+    }
+
+    .btn.load-more-btn.load-more-result {
+      height: 50px;
+      border-radius: 4px
+    }
+
+    .search-btn {
+      border: 0;
+      border-radius: 0;
+      background-color: #eee;
+      color: #222;
+      cursor: pointer
+    }
+
+    .search-btn>i.fa,
+    .search-btn>span {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 16px;
+      line-height: 40px
+    }
+
+    .search-btn>i.fa.spaced,
+    .search-btn>span.spaced {
+      margin-right: 5px
+    }
+
+    .search-btn.search-btn-dark {
+      background-color: #222;
+      color: #fff
+    }
+
+    .submenu-btn {
+      border-radius: 15px;
+      height: 29px;
+      top: 4px;
+      width: 29px
+    }
+
+    .submenu-btn .expand-button:before {
+      content: url(/pb/resources/images/simple-plus.svg);
+      filter: unset;
+      width: 21px
+    }
+
+    .submenu-btn .shrink-button:before {
+      content: url(/pb/resources/images/simple-minus.svg);
+      filter: unset;
+      width: 21px
+    }
+
+    .account-dropdown {
+      width: 160px;
+      position: absolute;
+      top: 55px;
+      right: 0;
+      z-index: 99999;
+      text-transform: capitalize;
+      padding: 10px
+    }
+
+    .account-dropdown li {
+      padding: 5px;
+      line-height: 25px;
+      height: 35px
+    }
+
+    .account-dropdown li a {
+      color: #fff
+    }
+
+    .account-dropdown.mobile {
+      top: 40px;
+      right: 36px
+    }
+
+    .my-account-btn {
+      position: relative;
+      text-align: left;
+      width: 100px;
+      line-height: 16px;
+      border-radius: 3px
+    }
+
+    .my-account-btn.select-arrow-active {
+      background-color: #222;
+      color: #fff
+    }
+
+    .my-account-btn.mobile {
+      padding: 0;
+      width: 50px;
+      background: url(http://media.philly.com/designimages/avatar_3x.png) 7px center no-repeat;
+      background-size: 20px;
+      color: #fff;
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden
+    }
+
+    .my-account-btn.mobile.select-arrow-active {
+      padding: 0;
+      background: #222 url(http://media.philly.com/designimages/avatar-rev_3x.png) 7px center no-repeat;
+      background-size: 20px
+    }
+
+    .my-account-btn:hover {
+      background-color: #666
+    }
+
+    .my-account-btn:after {
+      position: absolute;
+      content: '';
+      top: 10px;
+      right: 10px;
+      width: 0;
+      height: 0;
+      border: 4px solid transparent;
+      border-top: 5px solid;
+      border-bottom: 5px solid;
+      border-color: #000 transparent transparent transparent
+    }
+
+    .my-account-btn.select-arrow-active:after {
+      border-color: transparent transparent #fff transparent;
+      top: 7px
+    }
+
+    .my-account-btn:focus {
+      outline: 1px solid #999
+    }
+
+    .responsive-embed-16x9 {
+      position: relative
+    }
+
+    .responsive-embed-16x9 iframe {
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%
+    }
+
+    .responsive-embed-16x9.oembed-youtube {
+      padding-bottom: 56.25%
+    }
+
+    .label {
+      white-space: nowrap
+    }
+
+    .topics-bar-label {
+      line-height: 16px;
+      font-size: 15px;
+      letter-spacing: -.1px
+    }
+
+    .search-bar-label {
+      line-height: 1;
+      font-size: 14px;
+      letter-spacing: 1
+    }
+
+    .classifieds-label {
+      line-height: 1;
+      font-size: 16px;
+      letter-spacing: -.3px
+    }
+
+    .classifieds-label-sm {
+      line-height: 1;
+      font-size: 14px;
+      letter-spacing: -.3px
+    }
+
+    ol,
+    ul {
+      color: #222;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif
+    }
+
+    ol.inline,
+    ul.inline {
+      padding-left: 1em;
+      line-height: 18px;
+      font-size: 16px;
+      letter-spacing: normal
+    }
+
+    .list-unstyled {
+      list-style-type: none;
+      margin: 0;
+      padding: 0
+    }
+
+    .list-unstyled.related-links {
+      line-height: 1.14;
+      font-size: 14px;
+      letter-spacing: normal
+    }
+
+    .list-unstyled.subsection-links {
+      color: #333;
+      line-height: 1.82;
+      font-size: 22px;
+      letter-spacing: normal
+    }
+
+    .list-styled.related-links {
+      line-height: 1.14;
+      font-size: 14px;
+      letter-spacing: normal;
+      margin-bottom: 0
+    }
+
+    .list-styled.related-links .related-url:last-child {
+      margin-bottom: 0
+    }
+
+    .font-li-list {
+      font-size: 18px;
+      line-height: 1.44;
+      letter-spacing: -.2px;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .element-ol>ol {
+      list-style-type: lower-alpha
+    }
+
+    .element-ol>ol>ol {
+      list-style-type: lower-roman
+    }
+
+    .element-ol>ol>ol>ol>ol {
+      list-style-type: lower-alpha
+    }
+
+    .element-ul>ul>ul>ul {
+      list-style-type: disc
+    }
+
+    .element-ul>ul>ul>ul>ul {
+      list-style-type: circle
+    }
+
+    .logo-philly {
+      background-repeat: no-repeat;
+      background-position: center
+    }
+
+    .logo-philly.logo-stacked.logo-lg {
+      background-image: url(../images/inquirer-logo-mobile-01.svg);
+      background-image: url(../images/philly-logo-stacked.svg);
+      background-size: 100%;
+      height: 41px;
+      width: 115px
+    }
+
+    .logo-philly.logo-stacked.logo-lg.logo-inverted {
+      background-image: url(../images/philly-logo-stacked-inverted.svg);
+      background-color: inherit;
+      background-size: 100%;
+      height: 56px;
+      width: 126px
+    }
+
+    .logo-philly.logo-stacked.logo-sm {
+      background-image: url(../images/philly-logo-stacked.svg);
+      background-size: 100%;
+      height: 40px;
+      width: 110px;
+      background-image: url(../images/inquirer-logo-mobile-01.svg)
+    }
+
+    .logo-philly.logo-stacked.logo-sm.logo-inverted {
+      background-image: url(../images/philly-logo-stacked-inverted.svg);
+      background-color: inherit;
+      background-size: 100%;
+      height: 56px;
+      width: 126px
+    }
+
+    .logo-inquirer-footer {
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 100%
+    }
+
+    .logo-inquirer-footer.logo-inverted {
+      width: 150px;
+      background-image: url(../images/inquirer-logo-mobile-white.svg);
+      height: 50px
+    }
+
+    .byline {
+      line-height: 1.2;
+      font-size: 15px;
+      letter-spacing: -.2px
+    }
+
+    .byline.spread {
+      line-height: 1.73
+    }
+
+    .byline-small {
+      font-size: 12px
+    }
+
+    .card-byline {
+      line-height: 1.5;
+      font-size: 12px;
+      letter-spacing: -.1px;
+      color: #999
+    }
+
+    .card-byline a {
+      color: #999
+    }
+
+    figcaption {
+      line-height: 1.27;
+      font-size: 11px;
+      letter-spacing: -.22px;
+      color: #999
+    }
+
+    figcaption.small {
+      font-size: 11px
+    }
+
+    figcaption.fig-pad-top-2 {
+      padding-top: 2px
+    }
+
+    figcaption.lead {
+      width: 100vw;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+      padding-left: 20px
+    }
+
+    figcaption.expanded-caption {
+      line-height: 17px;
+      font-size: 14px;
+      letter-spacing: -.23px;
+      min-height: 25%;
+      max-height: 60%;
+      background-color: rgba(0, 0, 0, .75)
+    }
+
+    figcaption.expanded-caption .width-75p .font-light,
+    figcaption.expanded-caption .width-75p .font-light>p {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: -.2px
+    }
+
+    .blockquote {
+      border-style: solid;
+      border-width: 0 0 0 2px;
+      border-color: #222;
+      line-height: 26px;
+      font-size: 18px;
+      letter-spacing: normal;
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif;
+      padding: 0 20px
+    }
+
+    .pullquote {
+      border-style: solid;
+      border-width: 0 0 0 2px;
+      border-color: #222;
+      line-height: 28px;
+      font-size: 22px;
+      letter-spacing: normal;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      padding: 0 20px
+    }
+
+    .attribution {
+      font-size: 13px;
+      line-height: 1.25
+    }
+
+    figure img.full-width {
+      vertical-align: bottom
+    }
+
+    .byline-wrapper.no-author .author-name,
+    .byline-wrapper.no-author .spaced.spaced-right.spaced-xs {
+      display: none
+    }
+
+    .correction {
+      border-style: solid;
+      border-width: 0 0 0 2px;
+      border-color: #222;
+      font-weight: 400;
+      font-stretch: normal;
+      padding: 0 0 0 20px
+    }
+
+    .table-wrapper {
+      width: 100%;
+      overflow: auto
+    }
+
+    .table-wrapper .table-element {
+      display: table;
+      border-collapse: collapse;
+      width: 100%
+    }
+
+    .table-wrapper .table-element .table-row-th {
+      background-color: #ccc;
+      font-weight: 900
+    }
+
+    .table-wrapper .table-element .table-row-td,
+    .table-wrapper .table-element .table-row-th {
+      display: table-row
+    }
+
+    .table-wrapper .table-element .table-row-td .row-block,
+    .table-wrapper .table-element .table-row-th .row-block {
+      position: relative;
+      display: table-cell;
+      border: 1px solid #555;
+      min-width: 20px
+    }
+
+    .table-wrapper .table-element .table-row-td .row-ltr,
+    .table-wrapper .table-element .table-row-th .row-ltr {
+      direction: ltr;
+      text-align: left
+    }
+
+    .pad.pad-right.pad-sm {
+      padding-right: 8px
+    }
+
+    .pad.pad-right.pad-xs {
+      padding-right: 10px
+    }
+
+    .pad.pad-right.pad-md {
+      padding-right: 15px
+    }
+
+    .pad.pad-right.pad-lg {
+      padding-right: 30px
+    }
+
+    .pad.pad-right.no-pad-right {
+      padding-right: 0
+    }
+
+    .pad.pad-right.pad-md-20 {
+      padding-right: 20px
+    }
+
+    .pad.pad-left.pad-sm {
+      padding-left: 8px
+    }
+
+    .pad.pad-left.pad-xs {
+      padding-left: 10px
+    }
+
+    .pad.pad-left.pad-md {
+      padding-left: 15px
+    }
+
+    .pad.pad-left.pad-lg {
+      padding-left: 30px
+    }
+
+    .pad.pad-left.no-pad-left {
+      padding-left: 0
+    }
+
+    .pad.pad-left.pad-md-20 {
+      padding-left: 20px
+    }
+
+    .pad.pad-top.pad-sm {
+      padding-top: 8px
+    }
+
+    .pad.pad-top.pad-md {
+      padding-top: 15px
+    }
+
+    .pad.pad-top.pad-lg {
+      padding-top: 30px
+    }
+
+    .spaced.spaced-top.spaced-xs {
+      margin-top: 5px
+    }
+
+    .spaced.spaced-top.spaced-sm {
+      margin-top: 10px
+    }
+
+    .spaced.spaced-top.spaced-md {
+      margin-top: 20px
+    }
+
+    .spaced.spaced-top.spaced-lg {
+      margin-top: 30px
+    }
+
+    .spaced.spaced-top.spaced-xl {
+      margin-top: 30px
+    }
+
+    .spaced.spaced-left.spaced-xs {
+      margin-left: 5px
+    }
+
+    .spaced.spaced-left.spaced-sm {
+      margin-left: 10px
+    }
+
+    .spaced.spaced-left.spaced-md {
+      margin-left: 20px
+    }
+
+    .spaced.spaced-left.spaced-lg {
+      margin-left: 30px
+    }
+
+    .spaced.spaced-left.spaced-xl {
+      margin-left: 50px
+    }
+
+    .spaced.spaced-right.spaced-xs {
+      margin-right: 5px
+    }
+
+    .spaced.spaced-right.spaced-sm {
+      margin-right: 10px
+    }
+
+    .spaced.spaced-right.spaced-md {
+      margin-right: 20px
+    }
+
+    .spaced.spaced-right.spaced-lg {
+      margin-right: 30px
+    }
+
+    .spaced.spaced-right.spaced-xl {
+      margin-right: 50px
+    }
+
+    .spaced.spaced-bottom.spaced-xs {
+      margin-bottom: 5px
+    }
+
+    .spaced.spaced-bottom.spaced-sm {
+      margin-bottom: 10px
+    }
+
+    .spaced.spaced-bottom.spaced-md {
+      margin-bottom: 20px
+    }
+
+    .spaced.spaced-bottom.spaced-lg {
+      margin-bottom: 30px
+    }
+
+    .spaced.spaced-bottom.spaced-xl {
+      margin-bottom: 30px
+    }
+
+    .padded.padded-full.padded-xs {
+      padding: 5px
+    }
+
+    .padded.padded-full.padded-sm {
+      padding: 10px
+    }
+
+    .padded.padded-full.padded-md {
+      padding: 20px
+    }
+
+    .padded.padded-full.padded-lg {
+      padding: 30px
+    }
+
+    .padded.padded-full.padded-xl {
+      padding: 50px
+    }
+
+    .padded.padded-bottom.padded-xs {
+      padding-bottom: 5px
+    }
+
+    .padded.padded-bottom.padded-sm {
+      padding-bottom: 10px
+    }
+
+    .padded.padded-bottom.padded-md {
+      padding-bottom: 20px
+    }
+
+    .padded.padded-top.padded-xs {
+      padding-top: 5px
+    }
+
+    .padded.padded-top.padded-sm {
+      padding-top: 10px
+    }
+
+    .padded.padded-top.padded-md {
+      padding-top: 20px
+    }
+
+    .padded.padded-top.no-padding-top {
+      padding-top: 0
+    }
+
+    .no-spacing {
+      margin: 0
+    }
+
+    .no-padding {
+      padding: 0
+    }
+
+    .align-items-start {
+      align-items: flex-start
+    }
+
+    .align-items-stretch {
+      align-items: stretch
+    }
+
+    .align-items-center {
+      align-items: center
+    }
+
+    .align-items-baseline {
+      align-items: baseline
+    }
+
+    .align-items-end {
+      align-items: flex-end
+    }
+
+    .align-self-end {
+      align-self: flex-end
+    }
+
+    .align-self-center {
+      -ms-grid-row-align: center;
+      align-self: center
+    }
+
+    .align-self-stretch {
+      -ms-grid-row-align: stretch;
+      align-self: stretch
+    }
+
+    .container-column {
+      display: flex;
+      flex-direction: column
+    }
+
+    .container-column>* {
+      max-width: 100%
+    }
+
+    .container-column.max-480 {
+      max-width: 480px
+    }
+
+    .container-row {
+      display: flex;
+      flex-direction: row
+    }
+
+    .flex {
+      flex: 1
+    }
+
+    .flex-half {
+      flex: .5
+    }
+
+    .flex-no-desktop {
+      flex: 1
+    }
+
+    .flex-no-ie {
+      flex: 1
+    }
+
+    .flex-2 {
+      flex: 2
+    }
+
+    .flex-3 {
+      flex: 3
+    }
+
+    .flex-4 {
+      flex: 4
+    }
+
+    .flex-5 {
+      flex: 5
+    }
+
+    .flex-6 {
+      flex: 6
+    }
+
+    .flex-2-col {
+      flex: .25
+    }
+
+    .flex-4-col {
+      flex: .75
+    }
+
+    .flex-reverse {
+      order: 2
+    }
+
+    .wrap {
+      flex-wrap: wrap
+    }
+
+    .wrap-mobile {
+      flex-wrap: wrap
+    }
+
+    .row-reverse {
+      flex-direction: row-reverse
+    }
+
+    .column-reverse {
+      flex-direction: column-reverse
+    }
+
+    .justify-center {
+      justify-content: center
+    }
+
+    .justify-end {
+      justify-content: flex-end
+    }
+
+    .justify-start {
+      justify-content: flex-start
+    }
+
+    .justify-space-around {
+      justify-content: space-around
+    }
+
+    .justify-space-evenly {
+      justify-content: space-evenly
+    }
+
+    .justify-space-between {
+      justify-content: space-between
+    }
+
+    .max-95 {
+      max-width: 95%
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 0
+    }
+
+    .container:first-child {
+      margin: 0
+    }
+
+    .container-fluid {
+      margin: 0 0
+    }
+
+    .flex-grid,
+    .pb-container {
+      box-sizing: border-box;
+      display: flex;
+      flex: 0 1 auto;
+      flex-flow: row wrap
+    }
+
+    .flex-grid>.col,
+    .pb-container>.col {
+      box-sizing: border-box;
+      flex: 0 0 auto
+    }
+
+    .flex-grid>.col.min-300,
+    .pb-container>.col.min-300 {
+      min-width: 300px
+    }
+
+    .flex-grid>.col.mobile-1,
+    .pb-container>.col.mobile-1 {
+      flex-basis: 8.33%;
+      max-width: 8.33%
+    }
+
+    .flex-grid>.col.mobile-2,
+    .pb-container>.col.mobile-2 {
+      flex-basis: 16.67%;
+      max-width: 16.67%
+    }
+
+    .flex-grid>.col.mobile-3,
+    .pb-container>.col.mobile-3 {
+      flex-basis: 25%;
+      max-width: 25%
+    }
+
+    .flex-grid>.col.mobile-4,
+    .pb-container>.col.mobile-4 {
+      flex-basis: 33.33%;
+      max-width: 33.33%
+    }
+
+    .flex-grid>.col.mobile-5,
+    .pb-container>.col.mobile-5 {
+      flex-basis: 41.67%;
+      max-width: 41.67%
+    }
+
+    .flex-grid>.col.mobile-6,
+    .pb-container>.col.mobile-6 {
+      flex-basis: 50%;
+      max-width: 50%
+    }
+
+    .flex-grid>.col.mobile-7,
+    .pb-container>.col.mobile-7 {
+      flex-basis: 58.33%;
+      max-width: 58.33%
+    }
+
+    .flex-grid>.col.mobile-8,
+    .pb-container>.col.mobile-8 {
+      flex-basis: 66.67%;
+      max-width: 66.67%
+    }
+
+    .flex-grid>.col.mobile-9,
+    .pb-container>.col.mobile-9 {
+      flex-basis: 75%;
+      max-width: 75%
+    }
+
+    .flex-grid>.col.mobile-10,
+    .pb-container>.col.mobile-10 {
+      flex-basis: 83.33%;
+      max-width: 83.33%
+    }
+
+    .flex-grid>.col.mobile-11,
+    .pb-container>.col.mobile-11 {
+      flex-basis: 91.67%;
+      max-width: 91.67%
+    }
+
+    .flex-grid>.col.mobile-12,
+    .pb-container>.col.mobile-12 {
+      flex-basis: 100%;
+      max-width: 100%
+    }
+
+    .flex-grid.row-reverse,
+    .pb-container.row-reverse {
+      flex-direction: row-reverse
+    }
+
+    .full-width {
+      width: 100%
+    }
+
+    .max-full-width {
+      max-width: 100%
+    }
+
+    .width-75p {
+      width: 75%
+    }
+
+    .width-45p {
+      width: 45%
+    }
+
+    .full-height {
+      height: 100%
+    }
+
+    .min-h-120 {
+      min-height: 120px
+    }
+
+    .min-h-200 {
+      min-height: 200px
+    }
+
+    .min-h-1 {
+      min-height: 1px
+    }
+
+    .height-120 {
+      height: 120px
+    }
+
+    .height-400 {
+      height: 400px
+    }
+
+    .height-100 {
+      height: 100px
+    }
+
+    .height-40 {
+      height: 40px
+    }
+
+    .rail-300 {
+      width: 300px;
+      margin: 0 auto
+    }
+
+    .max-w-375 {
+      max-width: 375px
+    }
+
+    .cube-300 {
+      min-height: 300px
+    }
+
+    .font-light {
+      font-weight: 300
+    }
+
+    .font-semi-bold {
+      font-weight: 500
+    }
+
+    .font-ultra-bold {
+      font-weight: 800
+    }
+
+    .font-bold {
+      font-weight: 700
+    }
+
+    .font-black {
+      font-weight: 900
+    }
+
+    .primary-font {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif
+    }
+
+    .secondary-font {
+      font-family: 'Sentinel SSm A', 'Sentinel SSm B', serif
+    }
+
+    .webkit-font-auto {
+      -webkit-font-smoothing: auto
+    }
+
+    .capitalized {
+      text-transform: capitalize
+    }
+
+    .uppercase {
+      text-transform: uppercase
+    }
+
+    .no-transform {
+      text-transform: none
+    }
+
+    .underlined {
+      text-decoration: underline
+    }
+
+    .italicized {
+      font-style: italic
+    }
+
+    .font-normal {
+      font-style: normal
+    }
+
+    .hover-underlined:hover {
+      text-decoration: underline
+    }
+
+    .unselectable {
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none
+    }
+
+    .align-left {
+      text-align: left
+    }
+
+    .align-center {
+      text-align: center
+    }
+
+    .align-child-center>div {
+      text-align: center
+    }
+
+    .align-right {
+      text-align: right
+    }
+
+    .left-0 {
+      left: 0
+    }
+
+    .left-auto {
+      left: auto
+    }
+
+    .right-0 {
+      right: 0
+    }
+
+    .top-0 {
+      top: 0
+    }
+
+    .top-auto {
+      top: auto
+    }
+
+    .bottom-0 {
+      bottom: 0
+    }
+
+    left-unset {
+      left: unset
+    }
+
+    right-unset {
+      right: unset
+    }
+
+    .vertical-align-children-top>a,
+    .vertical-align-children-top>span {
+      vertical-align: top
+    }
+
+    .relative {
+      position: relative
+    }
+
+    .absolute {
+      position: absolute
+    }
+
+    .fixed {
+      position: fixed
+    }
+
+    .no-overflow {
+      overflow: hidden
+    }
+
+    .no-wrap {
+      white-space: nowrap
+    }
+
+    .text-overflow-ellipsis {
+      text-overflow: ellipsis
+    }
+
+    .overflow-scroll {
+      overflow: scroll
+    }
+
+    .float-left {
+      float: left
+    }
+
+    .color-blue {
+      color: #06a
+    }
+
+    .color-accent {
+      color: #c00
+    }
+
+    .color-red-ultra-medium {
+      color: #b63321
+    }
+
+    .color-white {
+      color: #fff
+    }
+
+    .color-black {
+      color: #222
+    }
+
+    .color-grey-medium {
+      color: #999
+    }
+
+    .color-grey-ultra-medium {
+      color: #a7a7a7
+    }
+
+    .color-grey-ultra-dark {
+      color: #333
+    }
+
+    .bg-accent {
+      background-color: #c00
+    }
+
+    .bg-red-medium {
+      background-color: #9f000d
+    }
+
+    .bg-white {
+      background-color: #fff
+    }
+
+    .bg-grey-light {
+      background-color: #eee
+    }
+
+    .bg-grey-ultra-light {
+      background-color: #f3f3f3
+    }
+
+    .bg-grey-ultra-light-2 {
+      background-color: #979797
+    }
+
+    .bg-grey-dark {
+      background-color: #666
+    }
+
+    .bg-grey-ultra-dark {
+      background-color: #333
+    }
+
+    .bg-black-dark {
+      background-color: #222
+    }
+
+    .bg-black-dark-alpha60 {
+      background-color: rgba(34, 34, 34, .6)
+    }
+
+    .bg-black-dark-alpha90 {
+      background-color: rgba(34, 34, 34, .9)
+    }
+
+    .bg-light-grey-to-white-gradient {
+      background-image: linear-gradient(to bottom, #eee, #fff)
+    }
+
+    .hide-last-child>.hideable-element:last-child {
+      display: none
+    }
+
+    .vertical-divider {
+      display: inline-block;
+      width: 2px;
+      height: 20px;
+      background-color: #eee;
+      margin: 0
+    }
+
+    .vertical-divider.vertical-divider-dark {
+      background-color: #333
+    }
+
+    .vertical-divider.submenu-divider {
+      width: 1px;
+      height: 23px;
+      background-color: #999;
+      margin: 0 15px
+    }
+
+    .vertical-divider.spaced {
+      margin: 0 5px
+    }
+
+    .vertical-divider.spaced-default {
+      margin: 0 5px
+    }
+
+    .high-z-index {
+      z-index: 99999
+    }
+
+    .low-z-index {
+      z-index: -1
+    }
+
+    .rating-icon {
+      height: 20px;
+      display: inline
+    }
+
+    .rating-icon.rating-star-0_0 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_0_0.svg)
+    }
+
+    .rating-icon.rating-star-0_5 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_0_5.svg)
+    }
+
+    .rating-icon.rating-star-1_0 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_1_0.svg)
+    }
+
+    .rating-icon.rating-star-1_5 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_1_5.svg)
+    }
+
+    .rating-icon.rating-star-2_0 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_2_0.svg)
+    }
+
+    .rating-icon.rating-star-2_5 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_2_5.svg)
+    }
+
+    .rating-icon.rating-star-3_0 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_3_0.svg)
+    }
+
+    .rating-icon.rating-star-3_5 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_3_5.svg)
+    }
+
+    .rating-icon.rating-star-4_0 {
+      width: 80px;
+      background-image: url(/pb/resources/images/Review_Stars_4_0.svg)
+    }
+
+    .rating-icon.rating-bell-0_0 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_0_0.svg)
+    }
+
+    .rating-icon.rating-bell-0_5 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_0_5.svg)
+    }
+
+    .rating-icon.rating-bell-1_0 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_1_0.svg)
+    }
+
+    .rating-icon.rating-bell-1_5 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_1_5.svg)
+    }
+
+    .rating-icon.rating-bell-2_0 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_2_0.svg)
+    }
+
+    .rating-icon.rating-bell-2_5 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_2_5.svg)
+    }
+
+    .rating-icon.rating-bell-3_0 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_3_0.svg)
+    }
+
+    .rating-icon.rating-bell-3_5 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_3_5.svg)
+    }
+
+    .rating-icon.rating-bell-4_0 {
+      width: 70px;
+      background-image: url(/pb/resources/images/LaBan_Bells_4_0.svg)
+    }
+
+    .cursor-pointer {
+      cursor: pointer
+    }
+
+    .font-size-30 {
+      font-size: 30px
+    }
+
+    .font-size-28 {
+      font-size: 28px
+    }
+
+    .font-size-12 {
+      font-size: 12px
+    }
+
+    .font-size-13 {
+      font-size: 13px
+    }
+
+    .font-size-14 {
+      font-size: 14px
+    }
+
+    .letter-spacing-05 {
+      letter-spacing: -.5px
+    }
+
+    .hidden {
+      display: none
+    }
+
+    .no-border {
+      border: 0
+    }
+
+    .border.border-bottom {
+      border-bottom: 3px solid #eee
+    }
+
+    .border.border-bottom.border-bold {
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      border-color: #222
+    }
+
+    .border.border-bottom.border-author {
+      width: 68.84%
+    }
+
+    .border.border-bottom.border-author-signoff {
+      width: 100%
+    }
+
+    .border.border-bottom.border-author-image {
+      margin-top: -10px
+    }
+
+    .border.border-top {
+      border-top: 3px solid #eee
+    }
+
+    .border.border-full {
+      border: 2px solid #eee
+    }
+
+    .border.border-full.border-top-bold {
+      border-top-color: #222
+    }
+
+    .author-border {
+      border-style: solid;
+      border-width: 0;
+      border-color: #eee
+    }
+
+    .author-border.border-bottom {
+      border-bottom-width: 2px
+    }
+
+    .author-border.border-top {
+      border-top-width: 2px
+    }
+
+    .black-light-border {
+      border-bottom: 2px solid #222
+    }
+
+    .black-light-border.border-bold {
+      border-width: 2px
+    }
+
+    .red-light-border {
+      border-bottom: 2px solid #c00
+    }
+
+    .red-light-border.border-bold {
+      border-width: 2px
+    }
+
+    .red-light-border-top {
+      border-top: 2px solid #c00
+    }
+
+    .opinion-border {
+      border-top: 2px solid #222
+    }
+
+    .border-list {
+      padding-left: 20px
+    }
+
+    .last-story .card>.card-content>.border.border-right {
+      border-right: none
+    }
+
+    .homepage-news-items {
+      display: block
+    }
+
+    .homepage-news-items .text-image-small.text-image-right {
+      padding-right: 10px
+    }
+
+    .homepage-news-items .text-image-right figure img {
+      float: right;
+      margin-left: 10px;
+      margin-bottom: 10px
+    }
+
+    .homepage-news-items .text-image-left figure img {
+      float: left;
+      margin-right: 10px;
+      margin-bottom: 10px
+    }
+
+    .homepage-news-items .text-image-container {
+      display: block
+    }
+
+    .top-furniture:first-child {
+      margin: 0 auto;
+      background-color: #fff
+    }
+
+    #a1-top-furniture,
+    #section-content-wrapper {
+      padding: 0
+    }
+
+    .author-container .author-img-container {
+      display: flex
+    }
+
+    .author-text-group .author-timestamp {
+      padding-left: 15px
+    }
+
+    .author-text-group .author-text {
+      padding-left: 15px
+    }
+
+    .card .card-content .element.element-rawhtml span.icon.icon--s.t-icon.add-pad.round.icon__plus {
+      display: none
+    }
+
+    .author-info {
+      width: 50%
+    }
+
+    .hr {
+      background: #eee;
+      display: block;
+      height: 2px
+    }
+
+    .vf-pull-quote-wrapper {
+      color: #666;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif
+    }
+
+    .vf-pull-quote-text {
+      font-size: 16px;
+      line-height: 22px;
+      font-style: italic
+    }
+
+    .vf-pull-quote-text:hover {
+      text-decoration: underline
+    }
+
+    .vf-pull-quote-user {
+      font-size: 12px;
+      line-height: 1.17;
+      color: #333;
+      font-weight: 900
+    }
+
+    .vf-error-box {
+      color: #c00;
+      text-transform: uppercase
+    }
+
+    .pb-f-global-app-bar {
+      min-height: 76px;
+      z-index: 40;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #fff;
+      transition: top .3s
+    }
+
+    .app-bar {
+      border-style: solid;
+      border-width: 3px 0 0 0;
+      border-color: #222;
+      line-height: 19px;
+      font-size: 13px;
+      letter-spacing: -.1px;
+      min-height: 60px;
+      top: 0
+    }
+
+    .app-bar .tray {
+      line-height: 1.46;
+      font-size: 16px;
+      letter-spacing: -.1px
+    }
+
+    .app-bar .tray nav {
+      background-color: #222;
+      left: 0;
+      height: 100%;
+      top: 0;
+      overflow-y: scroll
+    }
+
+    .app-bar .tray .tray-contents-inner {
+      align-items: stretch
+    }
+
+    .app-bar .tray .tray-logo {
+      margin-left: auto;
+      margin-right: auto;
+      background-color: transparent
+    }
+
+    .app-bar .tray .menu.menu-topic {
+      padding: 32px;
+      background-color: #111;
+      height: 100%
+    }
+
+    .app-bar .tray .menu.menu-topic .list-header,
+    .app-bar .tray .menu.menu-topic ul {
+      font-size: 16px
+    }
+
+    .app-bar .tray .menu.menu-topic>div {
+      width: 50%;
+      margin-bottom: 32px
+    }
+
+    .app-bar .tray .menu.sub {
+      padding: 32px;
+      font-weight: 700
+    }
+
+    .app-bar .tray .menu.sub ul {
+      font-size: 16px;
+      margin-bottom: 24px
+    }
+
+    .app-bar .tray .menu.sub ul li:first-child {
+      font-size: 22px;
+      display: block
+    }
+
+    .app-bar .tray .menu.sub ul li {
+      display: inline
+    }
+
+    .app-bar .tray .menu.sub ul li:after {
+      color: #c00;
+      content: '|';
+      font-weight: 100;
+      margin: 0 10px;
+      letter-spacing: -1em
+    }
+
+    .app-bar .tray .menu.sub ul li:first-child:after {
+      content: none
+    }
+
+    .app-bar .tray .menu.sub ul li:last-child:after {
+      content: none
+    }
+
+    .app-bar .tray .menu.sub ul:last-child {
+      margin-bottom: 0
+    }
+
+    .app-bar .tray input {
+      padding: 1em
+    }
+
+    .app-bar .tray .fa-search {
+      height: 2em;
+      width: 2em
+    }
+
+    .app-bar .tray .fa-search:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .app-bar .tray.visible {
+      visibility: visible
+    }
+
+    .app-bar .app-bar-inner {
+      justify-content: space-between;
+      min-height: 60px;
+      padding: 10px 0
+    }
+
+    .app-bar .app-bar-inner .logo-container {
+      max-width: 100%;
+      margin-right: 10px
+    }
+
+    .app-bar .app-bar-inner .timestamp {
+      font-size: 13px
+    }
+
+    .app-bar .app-bar-inner .fa {
+      font-size: 22px
+    }
+
+    .topic-bar {
+      min-height: 38px
+    }
+
+    .topic-bar>div {
+      padding: 10px 0
+    }
+
+    .topic-bar .topics-list {
+      line-height: 1.36;
+      font-size: 13px;
+      letter-spacing: -.1px;
+      flex-wrap: wrap;
+      font-weight: 400;
+      height: 18px;
+      overflow: hidden
+    }
+
+    .topic-bar .topic-bar-input-group {
+      position: absolute;
+      right: 0;
+      top: 0
+    }
+
+    .topic-bar .topic-bar-input-group .search-input {
+      width: 0;
+      background-color: #eee;
+      transition: width .2s ease-in-out
+    }
+
+    .topic-bar .topic-bar-input-group .search-input .fa-search {
+      cursor: pointer;
+      font-size: 17px;
+      height: 2em;
+      width: 2em
+    }
+
+    .topic-bar .topic-bar-input-group .search-input .fa-search:before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .topic-bar .topic-bar-input-group .search-input input {
+      background-color: #eee;
+      line-height: 1.1;
+      border: none;
+      padding: 1em
+    }
+
+    .topic-bar .topic-bar-input-group .search-input.expand {
+      width: 270px
+    }
+
+    .topic-bar .topic-bar-input-group>div {
+      height: 38px;
+      width: 38px
+    }
+
+    .topic-bar .topic-bar-input-group>div>span {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+
+    .topic-bar .topic-bar-input-group>div>span.fa-search {
+      cursor: default;
+      position: relative
+    }
+
+    .in-the-news-bar {
+      display: block;
+      max-height: 22px
+    }
+
+    .search-input-font,
+    .search-input-font::-webkit-input-placeholder {
+      font-size: 12px;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      color: #999;
+      font-weight: 400
+    }
+
+    .search-input-font,
+    .search-input-font:-ms-input-placeholder {
+      font-size: 12px;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      color: #999;
+      font-weight: 400
+    }
+
+    .search-input-font,
+    .search-input-font::placeholder {
+      font-size: 12px;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      color: #999;
+      font-weight: 400
+    }
+
+    .recommendations .recommendation.last {
+      border-bottom: 0
+    }
+
+    .recommendations .headline {
+      display: block
+    }
+
+    .recommendations .clear {
+      clear: both
+    }
+
+    .recommendation-item {
+      line-height: 1.11;
+      font-size: 18px;
+      letter-spacing: normal
+    }
+
+    .pb-f-global-footer footer {
+      line-height: 22px;
+      font-size: 14px;
+      letter-spacing: -.2px
+    }
+
+    .pb-f-global-footer footer .footer-social-container {
+      background-color: #111;
+      height: auto;
+      padding: 8px 10px;
+      width: 100%
+    }
+
+    .pb-f-global-footer footer .footer-social-container div.flex-4 {
+      flex: 1.6
+    }
+
+    .pb-f-global-footer footer .footer-social-container .footer-share-bar-container {
+      flex: auto
+    }
+
+    .pb-f-global-footer footer .vertical-divider {
+      height: 40px
+    }
+
+    .pb-f-global-footer footer .footer-grid-container {
+      background-color: #222;
+      line-height: 24px;
+      padding: 0 20px 20px 20px
+    }
+
+    .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container {
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      border-color: #700000
+    }
+
+    .pb-f-global-footer footer .footer-grid-container .branding>img {
+      height: 150px;
+      width: 150px
+    }
+
+    .pb-f-global-footer footer .footer-grid-container .links-headline,
+    .pb-f-global-footer footer .footer-grid-container .partner-title {
+      border-style: solid;
+      border-width: 0 0 2px 0;
+      border-color: #333;
+      padding-bottom: 10px
+    }
+
+    .pb-f-global-footer footer .copyright-container .footer-copyright {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 14px;
+      opacity: .8;
+      letter-spacing: -.4px;
+      line-height: 1.43
+    }
+
+    .pb-f-global-footer footer .footer-container {
+      max-width: 1300px;
+      margin: auto;
+      height: 100%;
+      padding-left: 10px;
+      padding-right: 10px
+    }
+
+    .gallery .aspect-ratio-container {
+      position: relative;
+      box-sizing: border-box
+    }
+
+    .gallery .aspect-ratio-container .button-container-right {
+      left: auto
+    }
+
+    .gallery .aspect-ratio-container .button-container-right.button-container-bottom {
+      top: auto
+    }
+
+    .gallery .aspect-ratio-container>* {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box
+    }
+
+    .gallery .aspect-ratio-container:before {
+      position: relative;
+      display: block;
+      content: "";
+      padding-top: 75%;
+      box-sizing: border-box
+    }
+
+    .gallery .pb-ad {
+      z-index: 0;
+      justify-content: center
+    }
+
+    .gallery .gallery-ad {
+      display: flex;
+      justify-content: center;
+      align-items: center
+    }
+
+    .gallery .gallery-photo-container {
+      outline: 0
+    }
+
+    .gallery .gallery-photo-container .slider-btn {
+      font-size: 38px;
+      padding: 0 10px;
+      line-height: 0
+    }
+
+    .gallery .gallery-photo-container .gallery-photo-backdrop {
+      height: calc(100% - 40px);
+      background-color: #fff
+    }
+
+    .gallery .gallery-photo-container.standalone {
+      margin: auto;
+      padding: 0;
+      max-width: 769px
+    }
+
+    .gallery .lightbox-image {
+      height: 100%;
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat
+    }
+
+    .gallery .lightbox-image.gallery-cover-image {
+      background-position: bottom;
+      background-size: cover
+    }
+
+    .gallery .lightbox {
+      background-color: #fff;
+      width: 100vw;
+      height: 100vh;
+      top: 0;
+      left: 0;
+      margin: 0;
+      position: fixed;
+      z-index: 9999999;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .gallery .lightbox .lightbox-photo-container {
+      outline: 0
+    }
+
+    .gallery .lightbox .lightbox-caption {
+      min-height: 150px
+    }
+
+    .gallery-inner,
+    .leaf-page-inner {
+      max-width: 970px;
+      margin: auto
+    }
+
+    .breaking-news-header {
+      align-items: center;
+      color: #fff;
+      height: 20px
+    }
+
+    .breaking-news-wrapper {
+      font-size: 14px;
+      background-color: #c00
+    }
+
+    .breaking-news-wrapper span {
+      letter-spacing: .6px
+    }
+
+    .breaking-news-wrapper .breaking-news-label {
+      display: block
+    }
+
+    .breaking-news-wrapper .breaking-news {
+      display: inline-block;
+      margin-left: 10px;
+      width: 1240px;
+      max-width: 1240px
+    }
+
+    .breaking-news-wrapper .breaking {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 14px;
+      letter-spacing: .6px
+    }
+
+    .breaking-news-wrapper .fa {
+      font-size: 18px
+    }
+
+    .breaking-news-wrapper .fa-times-thin:before {
+      content: '\D7'
+    }
+
+    .breaking-news-wrapper button {
+      width: 40px;
+      height: auto;
+      padding: 0;
+      background: 0 0;
+      border: 0;
+      margin-right: 10px
+    }
+
+    .breaking-news-wrapper button:hover {
+      background: 0 0
+    }
+
+    .arcad {
+      background: 0 0;
+      min-height: 0;
+      min-width: 0
+    }
+
+    #right-rail .pb-f-ads-arcads,
+    #top .pb-f-ads-arcads:first-of-type {
+      display: block;
+      overflow: visible;
+      position: relative;
+      margin: 0 auto
+    }
+
+    .pb-f-ads-arcads {
+      width: 100%
+    }
+
+    .righ-rail-ad-desktop {
+      margin-bottom: 20px;
+      position: -webkit-sticky;
+      position: sticky;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .adhesion {
+      position: fixed;
+      text-align: center;
+      bottom: 0;
+      width: 100%;
+      z-index: 9999;
+      background-color: #eee;
+      border-top: 1px solid #ccc;
+      padding-top: 2px
+    }
+
+    .adhesion-close-btn {
+      display: inline-block;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      width: .75em;
+      height: .75em;
+      position: fixed;
+      bottom: 44px;
+      right: 5px;
+      z-index: 9999;
+      -webkit-border-radius: 1em;
+      border-radius: 1em;
+      font: 400 18px/400 'Arial, Helvetica, sans-serif';
+      color: #000;
+      -o-text-overflow: clip;
+      text-overflow: clip;
+      background: 0 0;
+      border: 1px solid #ccc;
+      padding: 2px
+    }
+
+    .adhesion-close-btn:after {
+      width: 13px;
+      height: 2px;
+      background-color: #ccc;
+      content: '';
+      left: 50%;
+      top: 50%;
+      margin-left: -6px;
+      margin-top: 0;
+      position: absolute;
+      -webkit-transform: rotateZ(-45deg);
+      transform: rotateZ(-45deg)
+    }
+
+    .adhesion-close-btn:before {
+      width: 13px;
+      height: 2px;
+      left: 50%;
+      top: 50%;
+      margin-left: -6px;
+      margin-top: 0;
+      background-color: #ccc;
+      content: '';
+      position: absolute;
+      -webkit-transform: rotateZ(45deg);
+      transform: rotateZ(45deg)
+    }
+
+    [data-ad-name=homepage-top-leaderboard-mobile],
+    [data-ad-name=section-top-leaderboard-mobile],
+    [data-ad-name=top-leaderboard-mobile] {
+      margin: 0;
+      z-index: 9999
+    }
+
+    .global-newsletter-sign-up .forward-arrow {
+      background-image: url(../images/arrow-forward-icon.svg);
+      display: inline-block;
+      height: 10px;
+      width: 10px
+    }
+
+    .global-newsletter-sign-up p.promo-text {
+      color: #333;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 15px;
+      line-height: 1.4;
+      letter-spacing: -.1px
+    }
+
+    .global-newsletter-sign-up .js-cm-email-input {
+      border: 1px solid #eee;
+      padding: 5px;
+      font-size: 14px;
+      width: 60%
+    }
+
+    .global-newsletter-sign-up .js-cm-submit-button {
+      background-color: #333;
+      border-width: 0;
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-size: 15px;
+      height: auto;
+      line-height: 1;
+      padding: 10px
+    }
+
+    .weekend-planner-chain {
+      overflow: hidden
+    }
+
+    .weekend-planner-chain .pb-f-global-weekend-planner {
+      width: 100%
+    }
+
+    .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+      max-width: 1240px;
+      line-height: 1.08;
+      font-size: 15px;
+      letter-spacing: normal
+    }
+
+    .weekend-planner-chain .card .promo-photo {
+      height: 60px;
+      width: 90px
+    }
+
+    .weekend-planner-chain .card .label {
+      font-size: 12px;
+      line-height: 1.17
+    }
+
+    .weekend-planner-chain .card .headline {
+      font-size: 16px;
+      line-height: 1.08;
+      max-height: 42px;
+      overflow: hidden
+    }
+
+    .weekend-planner-chain .weekend-planner-wrapper {
+      max-width: 1300px;
+      margin-left: auto;
+      margin-right: auto
+    }
+
+    .weekend-planner-chain .weekend-planner-wrapper .weekend-planner .card-content {
+      overflow: overlay
+    }
+
+    .mobile-planner .promo-photo {
+      margin-right: 10px
+    }
+
+    .weather-widget-wrapper .weather-title {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      font-weight: 700;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #222;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 13px;
+      margin-top: 12px
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__primary {
+      justify-content: flex-end
+    }
+
+    .weather-widget-wrapper .wxmap--current-conditions__root {
+      min-width: unset
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__phrase {
+      display: none
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__root.wxmap--currents-body__dark-gray {
+      border: none;
+      background-color: transparent
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__root.wxmap--currents-body__dark-gray .wxmap--currents-body__primary {
+      background-color: transparent
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__icon-svg {
+      width: 33px;
+      height: 21px;
+      margin-left: 0
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__root_sm .wxmap--currents-body__temp {
+      font-family: 'Gotham Narrow SSm A', 'Gotham Narrow SSm B', sans-serif;
+      color: #222;
+      font-size: 19px
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__primary_sm .wxmap--currents-body__temp {
+      padding: 0;
+      line-height: 36px
+    }
+
+    .weather-widget-wrapper .wxmap--currents-body__root {
+      min-height: unset
+    }
+
+    .weather-widget-wrapper .black-light-border {
+      padding: 8px 0
+    }
+
+    .weather-widget-wrapper .black-light-border.weather-bottom-space {
+      padding-bottom: 14px
+    }
+
+    .longform-appbar .pb-f-global-app-bar {
+      min-height: 60px
+    }
+
+    .long-form-body-container {
+      max-width: calc(100% - 10px);
+      margin: 0 auto;
+      padding: 0
+    }
+
+    .backgroundImage {
+      position: relative;
+      width: auto;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: #000;
+      opacity: 1;
+      transition: opacity 1.3s ease .2s;
+      background-position: 50%;
+      height: 393px
+    }
+
+    .longform-header-container {
+      max-width: calc(100% - 20px);
+      margin: 0 auto;
+      position: relative;
+      font-style: normal;
+      font-stretch: normal;
+      color: #000;
+      padding: 20px
+    }
+
+    .longform-header-container .headline {
+      font-size: 36px;
+      line-height: 36px;
+      letter-spacing: -.1px;
+      margin-bottom: 10px;
+      font-weight: 900
+    }
+
+    .longform-header-container .subhead {
+      font-size: 18px;
+      line-height: 22px;
+      letter-spacing: normal;
+      margin-bottom: 0;
+      font-weight: 300
+    }
+
+    .longform-header-container .card .card-content.card-content-half-vertical {
+      padding: 0
+    }
+
+    .longform-header-container .card .card-content.card-content-half-vertical .timestamp-recent {
+      color: #000;
+      font-weight: 400
+    }
+
+    .longform-header-container .byline {
+      margin: 20px 0;
+      font-size: 16px;
+      letter-spacing: normal;
+      line-height: normal
+    }
+
+    .longform-header-container .longform-line {
+      width: 165px
+    }
+
+    .longform-header-container-with-bg {
+      margin: 0 auto -48px;
+      top: -48px;
+      background: #fff
+    }
+
+    body {
+      background-color: #fff;
+      margin: 0
+    }
+
+    a {
+      cursor: pointer
+    }
+
+    :focus {
+      outline: 0
+    }
+
+    @media (min-width:500px) {
+
+      .default-text,
+      p {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -.2px
+      }
+
+      .cta {
+        font-size: 15px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .preview-text,
+      .preview-text a {
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: normal
+      }
+
+      .description,
+      .description a {
+        font-size: 16px;
+        line-height: 22px;
+        letter-spacing: normal
+      }
+
+      .preview-text-search,
+      .preview-text-search a {
+        font-size: 14px;
+        line-height: 19px;
+        letter-spacing: normal
+      }
+
+      .advertisement-text {
+        font-size: 9px;
+        line-height: 1.78;
+        letter-spacing: normal
+      }
+
+      .caption {
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: -.1px
+      }
+
+      .section-widget-caption {
+        font-size: 16px;
+        line-height: 19px;
+        letter-spacing: normal
+      }
+
+      .section-widget-caption.lg {
+        font-size: 24px;
+        line-height: 26px;
+        letter-spacing: normal
+      }
+
+      a.wire-button-link {
+        padding: 5px 30px
+      }
+
+      a.opinion-spotlight-story-link {
+        font-size: 20px;
+        line-height: 22px;
+        letter-spacing: -.1px
+      }
+
+      a.opinion-spotlight-author-link {
+        font-size: 18px;
+        line-height: 18px;
+        letter-spacing: -.1px
+      }
+
+      a.classifieds-widget-link {
+        font-size: 22px;
+        line-height: 40px;
+        letter-spacing: -.3px
+      }
+
+      a.search-bar-link {
+        font-size: 15px;
+        line-height: 1;
+        letter-spacing: 1
+      }
+
+      h1 {
+        font-size: 36px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .h2,
+      h2 {
+        font-size: 30px;
+        line-height: 1.07;
+        letter-spacing: normal
+      }
+
+      h3 {
+        font-size: 24px;
+        line-height: 1.09;
+        letter-spacing: normal
+      }
+
+      h4 {
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: -.4px
+      }
+
+      h5 {
+        font-size: 16px;
+        line-height: 1.13;
+        letter-spacing: -.1px
+      }
+
+      h6 {
+        font-size: 14px;
+        line-height: 1.14;
+        letter-spacing: -.1px
+      }
+
+      .event-title {
+        font-size: 22px;
+        line-height: 28px;
+        letter-spacing: normal
+      }
+
+      .recommender-header {
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .list-header {
+        font-size: 18px;
+        line-height: 1.17;
+        letter-spacing: normal
+      }
+
+      .breaking-headline {
+        font-size: 90px;
+        line-height: 1;
+        letter-spacing: -.3px
+      }
+
+      .follow-bar-header {
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: -.07px
+      }
+
+      .section-header {
+        font-size: 64px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .section-widget-header {
+        font-size: 24px;
+        line-height: 25px;
+        letter-spacing: normal
+      }
+
+      .author-header {
+        font-size: 50px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .topic-header {
+        font-size: 50px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .rating-header {
+        font-size: 20px;
+        line-height: 1;
+        letter-spacing: normal
+      }
+
+      .opinion-spotlight-header {
+        font-size: 30px;
+        line-height: 1;
+        letter-spacing: -.5px
+      }
+
+      h1.detail-content {
+        font-size: 36px
+      }
+
+      .img-container {
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0
+      }
+
+      .img-container.full-width {
+        width: 100%
+      }
+
+      .card hr.side-margins {
+        margin: 0 10px
+      }
+
+      .card hr.with-margins {
+        margin: 5px 10px
+      }
+
+      .card .card-content {
+        padding: 10px
+      }
+
+      .card .card-content .text-container {
+        flex: 2
+      }
+
+      .card .card-content.card-content-hide-top-gutter-tablet {
+        padding-top: 0
+      }
+
+      .card .card-content.card-content-only-bottom-gutter-tablet {
+        padding: 0 0 10px 0
+      }
+
+      .card .card-content.no-card-mobile {
+        padding: 10px
+      }
+
+      .card .card-content.search-result-row .card-media {
+        width: 194px
+      }
+
+      .card .card-blockquote {
+        padding: 0 60px 0 16px
+      }
+
+      .events-card {
+        padding: 10px
+      }
+
+      .events-card .card-content .event-headline {
+        font-size: 18px;
+        line-height: 1.11;
+        letter-spacing: normal
+      }
+
+      .events-card .card-content .event-date {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: normal
+      }
+
+      .events-card .card-content .event-host {
+        font-size: 14px;
+        line-height: 1.36;
+        letter-spacing: normal
+      }
+
+      .feed-header {
+        margin: 0 10px
+      }
+
+      .confidential-tips {
+        padding: 10px
+      }
+
+      .confidential-tips .card-content .card-description {
+        font-size: 16px;
+        line-height: 1.06;
+        letter-spacing: -.1px
+      }
+
+      .section-spotlight {
+        padding: 0 10px
+      }
+
+      .section-spotlight .lead-story .spotlight .card-content {
+        margin: 0
+      }
+
+      .section-spotlight .lead-story .spotlight .text-container {
+        margin-top: 10px
+      }
+
+      .section-spotlight .spotlight .card-content {
+        margin: 20px 0;
+        padding: 0 20px
+      }
+
+      .card-side-margins {
+        margin: 0
+      }
+
+      .card-side-margins.subscribe-widget {
+        margin: 0 10px
+      }
+
+      .latest-news .card hr.side-margins {
+        margin: 0 10px
+      }
+
+      .blocks-6 .flex-grid div div.wrapper:last-child .card hr {
+        display: none
+      }
+
+      .recommender-content .recommender-col .container-column.col:last-child hr {
+        display: none
+      }
+
+      .col.full.pb-f-list-recommender .flex-grid div.col:nth-last-child(2) .card:last-child hr {
+        display: none
+      }
+
+      .btn {
+        border-radius: 3px;
+        width: 90px
+      }
+
+      .btn.login-btn {
+        width: 89px
+      }
+
+      .btn.load-more-btn {
+        font-size: 18px;
+        line-height: normal;
+        letter-spacing: -.1px
+      }
+
+      .btn.load-more-btn {
+        border-radius: 4px;
+        height: 45px
+      }
+
+      .topics-bar-label {
+        font-size: 15px;
+        line-height: 16px;
+        letter-spacing: -.1px
+      }
+
+      .search-bar-label {
+        font-size: 15px;
+        line-height: 1;
+        letter-spacing: 1
+      }
+
+      .classifieds-label {
+        font-size: 16px;
+        line-height: 1;
+        letter-spacing: -.3px
+      }
+
+      .classifieds-label-sm {
+        font-size: 14px;
+        line-height: 1;
+        letter-spacing: -.3px
+      }
+
+      ol.inline,
+      ul.inline {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: normal
+      }
+
+      .list-unstyled.related-links {
+        font-size: 13px;
+        line-height: 1.23;
+        letter-spacing: normal
+      }
+
+      .list-unstyled.subsection-links {
+        font-size: 14px;
+        line-height: normal;
+        letter-spacing: normal
+      }
+
+      .list-unstyled.subsection-links {
+        color: #222;
+        height: 16px
+      }
+
+      .list-styled.related-links {
+        font-size: 13px;
+        line-height: 1.23;
+        letter-spacing: normal
+      }
+
+      .font-li-list {
+        font-size: 16px;
+        line-height: 1.5
+      }
+
+      .logo-philly.logo-stacked.logo-lg {
+        height: 60px;
+        width: 173px
+      }
+
+      .logo-philly.logo-stacked.logo-lg.logo-inverted {
+        height: 63px;
+        width: 153px
+      }
+
+      .logo-philly.logo-stacked.logo-lg {
+        width: 200px;
+        background-image: url(https://www.inquirer.com/pb/resources/dist/images/inquirer-logo-stacked.svg)
+      }
+
+      .logo-philly.logo-stacked.logo-sm {
+        height: 42px;
+        width: 112px
+      }
+
+      .logo-philly.logo-stacked.logo-sm.logo-inverted {
+        height: 63px;
+        width: 153px
+      }
+
+      .logo-inquirer-footer.logo-inverted {
+        width: 250px;
+        background-image: url(https://www.inquirer.com/pb/resources/dist/images/inquirer-logo-desktop-white.svg)
+      }
+
+      .byline {
+        font-size: 16px;
+        line-height: 1.4;
+        letter-spacing: -.2px
+      }
+
+      .card-byline {
+        font-size: 12px;
+        line-height: 1.5;
+        letter-spacing: -.1px
+      }
+
+      figcaption {
+        font-size: 12px;
+        line-height: 1.27;
+        letter-spacing: -.22px
+      }
+
+      figcaption.lead {
+        width: 100%;
+        left: 0;
+        right: 0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0
+      }
+
+      figcaption.expanded-caption {
+        font-size: 15px;
+        line-height: 18px;
+        letter-spacing: -.23px
+      }
+
+      .blockquote {
+        font-size: 16px;
+        line-height: 26px;
+        letter-spacing: normal
+      }
+
+      .blockquote {
+        margin-left: 50px;
+        padding: 0 0 0 30px
+      }
+
+      .pullquote {
+        font-size: 24px;
+        line-height: 30px;
+        letter-spacing: normal
+      }
+
+      .pullquote {
+        margin-left: 30px;
+        padding: 0 30px
+      }
+
+      .pull-card-right {
+        clear: right;
+        float: right;
+        width: 50%
+      }
+
+      .pull-card-left {
+        clear: left;
+        float: left;
+        width: 50%
+      }
+
+      .pad.pad-right-tablet.pad-md {
+        padding-right: 15px
+      }
+
+      .pad.pad-right-tablet.pad-sm {
+        padding-right: 8px
+      }
+
+      .pad.pad-left-tablet.pad-md {
+        padding-left: 15px
+      }
+
+      .pad.pad-left-tablet.pad-sm {
+        padding-left: 8px
+      }
+
+      .spaced.spaced-top.spaced-xl {
+        margin-top: 50px
+      }
+
+      .spaced.spaced-bottom.spaced-xl {
+        margin-bottom: 50px
+      }
+
+      .tablet-spaced-top {
+        margin-top: 20px
+      }
+
+      .container-column.tablet-row {
+        flex-direction: row;
+        align-items: flex-start
+      }
+
+      .container-column.tablet-row-stretch {
+        flex-direction: row;
+        align-items: stretch
+      }
+
+      .container-column.tablet-row-reverse {
+        flex-direction: row-reverse;
+        align-items: flex-start
+      }
+
+      .container-row.tablet-column {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .flex-tablet {
+        flex: 1
+      }
+
+      .wrap-mobile {
+        flex-wrap: nowrap
+      }
+
+      .justify-end.justify-space-evenly-tablet {
+        justify-content: space-evenly
+      }
+
+      .justify-end-tablet {
+        justify-content: flex-end
+      }
+
+      .justify-space-around.justify-flex-start-sm {
+        justify-content: flex-start
+      }
+
+      .justify-center-tablet {
+        justify-content: center
+      }
+
+      .justify-space-between.justify-space-around-sm {
+        justify-content: space-around
+      }
+
+      .container {
+        max-width: calc(100% - 50px);
+        padding: 0 5px
+      }
+
+      .container-fluid {
+        margin: 0 -5px
+      }
+
+      .flex-grid>.col.tablet-12,
+      .pb-container>.col.tablet-12 {
+        flex-basis: 100%;
+        max-width: 100%
+      }
+
+      .flex-grid>.col.tablet-11,
+      .pb-container>.col.tablet-11 {
+        flex-basis: 91.67%;
+        max-width: 91.67%
+      }
+
+      .flex-grid>.col.tablet-10,
+      .pb-container>.col.tablet-10 {
+        flex-basis: 83.33%;
+        max-width: 83.33%
+      }
+
+      .flex-grid>.col.tablet-9,
+      .pb-container>.col.tablet-9 {
+        flex-basis: 75%;
+        max-width: 75%
+      }
+
+      .flex-grid>.col.tablet-8,
+      .pb-container>.col.tablet-8 {
+        flex-basis: 66.67%;
+        max-width: 66.67%
+      }
+
+      .flex-grid>.col.tablet-7,
+      .pb-container>.col.tablet-7 {
+        flex-basis: 58.33%;
+        max-width: 58.33%
+      }
+
+      .flex-grid>.col.tablet-6,
+      .pb-container>.col.tablet-6 {
+        flex-basis: 50%;
+        max-width: 50%
+      }
+
+      .flex-grid>.col.tablet-5,
+      .pb-container>.col.tablet-5 {
+        flex-basis: 41.67%;
+        max-width: 41.67%
+      }
+
+      .flex-grid>.col.tablet-4,
+      .pb-container>.col.tablet-4 {
+        flex-basis: 33.33%;
+        max-width: 33.33%
+      }
+
+      .flex-grid>.col.tablet-3,
+      .pb-container>.col.tablet-3 {
+        flex-basis: 25%;
+        max-width: 25%
+      }
+
+      .flex-grid>.col.tablet-2,
+      .pb-container>.col.tablet-2 {
+        flex-basis: 16.67%;
+        max-width: 16.67%
+      }
+
+      .flex-grid>.col.tablet-1,
+      .pb-container>.col.tablet-1 {
+        flex-basis: 8.33%;
+        max-width: 8.33%
+      }
+
+      .cube-300 {
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto
+      }
+
+      .vertical-divider.flex-divider {
+        height: auto;
+        margin-top: 5px
+      }
+
+      .hidden.visible-tablet {
+        display: inherit
+      }
+
+      .hidden-up-tablet {
+        display: none
+      }
+
+      .visible-tablet-up {
+        display: inherit
+      }
+
+      .hidden-tablet-up {
+        display: none
+      }
+
+      .border.border-right {
+        border-right: 3px solid #eee
+      }
+
+      .border.border-bottom {
+        border-bottom: 2px solid #eee
+      }
+
+      .author-border.border-bottom.border-mobile {
+        border: 0
+      }
+
+      .border-list {
+        padding: 0 30px
+      }
+
+      .homepage-news-items .text-image-left figure img,
+      .homepage-news-items .text-image-right figure img {
+        max-width: 50%
+      }
+
+      .homepage-news-items .text-image-small figure img {
+        max-width: 33%
+      }
+
+      #a1-top-furniture,
+      #section-content-wrapper {
+        padding: 0 10px
+      }
+
+      .app-bar {
+        border-style: solid;
+        border-width: 2px 0 0 0;
+        border-color: #222;
+        min-height: 76px
+      }
+
+      .app-bar .app-bar-inner {
+        min-height: 76px;
+        padding: 15px 0
+      }
+
+      .app-bar .tray {
+        font-size: 16px;
+        line-height: 1.46;
+        letter-spacing: -.1px
+      }
+
+      .app-bar .tray nav {
+        height: 100vh;
+        width: 66.67%;
+        right: 50px;
+        left: auto;
+        position: absolute;
+        top: 132px
+      }
+
+      .app-bar .tray .menu.menu-topic>div {
+        width: 100%
+      }
+
+      .app-bar {
+        font-size: 13px;
+        line-height: 19px;
+        letter-spacing: -.1px
+      }
+
+      .app-bar .app-bar-inner.spaced.spaced-right.spaced-left {
+        max-width: calc(100% - 50px);
+        padding: 10px 5px
+      }
+
+      .app-bar .app-bar-inner>div:nth-child(2) {
+        display: block
+      }
+
+      .topic-bar .topics-list {
+        font-size: 13px;
+        line-height: 1.36;
+        letter-spacing: -.1px
+      }
+
+      .in-the-news-bar-hidden-mobile {
+        display: block
+      }
+
+      .recommendation-item {
+        font-size: 20px;
+        line-height: 1.1;
+        letter-spacing: normal
+      }
+
+      .pb-f-global-footer footer {
+        font-size: 13px;
+        line-height: 22px;
+        letter-spacing: -.2px
+      }
+
+      .pb-f-global-footer footer .footer-social-container {
+        padding: 10px 0
+      }
+
+      .pb-f-global-footer footer .footer-grid-container {
+        padding: 20px 40px 40px
+      }
+
+      .gallery .lightbox .lightbox-photo-container {
+        margin: auto;
+        padding: 0;
+        width: 75%;
+        max-width: 769px
+      }
+
+      .gallery .lightbox .lightbox-caption {
+        min-height: 90px
+      }
+
+      .breaking-news-wrapper .breaking-news-label {
+        display: inline
+      }
+
+      .breaking-news-wrapper button {
+        margin-right: 50px
+      }
+
+      #right-rail .pb-f-ads-arcads,
+      #top .pb-f-ads-arcads:first-of-type {
+        min-height: 600px
+      }
+
+      .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+        font-size: 18px;
+        line-height: 1.08;
+        letter-spacing: normal
+      }
+
+      .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+        margin-left: 50px
+      }
+
+      .weekend-planner-chain .card .headline {
+        font-size: 13px
+      }
+    }
+
+    @media (max-width:375px) {
+      .section-header {
+        font-size: 12vw
+      }
+    }
+
+    @media (min-width:1000px) {
+      .author-divider-bars {
+        margin: 0 20px
+      }
+
+      .card .card-blockquote {
+        padding: 0 230px 0 16px
+      }
+
+      .section-spotlight .spotlight.lead-story .card-content {
+        flex-direction: row
+      }
+
+      .logo-philly.logo-stacked.logo-lg {
+        width: 423px
+      }
+
+      .recirc-card.spaced.spaced-bottom.spaced-md {
+        margin-right: 0;
+        margin-top: 0;
+        padding: 20px 10px 10px
+      }
+
+      .flex-no-desktop {
+        flex: none
+      }
+
+      .flex-2-col {
+        flex: .5
+      }
+
+      .flex-4-col {
+        flex: .67
+      }
+
+      .justify-center-desktop {
+        justify-content: center
+      }
+
+      .justify-space-between.justify-space-around-sm {
+        justify-content: space-around
+      }
+
+      .container {
+        max-width: 1300px;
+        padding: 0 0
+      }
+
+      .container-fluid {
+        margin: 0 0
+      }
+
+      #right-rail {
+        max-width: 300px;
+        margin: 0 auto
+      }
+
+      .flex-grid>.col.desktop-12,
+      .pb-container>.col.desktop-12 {
+        flex-basis: 100%;
+        max-width: 100%
+      }
+
+      .flex-grid>.col.desktop-11,
+      .pb-container>.col.desktop-11 {
+        flex-basis: 91.67%;
+        max-width: 91.67%
+      }
+
+      .flex-grid>.col.desktop-10,
+      .pb-container>.col.desktop-10 {
+        flex-basis: 83.33%;
+        max-width: 83.33%
+      }
+
+      .flex-grid>.col.desktop-9,
+      .pb-container>.col.desktop-9 {
+        flex-basis: 75%;
+        max-width: 75%
+      }
+
+      .flex-grid>.col.desktop-8,
+      .pb-container>.col.desktop-8 {
+        flex-basis: 66.67%;
+        max-width: 66.67%
+      }
+
+      .flex-grid>.col.desktop-7,
+      .pb-container>.col.desktop-7 {
+        flex-basis: 58.33%;
+        max-width: 58.33%
+      }
+
+      .flex-grid>.col.desktop-6,
+      .pb-container>.col.desktop-6 {
+        flex-basis: 50%;
+        max-width: 50%
+      }
+
+      .flex-grid>.col.desktop-5,
+      .pb-container>.col.desktop-5 {
+        flex-basis: 41.67%;
+        max-width: 41.67%
+      }
+
+      .flex-grid>.col.desktop-4,
+      .pb-container>.col.desktop-4 {
+        flex-basis: 33.33%;
+        max-width: 33.33%
+      }
+
+      .flex-grid>.col.desktop-3,
+      .pb-container>.col.desktop-3 {
+        flex-basis: 25%;
+        max-width: 25%
+      }
+
+      .flex-grid>.col.desktop-2,
+      .pb-container>.col.desktop-2 {
+        flex-basis: 16.67%;
+        max-width: 16.67%
+      }
+
+      .flex-grid>.col.desktop-1,
+      .pb-container>.col.desktop-1 {
+        flex-basis: 8.33%;
+        max-width: 8.33%
+      }
+
+      .vertical-divider.spaced {
+        margin: 0 30px
+      }
+
+      .expanded {
+        margin-left: -60px;
+        margin-right: -60px
+      }
+
+      .expanded .powa-blurb-wrap {
+        margin-right: 60px;
+        margin-left: 60px
+      }
+
+      .hidden-desktop {
+        display: none
+      }
+
+      .app-bar .app-bar-inner.spaced.spaced-right.spaced-left {
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px
+      }
+
+      .app-bar .app-bar-inner {
+        justify-content: flex-start
+      }
+
+      .topic-bar .topic-bar-inner.spaced.spaced-right.spaced-left {
+        max-width: 1300px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 10px;
+        padding-right: 10px
+      }
+
+      .pb-f-global-footer footer .footer-social-container {
+        padding: 10px 0
+      }
+
+      .pb-f-global-footer footer .footer-social-container .footer-share-bar-container .justify-space-evenly {
+        justify-content: flex-end
+      }
+
+      .pb-f-global-footer footer .footer-grid-container {
+        padding: 0
+      }
+
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container {
+        border-style: solid;
+        border-width: 0 0 2px 0;
+        border-color: #333
+      }
+
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .footer-links {
+        padding: 50px 0
+      }
+
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .footer-link {
+        line-height: 22px;
+        font-size: 14px;
+        letter-spacing: -.2px
+      }
+
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .links-headline,
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .partner-title {
+        line-height: 22px;
+        font-size: 14px;
+        letter-spacing: -.2px;
+        max-width: 105px
+      }
+
+      .pb-f-global-footer footer .copyright-container {
+        height: 69px
+      }
+
+      .pb-f-global-footer footer .copyright-container .footer-copyright {
+        text-align: left
+      }
+
+      .pb-f-global-footer footer .copyright-container .footer-container {
+        height: 59px
+      }
+
+      .gallery .gallery-photo-container.standalone {
+        width: 75%
+      }
+
+      .gallery .gallery-photo-container.standalone .slider-btn.spaced-left {
+        margin-left: -80px
+      }
+
+      .gallery .gallery-photo-container.standalone .slider-btn.spaced-right {
+        margin-right: -80px
+      }
+
+      .gallery .lightbox .lightbox-photo-container button.spaced-left {
+        margin-left: -130px
+      }
+
+      .gallery .lightbox .lightbox-photo-container button {
+        border: none;
+        color: #999;
+        font-size: 32px
+      }
+
+      .gallery .lightbox .lightbox-photo-container button.spaced-right {
+        margin-right: -130px
+      }
+
+      .gallery-inner.pad-left-right,
+      .leaf-page-inner.pad-left-right {
+        padding: 0 20px
+      }
+
+      .breaking-news-wrapper .breaking-news {
+        margin-left: 10px
+      }
+
+      .breaking-news-wrapper button {
+        margin-right: 0
+      }
+
+      .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+        margin-left: 10px
+      }
+
+      .longform-header-container .headline {
+        line-height: 1;
+        font-size: 70px;
+        letter-spacing: -.8px
+      }
+
+      .longform-header-container .subhead {
+        line-height: 1.23;
+        font-size: 26px;
+        letter-spacing: normal
+      }
+    }
+
+    @media (min-width:750px) {
+      .author-divider-bars {
+        margin: 0 10px
+      }
+
+      .btn.follow-btn>i.fa.spaced,
+      .btn.follow-btn>span.spaced {
+        margin-right: 10px
+      }
+
+      .search-btn>i.fa.spaced,
+      .search-btn>span.spaced {
+        margin-right: 10px
+      }
+
+      .justify-end-tablet-narrow {
+        justify-content: flex-end
+      }
+
+      .vertical-divider.spaced {
+        margin: 0 20px
+      }
+    }
+
+    @media (max-width:500px) {
+      .img-author {
+        width: 40px;
+        height: 40px
+      }
+
+      .img-author-block {
+        height: auto;
+        width: auto
+      }
+
+      .img-author-block img {
+        position: unset
+      }
+
+      .logo-philly.logo-stacked.logo-lg.logo-480-mobile {
+        background-image: url(../images/inquirer-logo-mobile-01.svg)
+      }
+
+      .byline.spread {
+        line-height: 1.2
+      }
+
+      .spaced.spaced-left.spaced-md {
+        margin-left: 10px
+      }
+
+      .flex-mobile-tablet {
+        flex: 1
+      }
+
+      .container-breaking-news {
+        flex-direction: column
+      }
+
+      .container-breaking-news .vertical-divider {
+        position: relative;
+        top: 16px
+      }
+
+      .pb-f-homepage-story>.card>.card-content {
+        padding-right: 20px
+      }
+
+      .author-container .author-img-container {
+        position: absolute;
+        top: 34px
+      }
+
+      .author-container {
+        position: relative
+      }
+
+      .author-text-group .author-timestamp {
+        margin-bottom: 15px;
+        padding-left: 0
+      }
+
+      .author-text-group .author-text {
+        padding-left: 50px;
+        line-height: 23px
+      }
+
+      .author-info {
+        width: 100%
+      }
+    }
+
+    @media (max-width:499px) {
+      .img-float-left {
+        width: 100%;
+        margin: 0
+      }
+
+      .spaced.no-spacing-mobile.spaced-bottom {
+        margin-bottom: 0
+      }
+
+      .spaced.no-spacing-mobile.spaced-top {
+        margin-top: 0
+      }
+
+      .padded.padded-bottom-mobile.padded-xs {
+        padding-bottom: 5px
+      }
+
+      .padded.padded-bottom-mobile.padded-sm {
+        padding-bottom: 10px
+      }
+
+      .padded.padded-bottom-mobile.padded-md {
+        padding-bottom: 20px
+      }
+
+      .padded.padded-bottom-mobile.no-padding-bottom {
+        padding-bottom: 0
+      }
+
+      .padded.padded-right-mobile.padded-xs {
+        padding-right: 5px
+      }
+
+      .padded.padded-right-mobile.padded-sm {
+        padding-right: 10px
+      }
+
+      .padded.padded-right-mobile.padded-md {
+        padding-right: 20px
+      }
+
+      .padded.padded-left-mobile.padded-sm {
+        padding-left: 10px
+      }
+
+      .flex-direction-column {
+        flex-direction: column
+      }
+
+      .flex-direction-column>div.spaced.spaced-left {
+        margin-left: 0;
+        margin-top: 20px
+      }
+
+      .hidden-mobile-up {
+        display: none
+      }
+
+      .homepage-news-items .text-image-small figure img {
+        max-width: 170px
+      }
+
+      .width-mobile-170 img {
+        width: 170px
+      }
+
+      .width-mobile-131 img {
+        width: 131px
+      }
+
+      .recommender img,
+      .width-mobile-120 img {
+        width: 120px
+      }
+
+      .width-mobile-100-percent img {
+        width: 100%
+      }
+    }
+
+    @media (min-width:730px) and (max-width:1120px) {
+      .card .card-content .wider.ad-wider {
+        width: 50vw
+      }
+
+      .card .card-content .wider.ad-wider>div {
+        width: 100vw
+      }
+    }
+
+    @media (max-width:480px) {
+      .section-spotlight .spotlight.lead-story .card-content {
+        order: 1
+      }
+
+      .btn.login-btn {
+        width: 50px;
+        margin-right: 10px
+      }
+
+      .btn.subscribe-btn {
+        padding-left: 8px;
+        padding-right: 8px;
+        margin-right: 10px;
+        width: auto
+      }
+
+      .spaced.spaced-right.spaced-sm {
+        margin-right: 15px
+      }
+
+      .spaced.spaced-right.spaced-md {
+        margin-right: 18px
+      }
+
+      .spaced.spaced-bottom-mobile.spaced-sm {
+        margin-bottom: 10px
+      }
+
+      .padded.padded-top-mobile.padded-md {
+        padding-top: 20px
+      }
+
+      .padded.padded-top-mobile.padded-sm {
+        padding-top: 10px
+      }
+
+      .padded.padded-top-mobile.padded-xs {
+        padding-top: 5px
+      }
+
+      .flex-half {
+        flex: 1.2
+      }
+
+      .flex-mobile {
+        flex: 1
+      }
+
+      .hidden-mobile {
+        display: none
+      }
+
+      .ticker-mobile {
+        -webkit-overflow-scrolling: touch;
+        overflow-x: hidden
+      }
+
+      .ticker-mobile iframe {
+        min-width: 100%;
+        width: 100px
+      }
+    }
+
+    @media (max-width:999px) {
+      .section-spotlight .spotlight.lead-story .card-content .text-container {
+        order: 2;
+        flex-basis: auto;
+        width: 100%
+      }
+    }
+
+    @media (min-width:500px) and (min-width:1000px) {
+      .section-spotlight .spotlight .card-media {
+        flex: 5
+      }
+
+      .section-spotlight .spotlight .text-container {
+        flex: 2
+      }
+
+      .section-spotlight .spotlight .card-content {
+        margin: 0
+      }
+
+      .section-spotlight .flex-grid .spotlight-col {
+        flex: 1;
+        margin: 20px 0
+      }
+
+      .section-spotlight .flex-grid .spotlight-col:not(:last-child) {
+        border-right: 2px solid #979797
+      }
+
+      .app-bar .app-bar-inner>div:nth-child(2) {
+        margin: auto
+      }
+
+      .app-bar .app-bar-inner>div:last-child {
+        min-width: 200px
+      }
+    }
+
+    @media (max-width:370px) {
+      .btn.subscribe-btn {
+        font-size: 12px
+      }
+
+      .logo-philly.logo-stacked.logo-sm {
+        width: 90px
+      }
+    }
+
+    @media (min-width:375px) {
+      .my-account-btn.mobile.select-arrow-active {
+        padding: 4px 8px;
+        background-image: none;
+        color: #fff;
+        text-indent: 0
+      }
+    }
+
+    @media (min-width:600px) {
+      .logo-philly.logo-stacked.logo-lg {
+        width: 300px
+      }
+
+      .logo-inquirer-footer.logo-inverted {
+        width: 300px
+      }
+    }
+
+    @media (min-width:500px) and (max-width:1000px) {
+      .recirc-card {
+        max-width: 300px
+      }
+
+      .recirc-card.spaced.spaced-left.spaced-md {
+        margin-left: auto
+      }
+
+      .recirc-card.spaced.spaced-right.spaced-md {
+        margin-right: auto
+      }
+
+      .recirc-card.spaced.spaced-bottom.spaced-md {
+        padding: 10px
+      }
+
+      .hidden-tablet-2-up {
+        display: none
+      }
+
+      .longform-header-container .headline {
+        font-size: 55px;
+        line-height: normal;
+        letter-spacing: -.7px;
+        margin-bottom: 5px
+      }
+
+      .longform-header-container .subhead {
+        font-size: 22px;
+        line-height: normal;
+        letter-spacing: 1.09px;
+        margin-bottom: 10px
+      }
+    }
+
+    @media (min-width:750px) and (max-width:1440px) {
+      .flex-half {
+        flex: .8
+      }
+    }
+
+    @media all and (-ms-high-contrast:none) {
+      .flex-no-ie {
+        flex: none
+      }
+    }
+
+    @media (min-width:1440px) {
+      .justify-space-between.justify-space-evenly-widescreen {
+        justify-content: space-evenly
+      }
+
+      .pb-f-global-footer footer .footer-social-container div.flex-4 {
+        flex: 3
+      }
+
+      .long-form-body-container {
+        max-width: 770px;
+        padding: 0 20px
+      }
+
+      .longform-header-container {
+        max-width: 980px;
+        padding: 0 28px
+      }
+    }
+
+    @media (min-width:500px) and (max-width:700px) {
+      .container {
+        max-width: 100%
+      }
+    }
+
+    @media (min-width:1000px) and (min-width:1000px) and (max-width:1250px) {
+
+      .flex-grid>.col.desktop-9.section-left,
+      .pb-container>.col.desktop-9.section-left {
+        flex-basis: 66.67%;
+        max-width: 66.67%
+      }
+
+      .flex-grid>.col.desktop-7.section-left,
+      .pb-container>.col.desktop-7.section-left {
+        flex-basis: 50%;
+        max-width: 50%
+      }
+
+      .flex-grid>.col.desktop-6.section-left,
+      .pb-container>.col.desktop-6.section-left {
+        flex-basis: 41.67%;
+        max-width: 41.67%
+      }
+
+      .flex-grid>.col.desktop-5.section-right,
+      .pb-container>.col.desktop-5.section-right {
+        flex-basis: 50%;
+        max-width: 50%
+      }
+
+      .flex-grid>.col.desktop-4.section-left,
+      .pb-container>.col.desktop-4.section-left {
+        flex-basis: 25%;
+        max-width: 25%
+      }
+
+      .flex-grid>.col.desktop-3.section-right,
+      .pb-container>.col.desktop-3.section-right {
+        flex-basis: 33.33%;
+        max-width: 33.33%
+      }
+
+      .flex-grid>.col.desktop-6.section-right,
+      .pb-container>.col.desktop-6.section-right {
+        flex-basis: 58.33%;
+        max-width: 58.33%
+      }
+    }
+
+    @media (min-width:500px) and (min-width:500px) and (max-width:600px) {
+
+      .flex-grid>.col.tablet-6.tablet-left,
+      .pb-container>.col.tablet-6.tablet-left {
+        flex-basis: 41.67%;
+        max-width: 41.67%
+      }
+
+      .flex-grid>.col.tablet-6.tablet-right,
+      .pb-container>.col.tablet-6.tablet-right {
+        flex-basis: 58.33%;
+        max-width: 58.33%
+      }
+    }
+
+    @media (min-width:480px) and (max-width:999px) {
+      .hidden-tablet {
+        display: none
+      }
+    }
+
+    @media (min-width:370px) {
+      .app-bar .app-bar-inner .logo-container {
+        max-width: 300px
+      }
+    }
+
+    @media (min-width:755px) {
+      .app-bar .app-bar-inner .logo-container {
+        max-width: 423px
+      }
+    }
+
+    @media screen (max-width:500px) {
+      .app-bar .app-bar-inner .logo-container {
+        max-width: 415px
+      }
+    }
+
+    @media (min-width:1750px) {
+      .pb-f-global-footer footer .footer-social-container div.flex-4 {
+        flex: 4
+      }
+    }
+
+    @media (min-width:1000px) and (min-width:500px) {
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .footer-link {
+        font-size: 13px;
+        line-height: 22px;
+        letter-spacing: -.2px
+      }
+
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .links-headline,
+      .pb-f-global-footer footer .footer-grid-container .footer-inner-grid-container .partner-title {
+        font-size: 13px;
+        line-height: 22px;
+        letter-spacing: -.2px
+      }
+    }
+
+    @media screen and (min-width:500px) and (max-width:999px) {
+
+      .gallery-inner.gallery-standalone-tablet,
+      .leaf-page-inner.gallery-standalone-tablet {
+        margin: 0 5px
+      }
+
+      #right-rail .pb-f-ads-arcads {
+        display: none
+      }
+    }
+
+    @media (min-width:480px) {
+      .breaking-news-wrapper .breaking-news {
+        margin-left: 50px
+      }
+    }
+
+    @media (min-width:1320px) {
+      .breaking-news-wrapper .breaking-news {
+        margin-left: auto
+      }
+    }
+
+    @media (min-width:1250px) {
+      .breaking-news-wrapper button {
+        margin-right: auto;
+        position: relative
+      }
+
+      .breaking-news-wrapper button .fa {
+        right: 5px;
+        top: 10px;
+        position: absolute
+      }
+
+      .weather-widget-wrapper .weather-title {
+        font-size: 15px
+      }
+
+      .weather-widget-wrapper .weather-title {
+        margin-top: 10px
+      }
+
+      .weather-widget-wrapper .wxmap--currents-body__root_sm .wxmap--currents-body__temp {
+        font-size: 24px
+      }
+
+      .weather-widget-wrapper .black-light-border {
+        padding: 7px 0
+      }
+    }
+
+    @media (max-width:730px) {
+
+      [data-ad-name=homepage-top-leaderboard],
+      [data-ad-name=section-top-leaderboard],
+      [data-ad-name=top-leaderboard] {
+        margin: 0
+      }
+    }
+
+    @media (max-width:1000px) {
+      .weekend-planner-chain .pb-f-global-weekend-planner:nth-child(4) {
+        display: none
+      }
+    }
+
+    @media only screen and (min-width:480px) and (max-width:750px) {
+      .weekend-planner-chain {
+        display: block
+      }
+
+      .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+        margin-top: 10px
+      }
+
+      .weekend-planner-chain .card .headline {
+        font-size: 10px
+      }
+
+      .weekend-planner-chain .card .promo-photo {
+        width: 60px
+      }
+
+      .weekend-planner-chain .card .label {
+        font-size: 12px;
+        line-height: 1;
+        margin-bottom: 5px
+      }
+
+      .weekend-planner-chain .planner-list {
+        margin: 0 5px
+      }
+    }
+
+    @media only screen and (min-width:750px) {
+      .weekend-planner-chain {
+        display: flex;
+        flex-direction: row
+      }
+    }
+
+    @media only screen and (min-width:1000px) {
+      .weekend-planner-chain .planner-name.spaced.spaced-left.spaced-sm {
+        width: 15%
+      }
+
+      .weekend-planner-chain .planner-list {
+        width: 85%
+      }
+    }
+
+    @media (min-width:1120px) {
+      .weather-widget-wrapper .weather-title {
+        font-size: 14px
+      }
+
+      .weather-widget-wrapper .wxmap--currents-body__root_sm .wxmap--currents-body__temp {
+        font-size: 20px
+      }
+    }
+
+    @media (min-width:600px) and (max-width:750px) {
+      .long-form-body-container {
+        max-width: 580px
+      }
+
+      .longform-header-container {
+        max-width: 572px;
+        padding: 0 16px
+      }
+    }
+
+    @media (min-width:750px) and (max-width:1000px) {
+      .long-form-body-container {
+        max-width: 520px;
+        padding: 0 5px
+      }
+
+      .longform-header-container {
+        max-width: 730px;
+        padding: 10px 24px
+      }
+    }
+
+    @media (min-width:1000px) and (max-width:1440px) {
+      .long-form-body-container {
+        max-width: 650px;
+        padding: 0 20px
+      }
+
+      .longform-header-container {
+        max-width: 830px;
+        padding: 0 30px
+      }
+    }
+
+    @media (min-width:500px) and (max-width:900px) {
+      .backgroundImage {
+        height: 624px
+      }
+    }
+
+    @media (min-width:900px) {
+      .backgroundImage {
+        height: 544px
+      }
+    }
+
+    @media print {
+      @page {
+        margin-bottom: 0
+      }
+
+      .pb-f-global-app-bar {
+        position: unset !important
+      }
+
+      header>div:not(.wrapper) {
+        height: 0 !important
+      }
+
+      body>div {
+        page-break-after: always;
+        display: table;
+        width: 1000px;
+        table-layout: fixed;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important
+      }
+
+      body>div>.container,
+      section {
+        display: table-row-group
+      }
+
+      .pf-footer {
+        display: table-footer-group !important;
+        background-color: #fff;
+        color: #333;
+        break-inside: avoid;
+        vertical-align: middle
+      }
+
+      .pf-footer div:first-child {
+        border-top: 1px solid
+      }
+
+      .adhesion {
+        display: none
+      }
+
+      .collection-item,
+      .container>.container-column,
+      .pb-f-global-footer,
+      .pb-f-list-we-recommend {
+        page-break-inside: avoid
+      }
+
+      .footer-grid-container {
+        padding: 20px !important
+      }
+
+      section>div.pb-container {
+        page-break-before: always
+      }
+    }
+  </style>
+
+  <style>
+    .video {
+      width: 100%;
+      margin: auto
+    }
+
+    .video .goldfish-player .powa-shot {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 1
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-image {
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: contain;
+      height: 100%
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-play-btn {
+      cursor: pointer;
+      height: 100%
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-play-btn .big-play-btn {
+      margin: auto;
+      width: 143px;
+      height: 85px;
+      border-radius: 4px;
+      background-color: rgba(0, 0, 0, .75);
+      border: solid 1px #aaa
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-play-btn .big-play-btn:hover {
+      border-color: #fff;
+      color: #fff
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-play-btn .big-play-btn:focus {
+      border-color: #fff;
+      color: #fff
+    }
+
+    .video .goldfish-player .powa-shot .powa-shot-play-btn .big-play-btn:before {
+      font-size: 38px;
+      margin: 0 auto;
+      padding-left: 8px
+    }
+  </style>
+
+
+  <script src="//www.philly.com/includes/e32121b31e345f561b84372c2bf06282/jquery-2.0.0b2.js" type="text/javascript"></script>
+
+
+</head>
+
+<body>
+  <div id="pb-root" class=""><a class="skip-link" href="#header">Skip to content</a>
+    <header id="app-bar" class="relative high-z-index">
+      <div class="wrapper clearfix full pb-feature pb-layout-item pb-f-global-app-bar" id="f0c70qhnmm1llr">
+        <div id="app-bar" class="app-bar card border border-bottom hidden-mobile" role="user-buttons">
+          <div class="justify-space-between container-row relative app-bar-inner spaced spaced-right spaced-left spaced-lg">
+            <div class="timestamp spaced spaced-right spaced-md hidden-mobile hidden-tablet container-row align-items-center"><span class="align-left date spaced spaced-right spaced-xs">Friday, June 07, 2019</span>|<a data-link-type='global-nav'
+                href="https://myaccount.inquirer.com/access.aspx?product=eEdition_inq" class="nav-link"><span class="font-bold spaced spaced-left spaced-xs">Today's Paper</span></a></div>
+            <div class="container-row align-items-center">
+              <div class="logo-container flex container-row align-items-center justify-center spaced spaced-right spaced-lg"> <a data-link-type='global-nav' aria-label="Visit homepage" href="/">
+                  <div class="logo-philly logo-stacked logo-lg logo-480-mobile"></div>
+                </a> </div>
+            </div>
+            <div class="container-row align-items-center justify-end utility-bar"> <a href="https://checkout.inquirer.com/subscribe" class="unstyled-link" data-link-type='global-nav'>
+                <div id="desktop-subscribe-btn" class="btn subscribe-btn font-semi-bold login-btn no-border container-column justify-center spaced spaced-right spaced-sm">Unlimited Access</div>
+              </a>
+              <div id="desktop-login-btn" class="login-btn font-semi-bold btn btn-light auth0-log-in" data-link-type='global-nav'>Log In</div>
+              <div id="desktop-dropdown-name" class="hidden my-account-btn font-semi-bold my-account-text btn btn-light unselectable" data-role="open-tray" data-tray="account-menu-desktop">MyAccount</div>
+              <div id="desktop-account-dropdown" data-tray="account-menu-desktop" data-role="tray" class="hidden unselectable">
+                <ul class="font-bold list-unstyled bg-black-dark account-dropdown container-column justify-center padded padded-full padded-sm">
+                  <li><a href="https://myaccount.inquirer.com" data-link-type='global-nav'>Manage my account</a></li>
+                  <li><a href="https://inquirer.com/myprofile" data-link-type='global-nav'>My profile</a></li>
+                  <li><a href="https://myaccount.inquirer.com/FAQ.aspx" data-link-type='global-nav'>FAQ</a></li>
+                  <li class="logout-btn"><a data-link-type='global-nav'>Log out</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div data-role="tray" data-tray="topics-desktop" class="tray hidden">
+            <nav class="tray tray-left fixed full-width high-z-index">
+              <div class="topics-tray tray-contents">
+                <div class="tray-search container-column hidden-tablet hidden-desktop">
+                  <div id="app-bar-topics-button" name="topicsMenu" class="justify-end container-row" data-role="close-tray" data-tray="topics-mobile">
+                    <div class="btn menu-btn font-semi-bold spaced spaced-top spaced-right spaced-bottom spaced-md"> <span class="icon-x"></span> </div>
+                  </div>
+                  <div class="search-input relative color-white spaced spaced-top spaced-right spaced-left spaced-md">
+                    <div class="search-icon-group absolute right-0 top-0">
+                      <div data-search="desktop-tray-search" class="fa fa-search center-no-dimensions color-black"></div>
+                    </div> <input id="desktop-tray-search" class="full-width spaced spaced-right spaced-md search-input-font" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off">
+                  </div>
+                </div>
+                <div class="tray-contents-inner container-column column-reverse tablet-row" tabindex="0">
+                  <div class="tray-topics-menu flex">
+                    <div class="menu menu-topic container-row wrap">
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Your Day</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/newsletters/" class="color-white topic-link">Newsletters</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://store.inquirer.com/" class="color-white topic-link">Philly.com Store</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/weather/" class="color-white topic-link">Weather</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/entertainment/horoscopes/" data-pb-url-field="custom.textURL_2_33333" data-pb-field="custom.text_2_33333" data-pb-field-type="text" data-pb-placeholder="Link #3"
+                              class="color-white topic-link">Horoscope</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/news/lottery/" data-pb-url-field="custom.textURL_3_33333" data-pb-field="custom.text_3_33333" data-pb-field-type="text" data-pb-placeholder="Link #4"
+                              class="color-white topic-link">Lottery</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/pmn-events/inq/inquirer-events-calendar-20190122.html" class="color-white topic-link">Events</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">People</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/celebrations-search.aspx?daterange=99999&announcementtype=16" data-pb-url-field="custom.textURL_0_22222"
+                              data-pb-field="custom.text_0_22222" data-pb-field-type="text" data-pb-placeholder="Link #1" class="color-white topic-link">Births</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/" data-pb-url-field="custom.textURL_1_22222" data-pb-field="custom.text_1_22222" data-pb-field-type="text"
+                              data-pb-placeholder="Link #2" class="color-white topic-link">Celebrations</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/celebrations-search.aspx?daterange=99999&announcementtype=2" data-pb-url-field="custom.textURL_2_22222"
+                              data-pb-field="custom.text_2_22222" data-pb-field-type="text" data-pb-placeholder="Link #3" class="color-white topic-link">Engagements</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/obituaries/" data-pb-url-field="custom.textURL_3_22222" data-pb-field="custom.text_3_22222" data-pb-field-type="text" data-pb-placeholder="Link #4"
+                              class="color-white topic-link">Obituaries</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/obituaries/philly/?" data-pb-url-field="custom.textURL_4_22222" data-pb-field="custom.text_4_22222" data-pb-field-type="text"
+                              data-pb-placeholder="Link #5" class="color-white topic-link">Death Notices</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Marketplace</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://marketplace.philly.com/pa/real-estate-for-sale/search" data-pb-url-field="custom.textURL_0_11111" data-pb-field="custom.text_0_11111" data-pb-field-type="text"
+                              data-pb-placeholder="Link #1" class="color-white topic-link">Find a Home</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://jobs.local-jobs.monster.com/search?wt.mc_n=hjnpsearch&ch=PINQ&where=Philadelphia%2C%20PA&rad=50" data-pb-url-field="custom.textURL_1_11111"
+                              data-pb-field="custom.text_1_11111" data-pb-field-type="text" data-pb-placeholder="Link #2" class="color-white topic-link">Job Listings</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://specialsections.philly.com/philly-inquirer/special-sections" data-pb-url-field="custom.textURL_3_11111" data-pb-field="custom.text_3_11111" data-pb-field-type="text"
+                              data-pb-placeholder="Link #4" class="color-white topic-link">Special Sections</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://marketplace.philly.com/" data-pb-url-field="custom.textURL_4_11111" data-pb-field="custom.text_4_11111" data-pb-field-type="text" data-pb-placeholder="Link #5"
+                              class="color-white topic-link">All
+                              Classifieds</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Get In Touch</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://inquirersolutions.webflow.io/" data-pb-url-field="custom.textURL_0_44444" data-pb-field="custom.text_0_44444" data-pb-field-type="text" data-pb-placeholder="Link #1"
+                              class="color-white topic-link">Advertise</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/contact-us/" data-pb-url-field="custom.textURL_1_44444" data-pb-field="custom.text_1_44444" data-pb-field-type="text" data-pb-placeholder="Link #2"
+                              class="color-white topic-link">Contact
+                              Us</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/about/newsroom-staff-beats-list.html" class="color-white topic-link">Newsroom Staff</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://olt.theygsgroup.com/philly/" data-pb-url-field="custom.textURL_2_44444" data-pb-field="custom.text_2_44444" data-pb-field-type="text" data-pb-placeholder="Link #3"
+                              class="color-white topic-link">Permissions</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://store.inquirer.com/collections/reprints" data-pb-url-field="custom.textURL_3_44444" data-pb-field="custom.text_3_44444" data-pb-field-type="text"
+                              data-pb-placeholder="Link #4" class="color-white topic-link">Reprints</a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub-menu flex-3">
+                    <div class="menu sub normal sub-spacer">
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/news/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/news/">News</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/new-jersey/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/news/new-jersey/">New
+                            Jersey</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/pennsylvania/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/news/pennsylvania/">Pennsylvania</a></li>
+                        <li><a data-link-type='mega-nav' href="/politics/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/politics/">Politics</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/nation-world/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/news/nation-world/">Nation
+                            & World</a></li>
+                        <li><a data-link-type='mega-nav' href="/education/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/education/">Education</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/sports/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/sports/">Sports</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/eagles/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/eagles/">Eagles</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/phillies/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/phillies/">Phillies</a></li>
+                        <li><a data-link-type='mega-nav' href="/sixers/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text" data-pb-placeholder="/sixers/">Sixers</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/flyers/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text" data-pb-placeholder="/flyers/">Flyers</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/soccer/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text" data-pb-placeholder="/soccer/">Union</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/college-sports/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/college-sports/">College
+                            Sports</a></li>
+                        <li><a data-link-type='mega-nav' href="/high-school-sports/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="/high-school-sports/">Rally
+                            High School Sports</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/business/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/business/">Business</a></li>
+                        <li><a data-link-type='mega-nav' href="/jobs/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/jobs/">Jobs</a></li>
+                        <li><a data-link-type='mega-nav' href="/economy/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/economy/">Economy</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/business/weed/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/business/weed/">Marijuana</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/phillydeals/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/business/phillydeals/">PhillyDeals</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/small-business/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/business/small-business/">Small
+                            Business</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/drugs/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/business/drugs/">Health
+                            & Pharma</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/consumer/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/consumer/">Consumer</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/opinion/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text" data-pb-placeholder="/opinion/">Opinion</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/columnists/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/columnists/">Columnists</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/commentary/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/commentary/">Commentary</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/editorials/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/editorials/">Editorials</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/cartoons/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/cartoons/">Cartoons</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/entertainment/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/entertainment/">Entertainment</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/">Things
+                            To Do</a></li>
+                        <li><a data-link-type='mega-nav' href="/arts/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/arts/">Arts &
+                            Culture</a></li>
+                        <li><a data-link-type='mega-nav' href="/entertainment/movies/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/entertainment/movies/">Movies</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/entertainment/tv/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/entertainment/tv/">TV</a></li>
+                        <li><a data-link-type='mega-nav' href="/celebrity/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/celebrity/">Celebrity</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/comics/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/comics/">Comics</a></li>
+                        <li><a data-link-type='mega-nav' href="/puzzles/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text" data-pb-placeholder="/puzzles/">Puzzles</a>
+                        </li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/life/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text" data-pb-placeholder="/life/">Life</a></li>
+                        <li><a data-link-type='mega-nav' href="/love/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/love/">Sex & Love</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/family/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/family/">Families</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/fashion/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text" data-pb-placeholder="/fashion/">Style</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/upside/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/upside/">The
+                            Upside</a></li>
+                        <li><a data-link-type='mega-nav' href="/real-estate/home/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/real-estate/home/">Home</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/travel/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/travel/">Travel</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/jersey-shore/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/jersey-shore/">Things
+                            To Do at the Shore</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/food/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text" data-pb-placeholder="/food/">Food</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/health/" class="color-white" data-pb-field="custom.callToActionText_7" data-pb-url-field="custom.callToActionUrl_7" data-pb-field-type="text" data-pb-placeholder="/health/">Health</a>
+                        </li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/real-estate/" class="color-white" data-pb-field="custom.callToActionText_8" data-pb-url-field="custom.callToActionUrl_8" data-pb-field-type="text"
+                            data-pb-placeholder="/real-estate/">Real
+                            Estate</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+        <div id="topic-bar" class="topic-bar card card-shadowed border border-bottom hidden-mobile" role="navigation">
+          <div class="justify-space-between container-row relative topic-bar-inner spaced spaced-right spaced-left spaced-xl">
+            <div class="flex-6 container-row align-items-center max-95">
+              <ul id="app-bar-topics-menu" class="list-unstyled container-row topics-list font-normal uppercase"> <a data-link-type='header-nav-main' href="/news/" class="nav-link" data-pb-field="custom.callToActionText_0"
+                  data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/news" data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">News</li>
+                </a> <a data-link-type='header-nav-main' href="/sports/" class="nav-link" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/sports"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Sports</li>
+                </a> <a data-link-type='header-nav-main' href="/business/" class="nav-link" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text" data-pb-placeholder="/business"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Business</li>
+                </a> <a data-link-type='header-nav-main' href="/opinion/" class="nav-link" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text" data-pb-placeholder="/opinion"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Opinion</li>
+                </a> <a data-link-type='header-nav-main' href="/politics/" class="nav-link" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text" data-pb-placeholder="/politics"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Politics</li>
+                </a> <a data-link-type='header-nav-main' href="/entertainment/" class="nav-link" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text" data-pb-placeholder="/entertainment"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Entertainment</li>
+                </a> <a data-link-type='header-nav-main' href="/life/" class="nav-link" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text" data-pb-placeholder="/life"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Life</li>
+                </a> <a data-link-type='header-nav-main' href="/food/" class="nav-link" data-pb-field="custom.callToActionText_7" data-pb-url-field="custom.callToActionUrl_7" data-pb-field-type="text" data-pb-placeholder="/food"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Food</li>
+                </a> <a data-link-type='header-nav-main' href="/health/" class="nav-link" data-pb-field="custom.callToActionText_8" data-pb-url-field="custom.callToActionUrl_8" data-pb-field-type="text" data-pb-placeholder="/health"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Health</li>
+                </a> <a data-link-type='header-nav-main' href="/real-estate/" class="nav-link" data-pb-field="custom.callToActionText_9" data-pb-url-field="custom.callToActionUrl_9" data-pb-field-type="text" data-pb-placeholder="/real-estate"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Real Estate</li>
+                </a> <a data-link-type='header-nav-main' href="/obituaries/" class="nav-link" data-pb-field="custom.callToActionText_10" data-pb-url-field="custom.callToActionUrl_10" data-pb-field-type="text" data-pb-placeholder="/obituaries"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Obituaries</li>
+                </a> <a data-link-type='header-nav-main' href="/jobs/" class="nav-link" data-pb-field="custom.callToActionText_11" data-pb-url-field="custom.callToActionUrl_11" data-pb-field-type="text" data-pb-placeholder="/jobs"
+                  data-link-type="header-nav-main">
+                  <li class="spaced spaced-right spaced-md font-bold">Jobs</li>
+                </a> </ul>
+            </div>
+            <div class="topic-bar-input-group container-row justify-end">
+              <div class="search-input relative">
+                <div class="search-icon-group absolute right-0 top-0">
+                  <div data-search="appbar-search" class="fa fa-search center-no-dimensions color-black"></div>
+                </div> <input id="appbar-search" class="full-width search-input-font" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off">
+              </div>
+              <div id="desktop-app-bar-topics-button" name="topicsMenu" class="btn menu-btn justify-end container-row relative bg-white" data-role="open-tray" data-tray="topics-desktop"> <span id="tray-toggle-btn" class="icon-menu"
+                  aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="app-bar-mobile" class="app-bar card card-shadowed border border-bottom hidden-desktop hidden-tablet" role="user-buttons">
+          <div class="justify-space-between container-row relative app-bar-inner container spaced spaced-right spaced-left spaced-sm">
+            <div class="flex container-row align-items-center">
+              <div class="logo-container container-row align-items-center justify-center spaced spaced-right spaced-md"> <a data-link-type='global-nav' aria-label="Visit homepage" href="/">
+                  <div class="logo-philly logo-stacked logo-sm"></div>
+                </a> </div>
+            </div>
+            <div class="container-row align-items-center justify-end"> <a href="https://checkout.inquirer.com/subscribe" class="unstyled-link">
+                <div class="no-border btn container-column justify-center subscribe-btn font-semi-bold">Unlimited Access</div>
+              </a>
+              <div class="login-btn font-semi-bold btn btn-light auth0-log-in">Log In</div>
+              <div id="mobile-dropdown-name" class="hidden mobile my-account-btn font-semi-bold my-account-text btn btn-light unselectable spaced spaced-right spaced-sm" data-role="open-tray" data-tray="account-menu-mobile"> <i class="fa fa-user"
+                  aria-hidden="true"></i> </div>
+              <div id="mobile-account-dropdown" data-tray="account-menu-mobile" data-role="tray" class="hidden unselectable">
+                <ul class="font-bold list-unstyled bg-black-dark mobile account-dropdown container-column justify-center padded padded-full padded-sm">
+                  <li><a href="https://myaccount.inquirer.com" data-link-type='global-nav'>Manage my account</a></li>
+                  <li><a href="https://inquirer.com/myprofile" data-link-type='global-nav'>My profile</a></li>
+                  <li><a href="https://myaccount.inquirer.com/FAQ.aspx" data-link-type='global-nav'>FAQ</a></li>
+                  <li class="logout-btn"><a data-link-type='global-nav'>Log out</a></li>
+                </ul>
+              </div>
+              <div id="app-bar-topics-button" name="topicsMenu" class="btn menu-btn container-row bg-white spaced spaced-right spaced-sm" data-role="open-tray" data-tray="topics-mobile"> <span id="tray-toggle-btn" class="icon-menu"
+                  aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+          <div data-role="tray" data-tray="topics-mobile" class="tray hidden">
+            <nav class="tray tray-left fixed full-width high-z-index">
+              <div class="topics-tray tray-contents">
+                <div class="tray-search container-column hidden-tablet hidden-desktop">
+                  <div id="app-bar-topics-button" name="topicsMenu" class="justify-end container-row" data-role="close-tray" data-tray="topics-mobile">
+                    <div class="btn menu-btn font-semi-bold spaced spaced-top spaced-right spaced-bottom spaced-md"> <span class="icon-x"></span> </div>
+                  </div>
+                  <div class="search-input relative color-white spaced spaced-top spaced-right spaced-left spaced-md">
+                    <div class="search-icon-group absolute right-0 top-0">
+                      <div data-search="mobile-tray-search" class="fa fa-search center-no-dimensions color-black"></div>
+                    </div> <input id="mobile-tray-search" class="full-width spaced spaced-right spaced-md search-input-font" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off">
+                  </div>
+                </div>
+                <div class="tray-contents-inner container-column column-reverse tablet-row" tabindex="0">
+                  <div class="tray-topics-menu flex">
+                    <div class="menu menu-topic container-row wrap">
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Your Day</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/newsletters/" class="color-white topic-link">Newsletters</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://store.inquirer.com/" class="color-white topic-link">Philly.com Store</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/weather/" class="color-white topic-link">Weather</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/entertainment/horoscopes/" data-pb-url-field="custom.textURL_2_33333" data-pb-field="custom.text_2_33333" data-pb-field-type="text" data-pb-placeholder="Link #3"
+                              class="color-white topic-link">Horoscope</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/news/lottery/" data-pb-url-field="custom.textURL_3_33333" data-pb-field="custom.text_3_33333" data-pb-field-type="text" data-pb-placeholder="Link #4"
+                              class="color-white topic-link">Lottery</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/pmn-events/inq/inquirer-events-calendar-20190122.html" class="color-white topic-link">Events</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">People</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/celebrations-search.aspx?daterange=99999&announcementtype=16" data-pb-url-field="custom.textURL_0_22222"
+                              data-pb-field="custom.text_0_22222" data-pb-field-type="text" data-pb-placeholder="Link #1" class="color-white topic-link">Births</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/" data-pb-url-field="custom.textURL_1_22222" data-pb-field="custom.text_1_22222" data-pb-field-type="text"
+                              data-pb-placeholder="Link #2" class="color-white topic-link">Celebrations</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/celebration/philly/celebrations-search.aspx?daterange=99999&announcementtype=2" data-pb-url-field="custom.textURL_2_22222"
+                              data-pb-field="custom.text_2_22222" data-pb-field-type="text" data-pb-placeholder="Link #3" class="color-white topic-link">Engagements</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/obituaries/" data-pb-url-field="custom.textURL_3_22222" data-pb-field="custom.text_3_22222" data-pb-field-type="text" data-pb-placeholder="Link #4"
+                              class="color-white topic-link">Obituaries</a>
+                          </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.legacy.com/obituaries/philly/?" data-pb-url-field="custom.textURL_4_22222" data-pb-field="custom.text_4_22222" data-pb-field-type="text"
+                              data-pb-placeholder="Link #5" class="color-white topic-link">Death Notices</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Marketplace</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://marketplace.philly.com/pa/real-estate-for-sale/search" data-pb-url-field="custom.textURL_0_11111" data-pb-field="custom.text_0_11111" data-pb-field-type="text"
+                              data-pb-placeholder="Link #1" class="color-white topic-link">Find a Home</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://jobs.local-jobs.monster.com/search?wt.mc_n=hjnpsearch&ch=PINQ&where=Philadelphia%2C%20PA&rad=50" data-pb-url-field="custom.textURL_1_11111"
+                              data-pb-field="custom.text_1_11111" data-pb-field-type="text" data-pb-placeholder="Link #2" class="color-white topic-link">Job Listings</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://specialsections.philly.com/philly-inquirer/special-sections" data-pb-url-field="custom.textURL_3_11111" data-pb-field="custom.text_3_11111" data-pb-field-type="text"
+                              data-pb-placeholder="Link #4" class="color-white topic-link">Special Sections</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://marketplace.philly.com/" data-pb-url-field="custom.textURL_4_11111" data-pb-field="custom.text_4_11111" data-pb-field-type="text" data-pb-placeholder="Link #5"
+                              class="color-white topic-link">All
+                              Classifieds</a> </li>
+                        </ul>
+                      </div>
+                      <div>
+                        <div class="list-header color-accent uppercase spaced spaced-bottom spaced-sm">Get In Touch</div>
+                        <ul class="list-unstyled list-unstyled">
+                          <li class=""> <a data-link-type='mega-nav' href="http://inquirersolutions.webflow.io/" data-pb-url-field="custom.textURL_0_44444" data-pb-field="custom.text_0_44444" data-pb-field-type="text" data-pb-placeholder="Link #1"
+                              class="color-white topic-link">Advertise</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="/contact-us/" data-pb-url-field="custom.textURL_1_44444" data-pb-field="custom.text_1_44444" data-pb-field-type="text" data-pb-placeholder="Link #2"
+                              class="color-white topic-link">Contact
+                              Us</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="http://www.inquirer.com/about/newsroom-staff-beats-list.html" class="color-white topic-link">Newsroom Staff</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://olt.theygsgroup.com/philly/" data-pb-url-field="custom.textURL_2_44444" data-pb-field="custom.text_2_44444" data-pb-field-type="text" data-pb-placeholder="Link #3"
+                              class="color-white topic-link">Permissions</a> </li>
+                          <li class=""> <a data-link-type='mega-nav' href="https://store.inquirer.com/collections/reprints" data-pb-url-field="custom.textURL_3_44444" data-pb-field="custom.text_3_44444" data-pb-field-type="text"
+                              data-pb-placeholder="Link #4" class="color-white topic-link">Reprints</a> </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="sub-menu flex-3">
+                    <div class="menu sub normal sub-spacer">
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/news/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/news/">News</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/new-jersey/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/news/new-jersey/">New
+                            Jersey</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/pennsylvania/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/news/pennsylvania/">Pennsylvania</a></li>
+                        <li><a data-link-type='mega-nav' href="/politics/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/politics/">Politics</a></li>
+                        <li><a data-link-type='mega-nav' href="/news/nation-world/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/news/nation-world/">Nation
+                            & World</a></li>
+                        <li><a data-link-type='mega-nav' href="/education/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/education/">Education</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/sports/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/sports/">Sports</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/eagles/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/eagles/">Eagles</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/phillies/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/phillies/">Phillies</a></li>
+                        <li><a data-link-type='mega-nav' href="/sixers/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text" data-pb-placeholder="/sixers/">Sixers</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/flyers/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text" data-pb-placeholder="/flyers/">Flyers</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/soccer/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text" data-pb-placeholder="/soccer/">Union</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/college-sports/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/college-sports/">College
+                            Sports</a></li>
+                        <li><a data-link-type='mega-nav' href="/high-school-sports/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="/high-school-sports/">Rally
+                            High School Sports</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/business/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/business/">Business</a></li>
+                        <li><a data-link-type='mega-nav' href="/jobs/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/jobs/">Jobs</a></li>
+                        <li><a data-link-type='mega-nav' href="/economy/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/economy/">Economy</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/business/weed/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/business/weed/">Marijuana</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/phillydeals/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/business/phillydeals/">PhillyDeals</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/small-business/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/business/small-business/">Small
+                            Business</a></li>
+                        <li><a data-link-type='mega-nav' href="/business/drugs/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/business/drugs/">Health
+                            & Pharma</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/consumer/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/consumer/">Consumer</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/opinion/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text" data-pb-placeholder="/opinion/">Opinion</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/columnists/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/columnists/">Columnists</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/commentary/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/commentary/">Commentary</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/editorials/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/editorials/">Editorials</a></li>
+                        <li><a data-link-type='mega-nav' href="/opinion/cartoons/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="/opinion/cartoons/">Cartoons</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/entertainment/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/entertainment/">Entertainment</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/">Things
+                            To Do</a></li>
+                        <li><a data-link-type='mega-nav' href="/arts/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/arts/">Arts &
+                            Culture</a></li>
+                        <li><a data-link-type='mega-nav' href="/entertainment/movies/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text"
+                            data-pb-placeholder="/entertainment/movies/">Movies</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/entertainment/tv/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/entertainment/tv/">TV</a></li>
+                        <li><a data-link-type='mega-nav' href="/celebrity/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/celebrity/">Celebrity</a></li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/comics/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/comics/">Comics</a></li>
+                        <li><a data-link-type='mega-nav' href="/puzzles/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text" data-pb-placeholder="/puzzles/">Puzzles</a>
+                        </li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/life/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text" data-pb-placeholder="/life/">Life</a></li>
+                        <li><a data-link-type='mega-nav' href="/love/" class="color-white" data-pb-field="custom.callToActionText_0" data-pb-url-field="custom.callToActionUrl_0" data-pb-field-type="text" data-pb-placeholder="/love/">Sex & Love</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/family/" class="color-white" data-pb-field="custom.callToActionText_1" data-pb-url-field="custom.callToActionUrl_1" data-pb-field-type="text" data-pb-placeholder="/family/">Families</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="/fashion/" class="color-white" data-pb-field="custom.callToActionText_2" data-pb-url-field="custom.callToActionUrl_2" data-pb-field-type="text" data-pb-placeholder="/fashion/">Style</a>
+                        </li>
+                        <li><a data-link-type='mega-nav' href="https://www.inquirer.com/upside/" class="color-white" data-pb-field="custom.callToActionText_3" data-pb-url-field="custom.callToActionUrl_3" data-pb-field-type="text"
+                            data-pb-placeholder="https://www.inquirer.com/upside/">The
+                            Upside</a></li>
+                        <li><a data-link-type='mega-nav' href="/real-estate/home/" class="color-white" data-pb-field="custom.callToActionText_4" data-pb-url-field="custom.callToActionUrl_4" data-pb-field-type="text"
+                            data-pb-placeholder="/real-estate/home/">Home</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/travel/" class="color-white" data-pb-field="custom.callToActionText_5" data-pb-url-field="custom.callToActionUrl_5" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/travel/">Travel</a></li>
+                        <li><a data-link-type='mega-nav' href="/things-to-do/jersey-shore/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text"
+                            data-pb-placeholder="/things-to-do/jersey-shore/">Things
+                            To Do at the Shore</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/food/" class="color-white" data-pb-field="custom.callToActionText_6" data-pb-url-field="custom.callToActionUrl_6" data-pb-field-type="text" data-pb-placeholder="/food/">Food</a></li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/health/" class="color-white" data-pb-field="custom.callToActionText_7" data-pb-url-field="custom.callToActionUrl_7" data-pb-field-type="text" data-pb-placeholder="/health/">Health</a>
+                        </li>
+                      </ul>
+                      <ul class="list-unstyled">
+                        <li><a data-link-type='mega-nav' href="/real-estate/" class="color-white" data-pb-field="custom.callToActionText_8" data-pb-url-field="custom.callToActionUrl_8" data-pb-field-type="text"
+                            data-pb-placeholder="/real-estate/">Real
+                            Estate</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="pb-container"> </div>
+    </header>
+    <div class="container inner-container spaced spaced-top spaced-xl">
+      <header id="header">
+        <div class="pb-container">
+          <div class="wrapper clearfix col desktop-6 tablet-6 mobile-6 pb-feature pb-layout-item pb-f-global-type-analytics" id="fd2oC81nmm1llr">
+
+          </div>
+        </div>
+      </header>
+    </div>
+    <div class="container">
+      <article id="main" class="container inner-container">
+        <div class="wrapper clearfix full pb-feature pb-layout-item pb-f-article-body" id="f03RC2Unmm1llr">
+          <div class="article-body collection collection-cards article__content article__content_lf" id="article-body">
+            <div data-type="code" class="card paragraph-spacing collection-item card-border-bottom card-border-bottom-thick card-border-bottom-darkcard-embedded-content">
+              <div class="card-content ">
+                <div class=" col-print-12">
+                  <div class="element element-code">

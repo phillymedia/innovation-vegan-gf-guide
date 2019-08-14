@@ -3,7 +3,7 @@
     "text": [
       {
         "type": "text",
-        "value": "Description for article (the one that shows up in google search): Got dietary restrictions? This guide to eating vegan and gluten-free in Philadelphia is for you - even if your friends are cheesesteak-loving carnivores."
+        "value": "Description for article (the one that shows up in google search)/ for Social Media: Got dietary restrictions? This guide to eating vegan and gluten-free in Philadelphia is for you - even if your friends are cheesesteak-loving carnivores."
       },
       {
         "type": "text",
@@ -11,15 +11,31 @@
       },
       {
         "type": "text",
-        "value": "But Philly is actually a haven for this crowd — it’s also home to a heap of vegan cheesesteaks (<a href=\"https://www.inquirer.com/philly/food/20160324_All_the_dish_from_the_3rd_annual_Best_Vegan_Cheesesteak_in_Philly_contest.html\">enough to hold a contest</a>), gluten-free cupcakes, and at least one stellar dairy-free shake. Whatever flavor of dietary restriction you have, the city has options for you. Many are so delicious, your omnivorous friends will happily tag along."
+        "value": "But Philly is actually a haven for this crowd — it’s also home to a heap of vegan cheesesteaks (<a href=\"https://www.inquirer.com/philly/food/20160324_All_the_dish_from_the_3rd_annual_Best_Vegan_Cheesesteak_in_Philly_contest.html\">enough to hold a contest</a>), gluten-free cupcakes, and at least one stellar dairy-free shake."
       },
       {
         "type": "text",
-        "value": "A note about our filters:"
+        "value": "So we’ve crafted a guide with the dietary-restricted eater and their omnivorous friends in mind. This list is full of restaurants, cafes, and bars with a number of vegan, dairy-free, or gluten-free offerings as well as dishes like pepperoni pizza and juicy, non-soy-based burgers."
       },
       {
         "type": "text",
-        "value": "All of the following restaurants either offer a separate menu for dietary restrictions, have several menu items appropriate for said restriction, or can alter a standard menu item to make it suitable. The carnivore-friendly label applies to establishments that offer meat; a restaurant that serves meat but also offers a separate vegan menu will be marked both “Vegan” and “Carnivore-friendly.” While the gluten-free label signifies restaurants with offerings that exclude ingredients containing gluten, please note that we cannot certify that there is no cross-contamination from shared prep surfaces and airborne allergens. If you have a severe intolerance or allergy, please make sure to notify the restaurant before you order."
+        "value": "Use the filters to sort the list by type of diet as well as neighborhood. Other things to keep in mind:"
+      },
+      {
+        "type": "text",
+        "value": "* All of the following restaurants either offer a separate menu for dietary restrictions, have several items appropriate for that restriction, or can alter a standard offering to make it suitable."
+      },
+      {
+        "type": "text",
+        "value": "* Nearly all of the restaurants with the gluten-free filter also offer some delicious, 100-percent wheat bread and pasta options as well."
+      },
+      {
+        "type": "text",
+        "value": "* The ‘carnivore-friendly’ label shows restaurants that serve meat; some restaurants will be both “vegan” and “carnivore-friendly,” meaning they cater to both crowds."
+      },
+      {
+        "type": "text",
+        "value": "Editor’s note: Restaurants marked gluten-free offer dishes without containing gluten, but we cannot certify that there is no cross-contamination from shared prep surfaces and airborne allergens. If you have a severe intolerance or allergy, please notify the restaurant."
       }
     ]
   },
@@ -29,9 +45,9 @@
         "Name": "Goldie",
         "Filters": "Vegan, Dairy-free",
         "Instagram": "<a href=\"https://www.instagram.com/p/By8ATUxgcip/?igshid=1ppe682139sfc\">https://www.instagram.com/p/By8ATUxgcip/?igshid=1ppe682139sfc</a>",
-        "Dishes_to_try": "Tehina shakes, falafel sandwiches and salads, tangy pickled mango sauce (amba),",
+        "Dishes_to_try": "Tehina shakes, falafel sandwiches and salads",
         "Go_for": "Lunch or a quick, casual dinner.",
-        "Something_to_note": "Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, sour cherry iced tea. Even the <a href=\"https://twitter.com/craiglaban/status/850036488683347969?lang=en\">addictively tasty</a> tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.",
+        "Something_to_note": "Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the <a href=\"https://twitter.com/craiglaban/status/850036488683347969?lang=en\">addictively tasty</a> tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free. Order at the counter for a quick pickup, and take your mediterranean feast to go, on dine in in the dimly lit space. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.",
         "text": []
       },
       {
@@ -52,7 +68,7 @@
       },
       {
         "Name": "HipCityVeg",
-        "Filters": "Vegan",
+        "Filters": "Vegan, Dairy-free, Gluten-free",
         "Dishes_to_try": "Try their banana whip (add multiple toppings for a sundae) and rendition of the Philly cheese steak plus their sweet potato fries and dairy free milkshakes",
         "Go_for": "A quick healthy lunch/dinner with a fellow vegan friend",
         "Something_to_note": "Although the chain is plentiful in the city, HipCityVeg is a reliable place to get a filling quick meal — but be warned, your friends who eat meat may not be fooled by their substitutes. Among their array of salad options, there are some unusual offerings worth a try, like their handful of burgers and milkshakes.",
@@ -94,11 +110,16 @@
       },
       {
         "Name": "Sweet Freedom Bakery",
-        "Filters": "Gluten-free, Vegan",
+        "Filters": "Vegan, Dairy-free, Gluten-free",
         "Dishes_to_try": "Try their Samoa cupcake if you love chocolate and coconut, or the Salted Carmel cupcake for even more chocolate. For something (very slightly) healthier, try one of their fruit oat crumble bars.",
         "Go_for": "a major sweet fix",
         "Something_to_note": "This is a great place to order some sweets for a group with allergies or restrictions — the bakery is vegan, gluten-free, soy free, nut free, kosher, and refined-sugar free. A mouthful in more ways than one.",
-        "text": []
+        "text": [
+          {
+            "type": "text",
+            "value": "This bakery should be your go-to spot for a dietary restriction birthday celebration, and at all times you’ll find cookies, bars, cupcakes, and more available at their small South Street hub. You can place an order over the phone by looking at their website’s menu, or roll the dice and pop in to see what’s in store. Sweet Freedom even ships and delivers, making it impossible to pass up these sugary treats!"
+          }
+        ]
       },
       {
         "Name": "Giorgio on Pine",
@@ -114,15 +135,25 @@
         "Dishes_to_try": "Try their vegan hemp pasta pignoli, their taco ‘meat’ pizza, and their truffle Parmesan fries.",
         "Go_for": "Happy hour for their drink specials, and stay late for a dinner that pleases everyone.",
         "Something_to_note": "Barra Rossa truly has it all — vegan cheese, gluten-free penne pasta and pizza crust, and ‘normal food’ for your friends. Gluten-free items are very clearly marked on the menu, and there is an entire “plant based” section dedicated to making  lives easier.",
-        "text": []
+        "text": [
+          {
+            "type": "text",
+            "value": "TK"
+          }
+        ]
       },
       {
         "Name": "Bareburger",
         "Filters": "Vegan, Dairy-free, Gluten-free, Carnivore-friendly",
-        "Dishes_to_try": "From their expansive vegan menu, try the Original burger (Impossible patty, caramelized onions, pickles, ‘special sauce,’ and a ‘Vrioche’ bun (can substitute for gluten-free);  the crispy brussels sprouts (a popular vegan and gluten-free dish containing parmesan cheese); and/or a vegan milkshake made from coconut ice cream and hemp milk",
+        "Dishes_to_try": "From their expansive vegan menu, try the Duchess;  the Uptown fries; and a vegan milkshake. Carnivores, try the",
         "Go_for": "An Impossible Burger tasting with carnivore friends",
-        "Something_to_note": "Bareburger, an international burger chain, has one of the largest menus you’ll ever see - they claim it’s possible to create 81 million different burgers. The menu is marked up to show which items are vegan and gluten-free, as well as which have nuts and GMOs. On social media, vegan posters rave about its separate vegan menu with options like vegan gouda, plant-based eggs, Beyond bratwurst, and five different types of vegan burgers (including both Impossible burgers and Beyond Meat burgers). Their menu also clearly marks their celiac-safe gluten-free options, which include buns and a collard green wrap.",
-        "text": []
+        "Something_to_note": "The menu is marked up to show which items are vegan and gluten-free, as well as which have nuts and GMOs. Their menu also clearly marks their celiac-safe gluten-free options, which include buns and a collard green wrap.",
+        "text": [
+          {
+            "type": "text",
+            "value": "Bareburger, an international burger chain whose Philly location has table service and a beer and wine menu, has one of the largest menus you’ll ever see - they claim it’s possible to create 81 million different burgers. Though they offer a large array of meat options as well -- bison and buttermilk-fried chicken, for example-- <a href=\"https://www.instagram.com/explore/locations/719969541546437/bareburger-philadelphia/\">vegans rave</a> about its separate vegan menu with options like vegan gouda, plant-based eggs, Beyond bratwurst, and five different types of vegan burgers (including both Impossible burgers and Beyond Meat burgers). Two of their most popular vegan dishes are the Duchess, an Impossible burger with garlic aioli, mushrooms, caramelized onions, baby kale and --get this-- smoked gouda, which mirrors the Duke burger on their non-vegan menu, and the crispy brussels sprouts (vegan and gluten-free; on the heavier side, as they are fried). Their emphasis on organic ingredients makes it a bit on the pricier end of the spectrum for burger joints, but most if not all of their food, including vegan options, is hearty and rich, and they have everything vegans usually miss out on, including coconut-and-hemp milk milkshakes."
+          }
+        ]
       },
       {
         "Name": "Bar Bombon",
@@ -143,10 +174,19 @@
       {
         "Name": "Charlie was a Sinner",
         "Filters": "Vegan, Dairy-free, Gluten-free",
-        "Dishes_to_try": "For gluten-free diners, must-try dishes include ‘Our ricotta’; the spinach bakoula, a creamy Moroccan dip; and the chocolate pot de crème. Gluten-eaters, see <a href=\"https://www.inquirer.com/philly/food/20141019_Don_t_call_Charlie_s__quot_plant-based_cuisine_quot__vegan.html\">Craig LaBan’s recommendations</a>.",
+        "Dishes_to_try": "For gluten-free diners, must-try dishes include ‘Our ricotta’; the spinach bakoula; and the chocolate pot de crème. Gluten-eaters, see <a href=\"https://www.inquirer.com/philly/food/20141019_Don_t_call_Charlie_s__quot_plant-based_cuisine_quot__vegan.html\">Craig LaBan’s recommendations</a>.",
         "Go_for": "A night out with friends.",
         "Something_to_note": "Tell your waiter about any allergies. The restaurant has full ingredient lists in the kitchen as well as soy-free and gluten-free menus. Everything on their gluten-free menu is Celiac safe, but if your gluten intolerance is mild rather than severe, more fried options are available to you as well (they don’t have a separate gluten-free fryer).",
-        "text": []
+        "text": [
+          {
+            "type": "text",
+            "value": "Far from being a vegan-only enclave, this low-lit bar and restaurant from HipCityVeg and Bar Bombon owner Nicole Marquis attracts all different kinds of hip Philadelphians eager to taste creative cocktails like the spicy Fire Island and the ‘East of Eden.’ (So don’t forget to make reservations.)  Like the drinks, the flavors in the food are strong instead of subtle in small plates like the tofu-based ‘Our Ricotta’ with crunchy sourdough, the spicy Korean fried tofu on pickled cauliflower and the Moroccan creamed ‘spinach bakoula’ (gluten-free) with salty olives. You won’t leave feeling hungry."
+          },
+          {
+            "type": "text",
+            "value": "[Another quote I could substitute for the first two sentences: Charlie’s is a “casual, stylish piece in Midtown Village's gallery of nightlife options, strong on low-commitment nibbles and drinks for a youthful crossroads where attention spans and budgets are not large,” <a href=\"https://www.inquirer.com/philly/food/20141019_Don_t_call_Charlie_s__quot_plant-based_cuisine_quot__vegan.html\">Craig writes</a>.]"
+          }
+        ]
       },
       {
         "Name": "Strangelove’s",
@@ -164,7 +204,12 @@
         "Go_for": "A slightly-fancier version of the college pizza + beer night out (replace beer with wine, pepperoni with prosciutto, and pop with blues).",
         "Something_to_note": "They don’t carry vegan cheese, but their pizzas can be made vegan and/or dairy free. They can make other items dairy-free, such as the brussels sprouts, spaghetti squash, the roasted cauliflower, the almond cake, and all of their salads. Their gluten-free crusts, however, contain milk.",
         "Instagram": "<a href=\"https://www.instagram.com/p/By5H8CcHJee/?utm_source=ig_web_copy_link\">https://www.instagram.com/p/By5H8CcHJee/?utm_source=ig_web_copy_link</a>",
-        "text": []
+        "text": [
+          {
+            "type": "text",
+            "value": "Zavino, while known for its pizza, is not a pizza joint. The white marble tables, fully-stocked bar and antipasti station in the restaurant tell you immediately that though they serve reasonably priced pies, they also cater to those who seek  to try their $23 tasting board. Though they have very few vegan options, their spaghetti squash small plate, which might sound like something from a deprivation diet, has an incredibly hearty flavor from the sage, garlic, roasted pine nuts in its tomato sauce. “Surely these pies are better than 98 percent of the competition,” Craig LaBan wrote in 2010, but “the pizzas aren't even nearly the best things to eat at Zavino.” The pizza is a must-try for gluten-intolerant diners, however: at the University City location, you can watch a chef spin their made-on-site gluten-free crust behind the bar (fluffy with a crunch from the wood-fired oven, it’s known in the gluten-free community as the best crust in the city)."
+          }
+        ]
       },
       {
         "Name": "Front Street Cafe",
@@ -252,17 +297,22 @@
         "text": [
           {
             "type": "text",
-            "value": "Grindcore House is the most hardcore all-vegan cafe you’ll find in Philadelphia. Heavy metal music greets visitors who step into the store, which has a glass case full of vegan treats including the popular Dottie’s donuts -- and vegan pastries are hard to find. They also offer a gluten-free bagel and some gluten-free pastries, but sandwiches make up most of their menu."
+            "value": "Grindcore House is the most hardcore all-vegan cafe you’ll find in Philadelphia. Heavy metal music greets visitors who step into the store, which has a glass case full of vegan treats including the popular Dottie’s donuts -- and vegan pastries are hard to find. Deeper in the cafe’s space is an extensive library of radical literature.  Their menu features many bagels, sandwiches and salads, like the popular kropotkin, which includes field roast, pesto, mixed greens, roasted red peppers, onion, and vegan mayonnaise on ciabatta, and their gourmet vegan cream cheeses, including olive, jalapeno and scallion."
           }
         ]
       },
       {
         "Name": "Slice",
         "Filters": "Vegan, Dairy-free, Gluten-free, Carnivore-friendly",
-        "Dishes_to_try": "Truffle pizza (can be made gluten free and vegan), vegan lemon bar, gluten-free tiramisu",
+        "Dishes_to_try": "Truffle pizza (can be made gluten free and vegan), gluten-free Fig pizza, vegan lemon bar, gluten-free tiramisu",
         "Go_for": "Late-night munchies",
         "Something_to_note": "Slice offers gluten-free crusts and vegan cheese. However, just because it’s on a gluten free crust doesn’t mean a pizza is gluten-free -- make sure to check toppings with the cashier or a manager before ordering. Another note is that their gluten-free pizzas only come in what some would consider personal-pizza size (10 inches, 6 small slices). Oh, and you can make your pizza heart-shaped (if it isn’t gluten free). Just ask.",
-        "text": []
+        "text": [
+          {
+            "type": "text",
+            "value": "At this relaxed BYOB with counter service, don’t expect to be confined to the salads section (though they have some good options, like the kale + apple). They offer creative pizzas like the popular truffled ribeye (mozzarella ribeye, caramelized onions, white truffle oil) as well as calzones and strombolis. As for special options, unlike some pizza places, they don’t skimp on the Daiya cheese, and the gluten-free pizza, while small (10”), is a great option for a pizza that’s less heavy (and won’t kill your stomach, if you have a gluten sensitivity). Most of their business comes from delivery."
+          }
+        ]
       }
     ]
   }
