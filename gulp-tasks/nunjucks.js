@@ -43,11 +43,23 @@ function formatData(name, resto){
   //format phone number
   if (resto.Phone){
 
-    var phone = resto.Phone;
-    var formatted_phone_str = formatPhoneNumber(phone);
-    //might add error catching for if formatPhoneNumber returns null
-    resto.Phone = formatted_phone_str;
-    resto.PhoneLink = parseInt(formatted_phone_str)
+    var phoneNumberString = resto.Phone;
+    var formatted_phone_str = ""
+    var phone_int = 0 //integer so that it can be a link
+
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '') //remove anything that isn't a digit
+    var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+    if (match) {
+      formatted_phone_str = match[1] + '-' + match[2] + '-' + match[3]
+      phone_int = parseInt(cleaned)
+      resto.Phone = formatted_phone_str;
+      resto.PhoneLink = phone_int;
+    }
+
+    else{
+        console.log("phone number missing for", resto.Name)
+    }
+
 
   }
   else{
@@ -55,11 +67,22 @@ function formatData(name, resto){
   }
   if (resto.Phone2){
 
-    var phone = resto.Phone2;
-    var formatted_phone_str = formatPhoneNumber(phone);
-    //might add error catching for if formatPhoneNumber returns null
-    resto.Phone2 = formatted_phone_str;
-    resto.PhoneLink2 = parseInt(formatted_phone_str)
+      var phoneNumberString = resto.Phone2;
+      var formatted_phone_str = ""
+      var phone_int = 0 //integer so that it can be a link
+
+      var cleaned = ('' + phoneNumberString).replace(/\D/g, '') //remove anything that isn't a digit
+      var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+      if (match) {
+        formatted_phone_str = match[1] + '-' + match[2] + '-' + match[3]
+        phone_int = parseInt(cleaned)
+        resto.Phone2 = formatted_phone_str;
+        resto.PhoneLink2 = phone_int;
+      }
+
+      else{
+          console.log("phone number missing for", resto.Name)
+      }
 
   }
 }
@@ -101,18 +124,32 @@ function checkIfFileLoaded(fileName) {
     });
 }
 
-function formatPhoneNumber(phoneNumberString) {
-  /*
-  Clean up phone numbers so they're all in this format:
-  215-644-9074
-  */
-  var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
-  var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
-  if (match) {
-    return match[1] + '-' + match[2] + '-' + match[3]
-  }
-  return null
-}
+// function formatPhoneNumber(phoneNumberString) {
+//   /*
+//   @params:
+//     phoneNumberString = unformatted string containing phone number
+//
+//   Clean up phone numbers so they're all in this format:
+//   215-644-9074
+//
+//   return formatted phone number in string format as well as
+//   an integer with all digits in phone number
+//   which will become the link that users click on to make a call.
+//
+//   return: "801-801-8011", 8018018011
+//   */
+//   var formatted_phone_str = ""
+//   var phone_int = 0 //integer so that it can be a link
+//
+//   var cleaned = ('' + phoneNumberString).replace(/\D/g, '') //remove anything that isn't a digit
+//   var match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/)
+//   if (match) {
+//     formatted_phone_str = match[1] + '-' + match[2] + '-' + match[3]
+//     phone_int = parseInt(cleaned)
+//     return formatted_phone_str
+//   }
+//
+// }
 
 function getMapsLink(address) {
   /*
