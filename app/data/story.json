@@ -47,7 +47,7 @@
         "Instagram": "<a href=\"https://www.instagram.com/p/By8ATUxgcip/?igshid=1ppe682139sfc\">https://www.instagram.com/p/By8ATUxgcip/?igshid=1ppe682139sfc</a>",
         "Dishes_to_try": "Tehina shakes, falafel sandwiches and salads",
         "Go_for": "Lunch or a quick, casual dinner.",
-        "Something_to_note": "Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the <a href=\"https://twitter.com/craiglaban/status/850036488683347969?lang=en\">addictively tasty</a> tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free. Order at the counter for a quick pickup, and take your mediterranean feast to go, on dine in in the dimly lit space. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.",
+        "Something_to_note": "Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the <a href=\"https://twitter.com/craiglaban/status/850036488683347969?lang=en\">addictively tasty</a> tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free. Order at the counter for a quick pickup, and take your mediterranean feast to go, or dine in in the low-lit space, filled with an unexpectedly moody interior. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.",
         "text": []
       },
       {
@@ -58,11 +58,11 @@
         "Image_credit": "sample credit",
         "Dishes_to_try": "Vegan jalapeno cheese whiz tots, fried pickle-topped “chickn” sammy, inventive drinks like the cotton candy-laced Cosmo Cloud",
         "Go_for": "A playful and affordable night out, especially on Meatless Mondays",
-        "Something_to_note": "",
+        "Something_to_note": "Tattooed Mom’s menu contains half vegan eats and half non-vegan bites. Choose wisely, but they all are Instagram-ready.",
         "text": [
           {
             "type": "text",
-            "value": "A South Street staple since 1997, Tattooed Mom’s kitchen turns out bar food for vegans and for carnivores (about half and half), making it the perfect hangout for eaters of all stripes. The vegan menu is thanks in part to staff members changing their own diets. Although it’s namesake caters to “cool moms,” this colorful bar is far from a parents spot. It has plenty of bar food that people with dietary restrictions can enjoy — there are even specials like Meatless Mondays (half off the full plant-based menu) and taco Tuesdays. It also boasts a late night happy hour from 10-11pm every day, perfect for a late night snack and drink. Make sure you check out their specials for the night before you go!"
+            "value": "A South Street staple since 1997, Tattooed Mom’s kitchen turns out bar food for vegans and for carnivores, making it the perfect hangout for eaters of all stripes. The vegan menu is thanks in part to staff members changing their own diets. Although it’s namesake caters to “cool moms,” this colorful bar is far from a parents spot. It has plenty of bar food that people with dietary restrictions can enjoy — there are even specials like Meatless Mondays (half off the full plant-based menu) and taco Tuesdays. It also boasts a late night happy hour from 10-11pm every day, perfect for a late night snack and drink. Make sure you check out their specials for the night before you go!"
           }
         ]
       },
@@ -78,10 +78,15 @@
       {
         "Name": "The Tasty",
         "Filters": "Vegan, Dairy-free, Gluten-free",
-        "Dishes_to_try": "Try their waffles or their hearty and best-selling deluxe breakfast burrito. Co-owner Sofia Baltopoulos says you can order the deluxe burrito as a tot bowl —  the secret menu item is all of the fillings and toppings for the burrito served over a big bowl of tater tots.Their rotating pastry options are often a hit as well.",
+        "Dishes_to_try": "Try their waffles or their hearty and best-selling deluxe breakfast burrito. Co-owner Sofia Baltopoulos says you can order the deluxe burrito as a tot bowl —  the secret menu item is all of the fillings and toppings for the burrito served over a big bowl of tater tots.",
         "Go_for": "A low-key breakfast or lunch with a classic diner no-frills vibe",
-        "Something_to_note": "Baltopoulos said she noticed there were an abundance of diners in the area, but none with more than one or two vegan options. This prompted Baltopoulos and her business partner Kate to open the Tasty three years ago.The Tasty is 100% vegan, and also offers an additional gluten-free menu — not everything can be made gluten-free, but there a quite a few options, including gluten-free bread and buns.",
-        "text": []
+        "Something_to_note": "The Tasty is 100% vegan, and also offers an additional gluten-free menu — not everything can be made gluten-free, but there a quite a few options, including gluten-free bread and buns.",
+        "text": [
+          {
+            "type": "text",
+            "value": "Baltopoulos said she noticed there were an abundance of diners in the area, but none with more than one or two vegan options. This prompted Baltopoulos and her business partner Kate to open the Tasty three years ago. “We wanted to come up with an idea that really fit the space, so we looked at diner menus from all over and made vegan versions of all of the dishes,” she said. “We wanted to have a space where everyone and anyone could come and enjoy the food in a relaxed environment.” The Tasty certainly does this — if you stop by the South Philly vegan staple you’ll feel right at home with their swivel bar chairs and classic trays and booths. With options from custom coffee drinks, to colorful donuts and pastries, you cannot go wrong by visiting this down-to-earth diner."
+          }
+        ]
       },
       {
         "Name": "Dim Sum House by Jane G’s",
@@ -117,7 +122,11 @@
         "text": [
           {
             "type": "text",
-            "value": "This bakery should be your go-to spot for a dietary restriction birthday celebration, and at all times you’ll find cookies, bars, cupcakes, and more available at their small South Street hub. You can place an order over the phone by looking at their website’s menu, or roll the dice and pop in to see what’s in store. Sweet Freedom even ships and delivers, making it impossible to pass up these sugary treats!"
+            "value": "Sweet Freedom brands itself as Philadelphia’s first all around dietary restriction friendly bakery, and it’s easy to see how this is true — it’s extremely difficult to build a bakery around that many restrictions. But somehow, <a href=\"https://www.inquirer.com/philly/entertainment/20101121_Sweet_Freedom_bakery_on_South_Street__vegan_and_gluten-free.html\">this quiet South Street joint</a> manages to do it, with plenty of sugar, icing, and substitutions along the way, that will make you forget the seemingly key ingredients they pass over. Sweet Freedom removes dairy, animal, and gluten products by replacing them with a variety of ingredients, many of them coconut products, — oil, milk, and sugar — sorghum flour, potato starch, rice flour, and cocoa powder for sweetness."
+          },
+          {
+            "type": "text",
+            "value": "This bakery should be your go-to spot for a dietary restriction birthday celebration, and at all times you’ll find cookies, bars, cupcakes, and more available at their small hub (there’s another location in Bryn Mawr). Whether you’re a chocolate fan or a fruit fan, there’s something here for you. Their fruit oat crumble bars pass for a sweet breakfast pick, while their selection of chocolate cupcakes pack in the sugary flavor. While they have many rotating options, many involve a twist on a typical cupcake flavor, like chocolate, and making it unique by adding a filling, like in the case of the Salted Caramel cupcake. For people looking for an even sweeter fruit options the bakery even offers a rich lemon cupcake option featuring lemon flavored icing in the middle and lemon flavored frosting — yum! Sweet Freedom was even featured on the Food Network’s Cupcake Wars, and earned stellar reviews for some of their clever creations — while we won’t reveal the ending, you can check it out for yourself and stop by to see the small bakery in person. The bakery allows you to place an order over the phone by looking at their website’s menu, or roll the dice and pop in to see what’s in store. Sweet Freedom even ships and delivers, making it impossible to pass up these sugary treats!"
           }
         ]
       },
@@ -132,13 +141,13 @@
       {
         "Name": "Barra Rossa",
         "Filters": "Vegan, Dairy-free, Gluten-free, Carnivore-friendly",
-        "Dishes_to_try": "Try their vegan hemp pasta pignoli, their taco ‘meat’ pizza, and their truffle Parmesan fries.",
+        "Dishes_to_try": "Try their vegan hemp pasta pignoli and their taco ‘meat’ pizza",
         "Go_for": "Happy hour for their drink specials, and stay late for a dinner that pleases everyone.",
-        "Something_to_note": "Barra Rossa truly has it all — vegan cheese, gluten-free penne pasta and pizza crust, and ‘normal food’ for your friends. Gluten-free items are very clearly marked on the menu, and there is an entire “plant based” section dedicated to making  lives easier.",
+        "Something_to_note": "Barra Rossa truly has it all — vegan cheese, gluten-free penne pasta and pizza crust, and ‘normal food’ for your friends. Gluten-free items are very clearly marked on the menu, and there is an entire “plant based” section dedicated to making lives easier.",
         "text": [
           {
             "type": "text",
-            "value": "TK"
+            "value": "TK With Barra Rossa, you can enjoy a night out with friends at a bar, and even get deals on the plant based menu. The upscale Italian restaurant and bar offers a vegan <a href=\"https://www.inquirer.com/food/michael-klein/barra-rossa-philadelphia-happy-hour-jefferson-20190618.html\">happy hour</a> menu on Wednesday nights, from 4 p.m. to 6 p.m, and a bustling atmosphere with friendly bartenders and servers to go along with it. Additionally, hit their half-price pizza deal on Monday nights and try their vegan taco pizza made with Impossible taco “meat” with a thin crust (if you’re so inclined, try it gluten free, too) for a light meal that gives you visions of a delicious vegan taco — lettuce, vegan cheese, and “meat” — but larger, and minus the taco shell of course. But, for a slightly more filling meal, order their hemp pignoli pasta that features hemp (gluten free!) pasta noodles and showcases flavorful sundried tomatoes. While also off the plant-based menu, you’ll marvel at the heart-healthy soft noodles paired with melted vegan cheese and spinach. These noodles are an interesting shade of gray-green, but that shouldn’t deter you from ordering — it can easily go head to head with your friend’s gluten-filled pastas with cheese. Both the taco ‘meat’ pizza and hemp pasta features Violife vegan cheese, coconut oil based highly-ranked alternative. If you’re sitting down for the full experience — and the comfortable luxurious white booths and the mini chandeliers make it appealing to — make sure you and your friends order from their extensive list of appetizers, including meats and cheeses (if you can stomach it, quite literally). But here’s a tip — if you want the happy hour deals, make sure you sit at the bar, and they’ll let you order off the dinner menu too."
           }
         ]
       },
