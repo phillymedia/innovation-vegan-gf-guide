@@ -63,3 +63,39 @@ if($(".filter-item").length > 0) {
     //hide neighborhoods with no restaurants ??
   })
 }
+
+var rdata = require("../data/data.json")
+console.log(rdata.Sheet1)
+
+var icon = L.divIcon({
+    className: 'icon',
+    iconSize: 15
+  });
+
+var map = L.map('map').setView([51.505, -0.09], 13);
+var CartoDB_VoyagerLabelsUnder = L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+}).addTo(map);
+  map.scrollWheelZoom.disable();
+  var allmarkers = L.featureGroup();
+
+  rdata.Sheet1.forEach((r,i)=> {
+    var marker = L.marker([
+      r.Latitude, r.Longitude
+    ], {icon: icon}).addTo(allmarkers).bindPopup(`
+      <div class="popup-text">
+        <div class="p-name">${r.Name}</div>
+        <div class="p-text">${r.Address}</div>
+        <div class="p-text"><a href="${r.Website}">${r.Website}</a></div>
+        <div class="p-jump">Go to review</div>
+      </div>
+      `);
+    marker.data = r;
+    r.marker = marker;
+
+    allmarkers.addTo(map)
+    map.fitBounds(allmarkers.getBounds())
+
+  })

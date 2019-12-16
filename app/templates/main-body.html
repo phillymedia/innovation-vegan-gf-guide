@@ -2,7 +2,7 @@
 <div class="restaurant-wrapper" >
 
   <div class="filter-section" id = "filter-section"> <!--The Javascript goes through all filters in the doc and appends them to this section-->
-    <div class="filter-title">FILTERS:</div>
+    <div class="filter-title">ADD FILTERS:</div>
   </div>
 
 <div class = "neighborhood-section" id = "neighborhood-section">
@@ -11,6 +11,11 @@
   </div>
 </div>
 
+<div class="map-section">
+  <div class="map-outer">
+    <div class="map-inner" id="map"></div>
+  </div>
+</div>
 
 
   <div class="restaurant-list" id = "restaurant-list">
@@ -28,19 +33,9 @@
         <div class="list-item" id='{{item.Name|replace( r/[^a-z0-9]/gi , "" )}}'>
         <div class ="intro">
         <div class="r-name">
-          <a href="{{item.Website}}" target="_blank">{{item.Name}}</a>
+          {{item.Name}}
         </div>
         <div class = 'intro-info'>
-          <div class = "contact-info">
-          {% if item.Address %}<a class = 'address' target = '_blank' href="{{item.DirectionsLink}}">{{item.Address}}</a>{% endif %}
-          {% if item.Phone %} | <a href="tel:{{item.PhoneLink}}">{{item.Phone}}</a>{% endif %}
-          {% if item.Price %} | {{item.Price}}{% endif %}
-          <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class = 'address' target = '_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
-          {% if item.Phone2 %} | <a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
-
-
-          </div>
-
           {% if item.Filters %}
           <!--what does the data=filter thing do?-->
           <div class="r-filters" data-filter="{% for f in item.Filters.split(',') %}{{f}} {% endfor %}">
@@ -51,6 +46,22 @@
 
           </div>
           {% endif %}
+
+          <div class = "contact-info">
+          {% if item.Address %}<a class = 'address' target = '_blank' href="{{item.DirectionsLink}}">{{item.Address}}</a>{% endif %}
+          {% if item.Phone %}<span class="line-divide">|</span><a href="tel:{{item.PhoneLink}}">{{item.Phone}}</a>{% endif %}
+
+
+
+
+          {% if item.Website %}<span class="line-divide">|</span><a href="{{item.Website}}">{{item.Website | replace(r/(^\w+:|^)\/\// , "") | replace('www.', '') | replace(r/\/$/, '') }}</a>{% endif %}
+          {% if item.Price %}<span class="line-divide">|</span>{{item.Price}}{% endif %}
+          <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class = 'address' target = '_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
+          {% if item.Phone2 %}<span class="line-divide">|</span><a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
+
+          </div>
+
+
         </div>
 
 
@@ -71,7 +82,7 @@
           {% endif %}
 
           {% if item.photos[0]['photographer'] and item.photos[0]['credit'] %}
-              ({{item.photos[0]['photographer']}} // {{item.photos[0]['credit']}})
+              ({{item.photos[0]['photographer']}}/{{item.photos[0]['credit']}})
           {% endif %}
           {% if item.photos[0]['photographer'] and not item.photos[0]['credit']%}
               ({{item.photos[0]['photographer']}})
@@ -109,9 +120,9 @@
 
         <div class="contact-section">
 
-          {% if item.Menu %}<a class = 'menu button' href="{{item.Menu}}" target="_blank">See Menu</a>{% endif %}
+          {% if item.Menu %}<a class = 'menu button' href="{{item.Menu}}" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>{% endif %}
 
-            <a class = 'jump button' href='#filter-section'> Jump to Top </a>
+            <a class = 'jump button' href='#filter-section'><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
 
         </div>
 
