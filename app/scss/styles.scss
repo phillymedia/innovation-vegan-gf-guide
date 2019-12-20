@@ -1,4 +1,4 @@
-@import 'values';
+@import "values";
 
 .restaurant-wrapper {
   max-width: 880px;
@@ -26,7 +26,7 @@
 
     @include tablet {
       margin: 10px 0;
-    };
+    }
 
     .neighborhood-list {
       display: flex;
@@ -38,8 +38,7 @@
 
       @include tablet {
         justify-content: space-around;
-      };
-
+      }
     }
 
     .hood-item {
@@ -75,17 +74,17 @@
         align-items: center;
         justify-content: center;
         display: flex;
-        flex:0 1 40%;
+        flex: 0 1 40%;
         border-bottom: none;
         //flex: 0 0 0%;
         //padding: 0 0 20px;
-      };
+      }
       @include mobile {
         flex-wrap: wrap;
         margin-right: 0;
         //flex: 1 1 100%;
         //padding: 0 0 20px;
-      };
+      }
     }
 
     .hood-title {
@@ -98,7 +97,8 @@
     }
   }
 
-  .sticky {}
+  .sticky {
+  }
 
   .neighborhood-box {
     border-top: 40px;
@@ -113,7 +113,7 @@
     position: relative;
 
     &::before {
-      content: '';
+      content: "";
       position: absolute;
       top: -40px;
       left: 0;
@@ -121,7 +121,6 @@
       width: 100%;
       border-top: 5px solid #ccc;
     }
-
 
     &:first-child {
       &::before {
@@ -142,7 +141,7 @@
       display: inline-block;
       // border-bottom: 2px solid #eee;
       font-weight: 300;
-      letter-spacing: -.5px;
+      letter-spacing: -0.5px;
       // text-transform: uppercase;
       //border-radius: 5px;
     }
@@ -170,7 +169,7 @@
       margin: 15px 0;
       padding: 0;
       //padding: 0 0 20px;
-    };
+    }
     @include mobile {
       flex-wrap: wrap;
       position: static;
@@ -178,11 +177,11 @@
       display: block;
       //flex: 1 1 100%;
       //padding: 0 0 20px;
-    };
+    }
 
     .filter-title {
       // margin-right: 10px;
-      flex:1 1 100%;
+      flex: 1 1 100%;
       padding: 0;
       text-transform: capitalize;
       font-weight: 300;
@@ -209,28 +208,28 @@
       align-items: center;
       justify-content: center;
       /* Rectangle 2: */
-      background: #E4E7EB;
-      box-shadow: 0 2px 0 0 #CBD2D9;
+      background: #e4e7eb;
+      box-shadow: 0 2px 0 0 #cbd2d9;
       border-radius: 3px;
       @include tablet {
         flex-wrap: wrap;
         margin-right: 0;
-        flex:0 1 auto;
+        flex: 0 1 auto;
         padding: 6px 15px 4px 15px;
         //flex: 0 0 0%;
         //padding: 0 0 20px;
-      };
+      }
       @include mobile {
         flex-wrap: wrap;
         margin-right: 0;
         //flex: 1 1 100%;
         //padding: 0 0 20px;
-      };
+      }
 
       &.selected-filter {
         /* Rectangle 2: */
         background: #006699;
-        box-shadow: 0 2px 0 0 #1F2933;
+        box-shadow: 0 2px 0 0 #1f2933;
         border-radius: 3px;
         //background: $philly-gray;
         color: white;
@@ -242,20 +241,21 @@
         background: transparent;
         font-weight: normal;
         // text-decoration: underline;
-        box-shadow: 0 2px 0 0 rgba(#CBD2D9,.3);
-        background: rgba(#CBD2D9,.3);
+        // box-shadow: 0 2px 0 0 rgba(#cbd2d9, 0.3);
+        // background: rgba(#cbd2d9, 0.3);
         color: #444;
         font-weight: bold;
         flex: 0 1 auto;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 0;
 
         @include tablet {
-          flex:1 1 100%;
+          flex: 1 1 100%;
           background: none;
           box-shadow: none;
-        };
+        }
       }
     }
     // .filter-item:hover{
@@ -301,7 +301,7 @@
       @include tablet {
         flex-wrap: wrap;
         margin-bottom: 30px;
-      };
+      }
 
       .intro {
         flex-wrap: wrap;
@@ -326,7 +326,7 @@
               // border-radius: 25px;
               // font-size: 14px;
               text-transform: uppercase;
-              letter-spacing: .5px;
+              letter-spacing: 0.5px;
               font-size: 15px;
               color: #444;
               flex: 0 0 auto;
@@ -350,7 +350,6 @@
         color: #222;
         a {
         }
-
       }
 
       p {
@@ -364,7 +363,7 @@
           flex: 1 1 100%;
           padding: 0 0 20px;
           order: 2;
-        };
+        }
       }
 
       .r-text {
@@ -393,13 +392,13 @@
           max-width: 100%;
           margin-left: 0;
           margin-bottom: 10px;
-        };
+        }
         @include mobile {
           float: none;
           max-width: 100%;
           margin-left: 0;
           margin-bottom: 10px;
-        };
+        }
 
         .img-credit {
           color: #666;
@@ -421,7 +420,7 @@
             //border: 4px solid white;
             @include tablet {
               border: none;
-            };
+            }
           }
         }
       }
@@ -497,7 +496,7 @@
   background: #eee;
 
   .icon {
-    background: rgba(#006699,0.7);
+    background: rgba(#006699, 0.7);
     border: 1px solid #ffffff;
     border-radius: 100%;
   }
@@ -519,20 +518,20 @@
   font-family: $philly-sans;
   font-size: 13px;
   line-height: 1.5;
-.p-name {
-font-size: 15px;
-font-weight: bold;
-}
-.p-text {
-  margin-bottom: 5px;
-}
+  .p-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .p-text {
+    margin-bottom: 5px;
+  }
 
-.p-jump {
-  margin-top: 5px;
-  font-weight: bold;
-  text-align: center;
-  border-top: 1px solid #eee;
-  padding-top: 5px;
-  cursor: pointer;
-}
+  .p-jump {
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    cursor: pointer;
+  }
 }

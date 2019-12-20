@@ -1,9 +1,12 @@
 <div class = 'body-wrapper'>
 <div class="restaurant-wrapper" >
 
-  <div class="filter-section" id = "filter-section"> <!--The Javascript goes through all filters in the doc and appends them to this section-->
-    <div class="filter-title">ADD FILTERS:</div>
+  <div class="map-section">
+    <div class="map-outer">
+      <div class="map-inner" id="map"></div>
+    </div>
   </div>
+
 
 <div class = "neighborhood-section" id = "neighborhood-section">
   <div class = 'hood-title'>JUMP TO A NEIGHBORHOOD: </div>
@@ -11,12 +14,9 @@
   </div>
 </div>
 
-<div class="map-section">
-  <div class="map-outer">
-    <div class="map-inner" id="map"></div>
-  </div>
+<div class="filter-section" id = "filter-section"> <!--The Javascript goes through all filters in the doc and appends them to this section-->
+  <div class="filter-title">ADD FILTERS:</div>
 </div>
-
 
   <div class="restaurant-list" id = "restaurant-list">
     {% for neighborhood, neighborlist in neighborlist | groupby("Neighborhood") %}
