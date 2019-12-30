@@ -54,7 +54,7 @@
       margin: 8px;
       margin-bottom: 5px;
       padding: 0 3px 2px 3px;
-      border-bottom: 2px solid #ccc;
+      border-bottom: 2px solid #eee;
 
       a {
         color: #333;
@@ -119,13 +119,13 @@
       left: 0;
       right: 0;
       width: 100%;
-      border-top: 5px solid #ccc;
+      border-top: 5px solid #eee;
     }
 
     &:first-child {
       &::before {
-        top: -30px;
-        border-top: 2px solid #ccc;
+        // top: -30px;
+        border: none;
       }
     }
 
@@ -241,7 +241,10 @@
         background: transparent;
         font-weight: normal;
         // text-decoration: underline;
-        // box-shadow: 0 2px 0 0 rgba(#cbd2d9, 0.3);
+        box-shadow: 0 2px 0 0 rgba(#006699, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-left: 10px;
         // background: rgba(#cbd2d9, 0.3);
         color: #444;
         font-weight: bold;
@@ -533,5 +536,240 @@
     border-top: 1px solid #eee;
     padding-top: 5px;
     cursor: pointer;
+  }
+}
+
+p {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: none;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  font-family: $philly-sans;
+
+  // margin-bottom: 20px;
+  overflow-x: hidden;
+
+  .flexSpacer {
+    flex: 1 1 10%;
+
+    @include tablet {
+      flex: 0 0 15px;
+    }
+
+
+    @include mobile {
+      flex: 0 0 15px;
+    }
+  }
+
+  .flexMainCol {
+    flex: 1 1 80%;
+
+    .text-wrap {
+      max-width: 750px;
+      margin: auto;
+    }
+  }
+}
+
+h2 {
+  @include mobile {
+    font-size: 30px;
+  }
+
+
+  text-align: center;
+  font-family: $philly-sans;
+  font-size: 35px;
+  color: #3b3b3b;
+  font-weight: normal;
+
+  span {
+    @include mobile {
+      max-width: 90px;
+    }
+
+
+    display: block;
+    max-width: 150px;
+    margin: auto;
+  }
+}
+
+.hero {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 10px;
+  }
+
+
+  .heroImage {
+    margin: 0 auto;
+    max-height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    // margin-top: 30px;
+
+    &.small-cutout {
+      max-height: none;
+      display: block;
+      margin-top: 30px;
+
+      img {
+        max-width: 320px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+
+      // max-width: 320px;
+
+    }
+
+    @include mobile {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+
+    @include BS-large {
+      max-height: 76vh;
+    }
+  }
+
+  .heroCredit {
+    text-align: right;
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+    line-height: normal;
+    color: #222;
+    font-weight: 900;
+    letter-spacing: normal;
+    line-height: 1.2;
+
+    // font-family: $philly-sans;
+    padding-bottom: 20px;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px;
+
+    @include tablet {
+      font-size: 48px;
+    }
+
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  .extratop {
+    margin-top: 20px;
+    font-size: 75px;
+
+    @include tablet {
+      font-size: 55px;
+    }
+
+
+    @include mobile {
+      font-size: 50px;
+      margin-top: 8px;
+    }
+  }
+
+  .headlinedescript {
+    font-size: 26px;
+    font-family: $philly-sans;
+    font-weight: 100;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .subHead {
+    margin-top: 30px;
+
+    // padding-bottom: 10px;
+    margin-bottom: 0;
+    color: #333;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+
+    // font-family: $philly-sans;
+    // font-weight: bold;
+    // text-transform: uppercase;
+    // font-style: italic;
+    // letter-spacing: 1px;
+    line-height: 1;
+    padding-bottom: 25px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid rgba($philly-blue, 0.2);
+
+      // color: philly-blue;
+
+      &:hover {
+        color: $philly-blue;
+        border-bottom: 2px solid rgba($philly-blue, 0.4);
+      }
+    }
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+
+    @include mobile {
+      font-size: 18px;
+      color: gray;
+      letter-spacing: 0;
+
+      // max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      line-height: 1.3;
+      padding-bottom: 15px;
+      padding-top: 10px;
+    }
+  }
+
+  p {
+    font-family: $philly-sans;
+    line-height: 1.3;
+  }
+
+  .heroText {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
   }
 }
