@@ -30,7 +30,8 @@
     "babel-core": "^6.26.0",
     "babelify": "^8.0.0",
     "googleapis": "^39.2.0",
-    "gootenberg": "^1.0.0"
+    "gootenberg": "^1.4.2",
+    "marked": "^0.8.0"
   },
   "browserslist": [
     ">1%",

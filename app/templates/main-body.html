@@ -1,57 +1,108 @@
-<div class = 'body-wrapper'>
-<div class="restaurant-wrapper" >
+<div class="flexRow ">
+  <div class="flexSpacer"></div>
+  <div class="flexMainCol">
+    <div class="hero">
+      <!-- <div class="heroImage "><img src="https://www.inquirer.com/resizer/8TkpEU9e09BB2nZTaeAmh-DsnVM=/arc-anglerfish-arc2-prod-pmn/public/E4B5K6RTQNBQLJWWLTMLL7P4KY.jpg" alt=""></div>
+      <div class="heroCredit">Rabbit cassoulet is pictured at Forsythia in Philadelphia's Old City on Friday, Nov. 1, 2019. (TIM TAI / Staff Photographer)</div> -->
 
-  <div class="filter-section" id = "filter-section"> <!--The Javascript goes through all filters in the doc and appends them to this section-->
-    <div class="filter-title">FILTERS:</div>
+      <div class="heroTitle">Guide to eating vegan and gluten-free in Philadelphia</div>
+      <div class="byline"></div>
+      <div class="byline font-light spaced spaced-top spaced-sm">
+        <a href="https://www.inquirer.com/author/laban_craig/">
+          <span class="byline-name font-bold">by Xxxxx Xxxxx</span></a>, Xxxxx XX, 2019</div>
+      <div id="newSocialShare">
+        <div id="share-bar-inline" class="leaf-page-share leaf-page-inner">
+          <div id="share-bar-bottom" class="viafoura">
+            <div id="vf-share-bar" class="vf-widget vf-share-bar-default vf-share-bar-bw font--primary" data-widget="sharebar" data-button-view="false" data-show-labels="false" data-show-counters="false" data-show-total="false"></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-
-<div class = "neighborhood-section" id = "neighborhood-section">
-  <div class = 'hood-title'>JUMP TO A NEIGHBORHOOD: </div>
-  <div class = "neighborhood-list">
-  </div>
+  <div class="flexSpacer"></div>
 </div>
+<div class="flexRow">
+  <div class="flexSpacer"></div>
+  <div class="flexMainCol">
+    <div class="text-wrap">
+      {% for item in intro.intro %}
+      <p>{{item.value | md}}</p>
+
+      {% endfor %}
+
+
+    </div>
+  </div>
+  <div class="flexSpacer"></div>
+</div>
+<div class='body-wrapper'>
+  <div class="restaurant-wrapper">
+
+    <div class="map-section">
+      <div class="map-outer">
+        <div class="map-inner" id="map"></div>
+      </div>
+    </div>
+
+
+    <div class="neighborhood-section" id="neighborhood-section">
+      <div class='hood-title'>JUMP TO A NEIGHBORHOOD: </div>
+      <div class="neighborhood-list">
+      </div>
+    </div>
+
+    <div class="filter-section" id="filter-section">
+      <!--The Javascript goes through all filters in the doc and appends them to this section-->
+      <div class="filter-title">ADD FILTERS:</div>
+    </div>
+
+    <div class="restaurant-list" id="restaurant-list">
+      {% for neighborhood, neighborlist in neighborlist | groupby("Neighborhood") %}
+      <!--<div id="mapid" style = "height:180px;"></div>-->
+
+      <!--Language used to add variables to HTML is called nunjucks-->
+      <!--archie is json object with restaurant data from the Archie doc-->
+
+      <div class='neighborhood-box' id='{{neighborhood|replace( r/[^a-z0-9]/gi , "")}}'>
+        <span>
+          <h3 class="neighborhood-name">{{neighborhood}}</h3>
+        </span>
+      </div>
+      {% for item in neighborlist %}
+
+      <div class="list-item" id='{{item.Name|replace( r/[^a-z0-9]/gi , "" )}}'>
+        <div class="intro">
+          <div class="r-name">
+            {{item.Name}}
+          </div>
+          <div class='intro-info'>
+            {% if item.Filters %}
+            <!--what does the data=filter thing do?-->
+            <div class="r-filters" data-filter="{% for f in item.Filters.split(',') %}{{f}} {% endfor %}">
+
+              {% for f in item.Filters.split(',') %}
+              <li class='{{f|replace( " " , "")}}'>{{f}}</li>
+              {% endfor %}
+
+            </div>
+            {% endif %}
+
+            <div class="contact-info">
+              {% if item.Address %}<a class='address' target='_blank' href="{{item.DirectionsLink}}">{{item.Address}}</a>{% endif %}
+              {% if item.Phone %}<span class="line-divide">|</span><a href="tel:{{item.PhoneLink}}">{{item.Phone}}</a>{% endif %}
 
 
 
-  <div class="restaurant-list" id = "restaurant-list">
-    {% for neighborhood, neighborlist in neighborlist | groupby("Neighborhood") %}
-     <!--<div id="mapid" style = "height:180px;"></div>-->
 
-    <!--Language used to add variables to HTML is called nunjucks-->
-   <!--archie is json object with restaurant data from the Archie doc-->
+              {% if item.Website %}<span class="line-divide">|</span><a href="{{item.Website}}">Restaurant website</a>{% endif %}
+              {% if item.Price %}<span class="line-divide">|</span>{{item.Price}}{% endif %}
+              <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class='address' target='_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
+              {% if item.Phone2 %}<span class="line-divide">|</span><a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
 
-        <div class = 'neighborhood-box' id = '{{neighborhood|replace( r/[^a-z0-9]/gi , "")}}'>
-          <span><h3 class="neighborhood-name" >{{neighborhood}}</h3></span>
-        </div>
-        {% for item in neighborlist %}
-
-        <div class="list-item" id='{{item.Name|replace( r/[^a-z0-9]/gi , "" )}}'>
-        <div class ="intro">
-        <div class="r-name">
-          <a href="{{item.Website}}" target="_blank">{{item.Name}}</a>
-        </div>
-        <div class = 'intro-info'>
-          <div class = "contact-info">
-          {% if item.Address %}<a class = 'address' target = '_blank' href="{{item.DirectionsLink}}">{{item.Address}}</a>{% endif %}
-          {% if item.Phone %} | <a href="tel:{{item.PhoneLink}}">{{item.Phone}}</a>{% endif %}
-          {% if item.Price %} | {{item.Price}}{% endif %}
-          <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class = 'address' target = '_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
-          {% if item.Phone2 %} | <a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
+            </div>
 
 
           </div>
-
-          {% if item.Filters %}
-          <!--what does the data=filter thing do?-->
-          <div class="r-filters" data-filter="{% for f in item.Filters.split(',') %}{{f}} {% endfor %}">
-
-            {% for f in item.Filters.split(',') %}
-            <li class = '{{f|replace( " " , "")}}'>{{f}}</li>
-            {% endfor %}
-
-          </div>
-          {% endif %}
-        </div>
 
 
         </div>
@@ -60,26 +111,26 @@
 
           <div class="img-wrapper">
             {% if item.photos[0]['url'] %}
-                <img src="{{item.photos[0]['url']}}" alt="">
+            <img src="{{item.photos[0]['url']}}" alt="">
             {% endif %}
-         </div>
+          </div>
 
-        <div class="img-credit">
+          <div class="img-credit">
 
-          {% if item.photos[0]['caption'] %}
+            {% if item.photos[0]['caption'] %}
             {{item.photos[0]['caption']}}
-          {% endif %}
+            {% endif %}
 
-          {% if item.photos[0]['photographer'] and item.photos[0]['credit'] %}
-              ({{item.photos[0]['photographer']}} // {{item.photos[0]['credit']}})
-          {% endif %}
-          {% if item.photos[0]['photographer'] and not item.photos[0]['credit']%}
-              ({{item.photos[0]['photographer']}})
-          {% endif %}
-          {% if (not item.photos[0]['photographer']) and (item.photos[0]['credit'])%}
-              ({{item.photos[0]['credit']}})
-          {% endif %}
-        </div>
+            {% if item.photos[0]['photographer'] and item.photos[0]['credit'] %}
+            ({{item.photos[0]['photographer']}}/{{item.photos[0]['credit']}})
+            {% endif %}
+            {% if item.photos[0]['photographer'] and not item.photos[0]['credit']%}
+            ({{item.photos[0]['photographer']}})
+            {% endif %}
+            {% if (not item.photos[0]['photographer']) and (item.photos[0]['credit'])%}
+            ({{item.photos[0]['credit']}})
+            {% endif %}
+          </div>
         </div>
 
         <div class="r-gofor">
@@ -100,7 +151,7 @@
         </div>
         {% endif %}
 
-        <br>
+        <!-- <br> -->
         <div class="r-note">
           <strong>A tip</strong>{{item.Something_to_note}}
         </div>
@@ -109,9 +160,9 @@
 
         <div class="contact-section">
 
-          {% if item.Menu %}<a class = 'menu button' href="{{item.Menu}}" target="_blank">See Menu</a>{% endif %}
+          {% if item.Menu %}<a class='menu button' href="{{item.Menu}}" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>{% endif %}
 
-            <a class = 'jump button' href='#filter-section'> Jump to Top </a>
+          <a class='jump button' href='#filter-section'><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
 
         </div>
 
@@ -121,19 +172,19 @@
 
 
 
-        </div>
+      </div>
 
 
 
-        {% endfor %}
-    {% endfor %}
+      {% endfor %}
+      {% endfor %}
 
+
+    </div>
 
   </div>
 
-</div>
-
-<!-- Make sure you put this AFTER Leaflet's CSS
+  <!-- Make sure you put this AFTER Leaflet's CSS
 <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"
   integrity="sha512-GffPMF3RvMeYyc1LWMHtK8EbPv0iNZ8/oTtHPx9/cc2ILxQ+u905qIwdpULaqDkyBKgOaB57QTMg7ztg8Jm2Og=="
   crossorigin=""></script>-->

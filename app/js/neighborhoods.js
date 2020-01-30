@@ -47,4 +47,4 @@ hood_arrays.each(function(f){
 // console.log(hoods)
 
 
-$(".neighborhood-list").append(`${hoods.map(hood => (`<div class="hood-item" ><a class='jump' href="#${hood.replace(/[^a-z0-9]/gi , "")}">${hood}</a></div>`)).join('|')}`)
+$(".neighborhood-list").append(`${hoods.map(hood => (`<div class="hood-item" ><a class='jump' href="#${hood.replace(/[^a-z0-9]/gi , "")}">${hood}</a></div>`)).join('')}`)

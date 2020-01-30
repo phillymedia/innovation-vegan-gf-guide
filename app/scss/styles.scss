@@ -1,407 +1,770 @@
-@import 'values';
+@import "values";
 
 .restaurant-wrapper {
   max-width: 880px;
   margin: auto;
+  font-family: $philly-sans;
 
+  a {
+    cursor: pointer;
+    color: #333;
+    box-shadow: inset -2px -3px 0 -2px #ccc;
+    transition: box-shadow 0.3s cubic-bezier(0.86, 0, 0.07, 1);
 
-  .neighborhood-section{
+    &:hover {
+      box-shadow: inset -2px -20px 0 -3px #eee;
+      text-decoration: none;
+    }
+  }
+
+  .neighborhood-section {
     text-align: center;
-    border: 10px 0px;
+    border: 10px 0;
     margin: 30px auto;
     font-size: 16px;
     box-sizing: border-box;
 
-    .neighborhood-list{
+    @include tablet {
+      margin: 10px 0;
+    }
+
+    .neighborhood-list {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
-      justify-content:center;
-      padding: 15px;
+      justify-content: center;
+      // padding: 15px;
       box-sizing: border-box;
+
+      @include tablet {
+        justify-content: space-around;
+      }
     }
 
+    .hood-item {
+      text-transform: capitalize;
+      flex-wrap: wrap;
+      flex: 0 0 auto;
+      // margin-top: 5px;
+      // margin-bottom: 5px;
+      // padding: 5px;
+      // font-weight: 900;
+      text-align: center;
+      cursor: pointer;
+      margin: 8px;
+      margin-bottom: 5px;
+      padding: 0 3px 2px 3px;
+      border-bottom: 2px solid #eee;
 
-    .hood-item{
-          text-transform: capitalize;
-          flex-wrap: wrap;
-          flex: 0 0 auto;
-          margin-top: 5px;
-          margin-bottom: 5px;
-          padding: 5px;
-          font-weight: 900;
-          text-align: center;
-          cursor: pointer;
+      a {
+        color: #333;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: none;
 
-          @include tablet {
-            flex-wrap: wrap;
-            margin-right: 0;
-            //flex: 0 0 0%;
-            //padding: 0 0 20px;
-          };
-
-          @include mobile {
-            flex-wrap: wrap;
-            margin-right: 0;
-            //flex: 1 1 100%;
-            //padding: 0 0 20px;
-          };
-
+        &:hover {
+          text-decoration: none;
+          color: #c00;
+        }
+      }
+      @include tablet {
+        flex-wrap: wrap;
+        margin-right: 0;
+        align-self: stretch;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex: 0 1 40%;
+        border-bottom: none;
+        //flex: 0 0 0%;
+        //padding: 0 0 20px;
+      }
+      @include mobile {
+        flex-wrap: wrap;
+        margin-right: 0;
+        //flex: 1 1 100%;
+        //padding: 0 0 20px;
+      }
     }
 
     .hood-title {
-
       padding: 0;
+      padding-bottom: 5px;
       text-transform: capitalize;
+      font-weight: 300;
+      @include fontSmoothing;
+      color: #666;
+    }
+  }
+
+  .sticky {
+  }
+
+  .neighborhood-box {
+    border-top: 40px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    // border-bottom: 3px solid black;
+    background: #fff;
+    padding: 5px;
+    width: auto;
+    height: auto;
+    text-align: center;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: -40px;
+      left: 0;
+      right: 0;
+      width: 100%;
+      border-top: 5px solid #eee;
     }
 
+    &:first-child {
+      &::before {
+        // top: -30px;
+        border: none;
+      }
+    }
+
+    // top: 0;
+    // position: sticky;
+    h3.neighborhood-name {
+      //margin-left: 10px;
+      padding: 0 40px 10px 40px;
+      //background: #eee;
+      font-family: $philly-sans;
+      font-size: 34px;
+      text-align: center;
+      display: inline-block;
+      // border-bottom: 2px solid #eee;
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      // text-transform: uppercase;
+      //border-radius: 5px;
+    }
+    @include mobile {
+      position: static;
+    }
   }
 
-.sticky{
-}
-
-.neighborhood-box{
-
-  border-top: 40px;
-  margin-top: 0px;
-  margin-bottom: 10px;
-  border-bottom: 3px solid black;
-  background: #fff;
-  padding: 5px;
-  width: auto;
-  height: auto;
-  // top: 0;
-  // position: sticky;
-
-  h3.neighborhood-name {
-    //margin-left: 10px;
-    padding: 15px 15px 5px 15px;
-    //background: #eee;
-    font-family: $philly-serif, serif;
-    text-transform: uppercase;
-    //border-radius: 5px;
-
-  }
-
-  @include mobile{
-    position: static;
-  }
-
-}
-
-
-
-.filter-section {
-  display: flex;
-  align-items: center;
-  margin: 45px 30px;
-  font-size: 16px;
-  justify-content: space-around;
-  padding: 15px;
-  border-radius: 5px;
-  background: #eee;
-  box-shadow: 0 2px 2px rgba(black,0.4);
-  box-sizing: border-box;
-  //font-family: $philly-sans;
-
-  @include tablet {
+  .filter-section {
+    display: flex;
+    align-items: stretch;
+    margin: 20px 10px;
+    font-size: 16px;
+    justify-content: center;
+    padding: 15px;
+    // border-radius: 5px;
+    // background: #eee;
+    // box-shadow: 0 2px 2px rgba(black,0.4);
+    box-sizing: border-box;
+    //font-family: $philly-sans;
     flex-wrap: wrap;
-    flex: 1 1 100%;
-    //padding: 0 0 20px;
-  };
-
-  @include mobile {
-    flex-wrap: wrap;
-    position: static;
-    justify-content: flex-start;
-    display: block;
-    //flex: 1 1 100%;
-    //padding: 0 0 20px;
-  };
-
-  .filter-title {
-    margin-right: 10px;
-    padding: 0;
-    text-transform: capitalize;
-  }
-
-
-  .filter-item {
-
-    //flex: 0 0 auto;
-    flex: 0 auto auto; //check
-    margin: 5px 5px;
-    padding: 5px;
-    background: #fff;
-    //box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.5);
-    font-weight: 900;
-    border-radius: 15px;
-    text-align: center;
-    cursor: pointer;
-
     @include tablet {
       flex-wrap: wrap;
-      margin-right: 0;
-      //flex: 0 0 0%;
+      flex: 1 1 100%;
+      margin: 15px 0;
+      padding: 0;
       //padding: 0 0 20px;
-    };
-
+    }
     @include mobile {
       flex-wrap: wrap;
-      margin-right: 0;
+      position: static;
+      justify-content: flex-start;
+      display: block;
       //flex: 1 1 100%;
       //padding: 0 0 20px;
-    };
-
-
-    &.selected-filter {
-      background: black;
-      //background: $philly-gray;
-      color: white;
     }
 
-    //the clear filters item isn't nested within filter item, it's just
-    //ALSO a class name (thus the & symbol)
-    &.ClearFilters{
-      border: none;
-      background: transparent;
-      font-weight: normal;
-      text-decoration: underline;
-
+    .filter-title {
+      // margin-right: 10px;
+      flex: 1 1 100%;
+      padding: 0;
+      text-transform: capitalize;
+      font-weight: 300;
+      @include fontSmoothing;
+      color: #666;
+      text-align: center;
+      margin-bottom: 10px;
     }
+
+    .filter-item {
+      //flex: 0 0 auto;
+      flex: 0 1 auto; //check
+      margin: 0 3px 6px 3px;
+      padding: 6px 10px 4px 10px;
+      color: #111;
+      background: #ffcc99;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+      font-weight: bold;
+      letter-spacing: 0.2px;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      /* Rectangle 2: */
+      background: #e4e7eb;
+      box-shadow: 0 2px 0 0 #cbd2d9;
+      border-radius: 3px;
+      @include tablet {
+        flex-wrap: wrap;
+        margin-right: 0;
+        flex: 0 1 auto;
+        padding: 6px 15px 4px 15px;
+        //flex: 0 0 0%;
+        //padding: 0 0 20px;
+      }
+      @include mobile {
+        flex-wrap: wrap;
+        margin-right: 0;
+        //flex: 1 1 100%;
+        //padding: 0 0 20px;
+      }
+
+      &.selected-filter {
+        /* Rectangle 2: */
+        background: #006699;
+        box-shadow: 0 2px 0 0 #1f2933;
+        border-radius: 3px;
+        //background: $philly-gray;
+        color: white;
+      }
+      //the clear filters item isn't nested within filter item, it's just
+      //ALSO a class name (thus the & symbol)
+      &.ClearFilters {
+        border: none;
+        background: transparent;
+        font-weight: normal;
+        // text-decoration: underline;
+        box-shadow: 0 2px 0 0 rgba(#006699, 0.3);
+        padding-left: 4px;
+        padding-right: 4px;
+        margin-left: 10px;
+        // background: rgba(#cbd2d9, 0.3);
+        color: #444;
+        font-weight: bold;
+        flex: 0 1 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+
+        @include tablet {
+          flex: 1 1 100%;
+          background: none;
+          box-shadow: none;
+        }
+      }
+    }
+    // .filter-item:hover{
+    //
+    //     background: $philly-darkgray;
+    //     color: white;
+    //
+    //     &.ClearFilters{
+    //       border: none;
+    //       background: transparent;
+    //       font-weight: normal;
+    //       text-decoration: underline;
+    //       color: black;
+    //
+    //     }
+    //
+    //     @include mobile{
+    //       background: #fff;
+    //       color: black;
+    //     }
+    //
+    //     @include tablet{
+    //       background: #fff;
+    //       color: black;
+    //     }
+    //
+    // }
+    // .filter-item:hover{
+    //   background-color: #E8E8E8;
+    // }
   }
 
-  // .filter-item:hover{
-  //
-  //     background: $philly-darkgray;
-  //     color: white;
-  //
-  //     &.ClearFilters{
-  //       border: none;
-  //       background: transparent;
-  //       font-weight: normal;
-  //       text-decoration: underline;
-  //       color: black;
-  //
-  //     }
-  //
-  //     @include mobile{
-  //       background: #fff;
-  //       color: black;
-  //     }
-  //
-  //     @include tablet{
-  //       background: #fff;
-  //       color: black;
-  //     }
-  //
-  // }
-
-  // .filter-item:hover{
-  //   background-color: #E8E8E8;
-  // }
-}
-
-
-
-.restaurant-list {
-
-
-  .list-item {
-    margin-bottom: 0px;
-    // display: flex;
-    font-family: $philly-sans;
-    line-height: 1.5;
-    font-size: 16px;
-    flex-wrap: wrap;
-    padding: 20px 20px 0px 20px;
-    //border-bottom: 10px;
-    @include tablet {
+  .restaurant-list {
+    .list-item {
+      margin-bottom: 0;
+      // display: flex;
+      font-family: $philly-sans;
+      line-height: 1.5;
+      font-size: 16px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
-    };
-
-    .intro{
-
-      flex-wrap: wrap;
-      order: 0;
-      flex: 1 1 100%;
-
-      .intro-info{
-        margin: 10px 0 15px 0;
-
-
-      .r-filters {
-        display: flex;
-        margin: 10px 0 10px 0;
+      padding: 0 0 50px 0;
+      //border-bottom: 10px;
+      @include tablet {
         flex-wrap: wrap;
+        margin-bottom: 30px;
+      }
 
-        li {
-          margin-bottom: 10px;
-          display: block;
-          padding: 5px 8px;
-          margin-right: 10px;
-          background: #eee;
-          font-weight: bold;
-          border-radius: 25px;
-          font-size: 14px;
-          flex: 0 0 auto;
-          font-family: $philly-sans;
+      .intro {
+        flex-wrap: wrap;
+        order: 0;
+        flex: 1 1 100%;
 
+        .intro-info {
+          margin: 10px 0 30px 0;
+
+          .r-filters {
+            display: flex;
+            margin: 10px 0 5px 0;
+            flex-wrap: wrap;
+
+            li {
+              margin-bottom: 10px;
+              display: block;
+              padding: 4px 10px 3px 10px;
+              margin-right: 5px;
+              background: #eee;
+              font-weight: 900;
+              // border-radius: 25px;
+              // font-size: 14px;
+              text-transform: uppercase;
+              letter-spacing: 0.5px;
+              font-size: 15px;
+              color: #444;
+              flex: 0 0 auto;
+              font-family: $philly-sans;
+            }
+          }
+
+          .contact-info {
+            margin-left: 5px;
+
+            .address {
+              text-transform: capitalize;
+            }
+          }
         }
       }
 
-
-
-    .contact-info {
-
-      margin-left: 5px;
-      .address {
-        text-transform: capitalize;
+      .r-name {
+        font-size: 24px;
+        font-weight: bold;
+        color: #222;
+        a {
+        }
       }
-
-    }
-
-  }
-}
-
-    .r-name a {
-      font-size: 24px;
-      font-weight: 900;
-
-    }
-
-
-
-    p {
-      font-family: $philly-sans;
-    }
-
-    .flex-left {
-      flex: 1 1 40%;
-      padding-right: 10px;
-      @include tablet {
-        flex: 1 1 100%;
-        padding: 0 0 20px;
-        order: 2;
-      };
-    }
-
-    .r-text {
-      padding: 20px 0 0 0 ;
-      flex: 1 1 100%;
 
       p {
         font-family: $philly-sans;
-        //font-size: 15px;
-      }
-    }
-
-    .r-address {
-      font-size: 15px;
-      line-height: 1.4;
-      color: #444;
-    }
-
-    .float-right {
-      float: right;
-      max-width: 66%;
-      margin-left: 20px;
-      margin-bottom: 10px;
-
-      @include tablet {
-        float: none;
-        max-width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
-      };
-
-      @include mobile {
-        float: none;
-        max-width: 100%;
-        margin-left: 0;
-        margin-bottom: 10px;
-      };
-
-      .img-credit {
-        color: #666;
-        text-align: left;
-        font-size: 12px;
-        flex: 1 1 100%;
       }
 
-      .img-wrapper {
+      .flex-left {
+        flex: 1 1 40%;
+        padding-right: 10px;
+        @include tablet {
+          flex: 1 1 100%;
+          padding: 0 0 20px;
+          order: 2;
+        }
+      }
 
-        order: 1;
+      .r-text {
+        padding: 20px 0 0;
         flex: 1 1 100%;
 
-        img {
-          //display: none; //THIS IS SO BAYLISS DOESN'T GET HUNGRY, PLEASE
-          //COMMENT THIS OUT WHEN SHOWING TO PEOPLE, IT'S NOT A BUG!!!!
-          width: 100%;
-          border-radius: 5px;
-          height: auto;
-          //border: 4px solid white;
-          @include tablet {
-            border: none;
-          };
+        p {
+          font-family: $philly-sans;
+          //font-size: 15px;
+        }
+      }
+
+      .r-address {
+        font-size: 15px;
+        line-height: 1.4;
+        color: #444;
+      }
+
+      .float-right {
+        float: right;
+        max-width: 60%;
+        margin-left: 30px;
+        margin-bottom: 10px;
+        @include tablet {
+          float: none;
+          max-width: 100%;
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+        @include mobile {
+          float: none;
+          max-width: 100%;
+          margin-left: 0;
+          margin-bottom: 10px;
+        }
+
+        .img-credit {
+          color: #666;
+          text-align: left;
+          font-size: 12px;
+          flex: 1 1 100%;
+        }
+
+        .img-wrapper {
+          order: 1;
+          flex: 1 1 100%;
+
+          img {
+            //display: none; //THIS IS SO BAYLISS DOESN'T GET HUNGRY, PLEASE
+            //COMMENT THIS OUT WHEN SHOWING TO PEOPLE, IT'S NOT A BUG!!!!
+            width: 100%;
+            border-radius: 3px;
+            height: auto;
+            //border: 4px solid white;
+            @include tablet {
+              border: none;
+            }
+          }
+        }
+      }
+
+      .contact-section {
+        display: flex;
+        padding: 10px 0 0;
+        box-sizing: border-box;
+        justify-content: center;
+        clear: both;
+        @include mobile {
+          justify-content: center;
+        }
+
+        .button {
+          // text-transform: uppercase;
+          // font-weight: 500;
+          color: #444;
+          font-weight: bold;
+          //float: right;
+          // padding: 5px 10px;
+          margin: 15px 10px;
+          // background: #eee;
+          // border-radius: 5px;
+          .fa {
+            color: #999;
+          }
+          @include mobile {
+            font-weight: 750;
+          }
+        }
+      }
+
+      .r-dishes,
+      .r-gofor,
+      .r-note,
+      .r-text {
+        strong {
+          text-transform: uppercase;
+          font-weight: 900;
+          display: block;
+          font-size: 14px;
         }
       }
     }
 
+    .clear-this {
+      clear: both;
+    }
+  }
+}
 
+.map-section {
+  padding: 20px 0 40px 0;
+  position: relative;
+  display: block;
+}
 
+.map-outer {
+  width: 100%;
+  padding-bottom: 45%;
+  position: relative;
+}
 
-.contact-section {
+.map-inner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: #eee;
 
-  display: flex;
-  padding: 10px 0px 0px 0px;
-  box-sizing: border-box;
-  justify-content: flex-end;
-  clear: both;
+  .icon {
+    background: rgba(#006699, 0.7);
+    border: 1px solid #ffffff;
+    border-radius: 100%;
+  }
+}
 
-  @include mobile{
-    justify-content: center;
+.line-divide {
+  color: #ccc;
+  padding: 0 6px;
+}
+
+#map a {
+  box-shadow: unset;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 5px;
+}
+.popup-text {
+  font-family: $philly-sans;
+  font-size: 13px;
+  line-height: 1.5;
+  .p-name {
+    font-size: 15px;
+    font-weight: bold;
+  }
+  .p-text {
+    margin-bottom: 5px;
   }
 
-  .button{
-    text-transform: uppercase;
-    font-weight: 500;
-    //float: right;
-    padding: 5px 10px;
-    margin: 15px 10px;
-    background: #eee;
-    border-radius: 5px;
+  .p-jump {
+    margin-top: 5px;
+    font-weight: bold;
+    text-align: center;
+    border-top: 1px solid #eee;
+    padding-top: 5px;
+    cursor: pointer;
+  }
+}
 
-    @include mobile{
-      font-weight: 750;
+p {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: none;
+  }
+}
+
+.flexRow {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: center;
+  font-family: $philly-sans;
+
+  // margin-bottom: 20px;
+  overflow-x: hidden;
+
+  .flexSpacer {
+    flex: 1 1 10%;
+
+    @include tablet {
+      flex: 0 0 15px;
+    }
+
+    @include mobile {
+      flex: 0 0 15px;
     }
   }
 
+  .flexMainCol {
+    flex: 1 1 80%;
 
+    .text-wrap {
+      max-width: 750px;
+      margin: auto;
+    }
+  }
+}
 
-
-
+h2 {
+  @include mobile {
+    font-size: 30px;
   }
 
+  text-align: center;
+  font-family: $philly-sans;
+  font-size: 35px;
+  color: #3b3b3b;
+  font-weight: normal;
 
+  span {
+    @include mobile {
+      max-width: 90px;
+    }
 
-.r-dishes,
-.r-gofor,
-.r-note, .r-text {
-  strong {
-    text-transform: uppercase;
-    font-weight: 900;
     display: block;
-    font-size: 14px;
+    max-width: 150px;
+    margin: auto;
   }
 }
+
+.hero {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 10px;
+  }
+
+  .heroImage {
+    margin: 0 auto;
+    max-height: 60vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+
+    // margin-top: 30px;
+
+    &.small-cutout {
+      max-height: none;
+      display: block;
+      margin-top: 30px;
+
+      img {
+        max-width: 320px;
+      }
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+
+      // max-width: 320px;
+    }
+
+    @include mobile {
+      margin-left: -15px;
+      margin-right: -15px;
+    }
+
+    @include BS-large {
+      max-height: 76vh;
+    }
+  }
+
+  .heroCredit {
+    text-align: right;
+    margin-top: 4px;
+    color: #777;
+    font-size: 13px;
+  }
+
+  .heroTitle {
+    font-size: 38px;
+    line-height: normal;
+    color: #222;
+    font-weight: 900;
+    letter-spacing: normal;
+    line-height: 1.2;
+
+    // font-family: $philly-sans;
+    padding-bottom: 20px;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 30px;
+
+    @include tablet {
+      font-size: 48px;
+    }
+
+    @include mobile {
+      font-size: 40px;
+    }
+  }
+
+  .extratop {
+    margin-top: 20px;
+    font-size: 75px;
+
+    @include tablet {
+      font-size: 55px;
+    }
+
+    @include mobile {
+      font-size: 50px;
+      margin-top: 8px;
+    }
+  }
+
+  .headlinedescript {
+    font-size: 26px;
+    font-family: $philly-sans;
+    font-weight: 100;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+
+    @include mobile {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  }
+
+  .subHead {
+    margin-top: 30px;
+
+    // padding-bottom: 10px;
+    margin-bottom: 0;
+    color: #333;
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: -0.2px;
+
+    // font-family: $philly-sans;
+    // font-weight: bold;
+    // text-transform: uppercase;
+    // font-style: italic;
+    // letter-spacing: 1px;
+    line-height: 1;
+    padding-bottom: 25px;
+
+    a {
+      color: #333;
+      text-decoration: none;
+      border-bottom: 1px solid rgba($philly-blue, 0.2);
+
+      // color: philly-blue;
+
+      &:hover {
+        color: $philly-blue;
+        border-bottom: 2px solid rgba($philly-blue, 0.4);
+      }
+    }
+
+    @include tablet {
+      font-size: 18px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+      color: gray;
+      letter-spacing: 0;
+
+      // max-width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 15px;
+      line-height: 1.3;
+      padding-bottom: 15px;
+      padding-top: 10px;
+    }
+  }
+
+  p {
+    font-family: $philly-sans;
+    line-height: 1.3;
+  }
+
+  .heroText {
+    max-width: 500px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
 }
 
-.clear-this {
-  clear: both;
-}
-}
-
-
+#share-bar-inline.leaf-page-share .viafoura .vf-share-bar ul {
+  margin: auto;
 }

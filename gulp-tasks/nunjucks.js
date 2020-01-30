@@ -1,3 +1,4 @@
+var marked = require('marked');
 var nunjucksRender = require('gulp-nunjucks-html');
 var data = require("gulp-data");
 var n_order_obj = require("../neighborhood_order.json");
@@ -349,7 +350,7 @@ module.exports = function(gulp, browserSync) {
 
         return {
           // data:rdata,
-
+          intro: require('../app/data/story.json'),
           all_data: allrestaurantdata,
           neighborlist: neighborlist
         }
@@ -357,9 +358,19 @@ module.exports = function(gulp, browserSync) {
       .on('error', function(err) {
     console.log(err)
     })
-      .pipe(nunjucksRender({
-        searchPaths: ['app/templates']
-      }))
+    .pipe(
+      nunjucksRender({
+        searchPaths: ['app/templates'],
+        setUp: function(env) {
+          env.addFilter('md', function(text) {
+            if (text !== '**') {
+              return marked.inlineLexer(text, []);
+            }
+          });
+          return env;
+        },
+      })
+    )
       .on('error', function(err) {
         console.log(err)
     })
