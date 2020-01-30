@@ -387,7 +387,7 @@
 
       .float-right {
         float: right;
-        max-width: 64%;
+        max-width: 60%;
         margin-left: 30px;
         margin-bottom: 10px;
         @include tablet {
@@ -564,7 +564,6 @@ p {
       flex: 0 0 15px;
     }
 
-
     @include mobile {
       flex: 0 0 15px;
     }
@@ -585,7 +584,6 @@ h2 {
     font-size: 30px;
   }
 
-
   text-align: center;
   font-family: $philly-sans;
   font-size: 35px;
@@ -596,7 +594,6 @@ h2 {
     @include mobile {
       max-width: 90px;
     }
-
 
     display: block;
     max-width: 150px;
@@ -612,7 +609,6 @@ h2 {
   @include tablet {
     margin-bottom: 10px;
   }
-
 
   .heroImage {
     margin: 0 auto;
@@ -638,14 +634,12 @@ h2 {
       height: auto;
 
       // max-width: 320px;
-
     }
 
     @include mobile {
       margin-left: -15px;
       margin-right: -15px;
     }
-
 
     @include BS-large {
       max-height: 76vh;
@@ -677,7 +671,6 @@ h2 {
       font-size: 48px;
     }
 
-
     @include mobile {
       font-size: 40px;
     }
@@ -690,7 +683,6 @@ h2 {
     @include tablet {
       font-size: 55px;
     }
-
 
     @include mobile {
       font-size: 50px;
@@ -746,7 +738,6 @@ h2 {
       font-size: 18px;
     }
 
-
     @include mobile {
       font-size: 18px;
       color: gray;
@@ -772,4 +763,8 @@ h2 {
     margin: 0 auto;
     padding-top: 20px;
   }
+}
+
+#share-bar-inline.leaf-page-share .viafoura .vf-share-bar ul {
+  margin: auto;
 }

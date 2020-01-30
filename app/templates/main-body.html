@@ -94,7 +94,7 @@
 
 
 
-              {% if item.Website %}<span class="line-divide">|</span><a href="{{item.Website}}">{{item.Website | replace(r/(^\w+:|^)\/\// , "") | replace('www.', '') | replace(r/\/$/, '') }}</a>{% endif %}
+              {% if item.Website %}<span class="line-divide">|</span><a href="{{item.Website}}">Restaurant website</a>{% endif %}
               {% if item.Price %}<span class="line-divide">|</span>{{item.Price}}{% endif %}
               <br>{% if item.Address2 %} <span style="font-style: italic;"> Also at </span> <a class='address' target='_blank' href="{{item.DirectionsLink2}}">{{item.Address2}}</a>{% endif %}
               {% if item.Phone2 %}<span class="line-divide">|</span><a href="tel:{{item.PhoneLink2}}">{{item.Phone2}}</a>{% endif %}
@@ -151,7 +151,7 @@
         </div>
         {% endif %}
 
-        <br>
+        <!-- <br> -->
         <div class="r-note">
           <strong>A tip</strong>{{item.Something_to_note}}
         </div>
