@@ -1,6 +1,6 @@
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin>
-<style>.restaurant-wrapper{max-width:880px;margin:auto;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper a{cursor:pointer;color:#333;-webkit-box-shadow:inset -2px -3px 0 -2px #ccc;box-shadow:inset -2px -3px 0 -2px #ccc;-webkit-transition:-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1);transition:-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1);-o-transition:box-shadow .3s cubic-bezier(.86,0,.07,1);transition:box-shadow .3s cubic-bezier(.86,0,.07,1);transition:box-shadow .3s cubic-bezier(.86,0,.07,1),-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1)}.restaurant-wrapper a:hover{-webkit-box-shadow:inset -2px -20px 0 -3px #eee;box-shadow:inset -2px -20px 0 -3px #eee;text-decoration:none}.restaurant-wrapper .neighborhood-section{text-align:center;border:10px 0;margin:30px auto;font-size:16px;-webkit-box-sizing:border-box;box-sizing:border-box}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section{margin:10px 0}}.restaurant-wrapper .neighborhood-section .neighborhood-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-sizing:border-box;box-sizing:border-box}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section .neighborhood-list{-ms-flex-pack:distribute;justify-content:space-around}}.restaurant-wrapper .neighborhood-section .hood-item{text-transform:capitalize;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;text-align:center;cursor:pointer;margin:8px;margin-bottom:5px;padding:0 3px 2px 3px;border-bottom:2px solid #eee}.restaurant-wrapper .neighborhood-section .hood-item a{color:#333;font-weight:700;font-size:16px;-webkit-box-shadow:none;box-shadow:none}.restaurant-wrapper .neighborhood-section .hood-item a:hover{text-decoration:none;color:#c00}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section .hood-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0;-ms-flex-item-align:stretch;align-self:stretch;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 40%;flex:0 1 40%;border-bottom:none}}@media only screen and (max-width:480px){.restaurant-wrapper .neighborhood-section .hood-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0}}.restaurant-wrapper .neighborhood-section .hood-title{padding:0;padding-bottom:5px;text-transform:capitalize;font-weight:300;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:none;-moz-osx-font-smoothing:grayscale;color:#666}.restaurant-wrapper .neighborhood-box{border-top:40px;margin-top:0;margin-bottom:10px;background:#fff;padding:5px;width:auto;height:auto;text-align:center;position:relative}.restaurant-wrapper .neighborhood-box::before{content:"";position:absolute;top:-40px;left:0;right:0;width:100%;border-top:5px solid #eee}.restaurant-wrapper .neighborhood-box:first-child::before{border:none}.restaurant-wrapper .neighborhood-box h3.neighborhood-name{padding:0 40px 10px 40px;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:34px;text-align:center;display:inline-block;font-weight:300;letter-spacing:-.5px}@media only screen and (max-width:480px){.restaurant-wrapper .neighborhood-box{position:static}}.restaurant-wrapper .filter-section{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;margin:20px 10px;font-size:16px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:15px;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-flex-wrap:wrap;flex-wrap:wrap}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section{-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;margin:15px 0;padding:0}}@media only screen and (max-width:480px){.restaurant-wrapper .filter-section{-ms-flex-wrap:wrap;flex-wrap:wrap;position:static;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;display:block}}.restaurant-wrapper .filter-section .filter-title{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;padding:0;text-transform:capitalize;font-weight:300;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:none;-moz-osx-font-smoothing:grayscale;color:#666;text-align:center;margin-bottom:10px}.restaurant-wrapper .filter-section .filter-item{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;margin:0 3px 6px 3px;padding:6px 10px 4px 10px;color:#111;background:#fc9;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.2);box-shadow:0 2px 4px 0 rgba(0,0,0,.2);font-weight:700;letter-spacing:.2px;border-radius:3px;text-align:center;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#e4e7eb;-webkit-box-shadow:0 2px 0 0 #cbd2d9;box-shadow:0 2px 0 0 #cbd2d9;border-radius:3px}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section .filter-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;padding:6px 15px 4px 15px}}@media only screen and (max-width:480px){.restaurant-wrapper .filter-section .filter-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0}}.restaurant-wrapper .filter-section .filter-item.selected-filter{background:#069;-webkit-box-shadow:0 2px 0 0 #1f2933;box-shadow:0 2px 0 0 #1f2933;border-radius:3px;color:#fff}.restaurant-wrapper .filter-section .filter-item.ClearFilters{border:none;background:0 0;font-weight:400;-webkit-box-shadow:0 2px 0 0 rgba(0,102,153,.3);box-shadow:0 2px 0 0 rgba(0,102,153,.3);padding-left:4px;padding-right:4px;margin-left:10px;color:#444;font-weight:700;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:0}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section .filter-item.ClearFilters{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;background:0 0;-webkit-box-shadow:none;box-shadow:none}}.restaurant-wrapper .restaurant-list .list-item{margin-bottom:0;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;line-height:1.5;font-size:16px;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0 0 50px 0}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-bottom:30px}}.restaurant-wrapper .restaurant-list .list-item .intro{-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info{margin:10px 0 30px 0}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .r-filters{display:-webkit-box;display:-ms-flexbox;display:flex;margin:10px 0 5px 0;-ms-flex-wrap:wrap;flex-wrap:wrap}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .r-filters li{margin-bottom:10px;display:block;padding:4px 10px 3px 10px;margin-right:5px;background:#eee;font-weight:900;text-transform:uppercase;letter-spacing:.5px;font-size:15px;color:#444;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .contact-info{margin-left:5px}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .contact-info .address{text-transform:capitalize}.restaurant-wrapper .restaurant-list .list-item .r-name{font-size:24px;font-weight:700;color:#222}.restaurant-wrapper .restaurant-list .list-item p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .flex-left{-webkit-box-flex:1;-ms-flex:1 1 40%;flex:1 1 40%;padding-right:10px}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .flex-left{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;padding:0 0 20px;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}}.restaurant-wrapper .restaurant-list .list-item .r-text{padding:20px 0 0;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .r-text p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .r-address{font-size:15px;line-height:1.4;color:#444}.restaurant-wrapper .restaurant-list .list-item .float-right{float:right;max-width:60%;margin-left:30px;margin-bottom:10px}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .float-right{float:none;max-width:100%;margin-left:0;margin-bottom:10px}}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .float-right{float:none;max-width:100%;margin-left:0;margin-bottom:10px}}.restaurant-wrapper .restaurant-list .list-item .float-right .img-credit{color:#666;text-align:left;font-size:12px;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper img{width:100%;border-radius:3px;height:auto}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper img{border:none}}.restaurant-wrapper .restaurant-list .list-item .contact-section{display:-webkit-box;display:-ms-flexbox;display:flex;padding:10px 0 0;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;clear:both}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .contact-section{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}.restaurant-wrapper .restaurant-list .list-item .contact-section .button{color:#444;font-weight:700;margin:15px 10px}.restaurant-wrapper .restaurant-list .list-item .contact-section .button .fa{color:#999}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .contact-section .button{font-weight:750}}.restaurant-wrapper .restaurant-list .list-item .r-dishes strong,.restaurant-wrapper .restaurant-list .list-item .r-gofor strong,.restaurant-wrapper .restaurant-list .list-item .r-note strong,.restaurant-wrapper .restaurant-list .list-item .r-text strong{text-transform:uppercase;font-weight:900;display:block;font-size:14px}.restaurant-wrapper .restaurant-list .clear-this{clear:both}.map-section{padding:20px 0 40px 0;position:relative;display:block}.map-outer{width:100%;padding-bottom:45%;position:relative}.map-inner{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#eee}.map-inner .icon{background:rgba(0,102,153,.7);border:1px solid #fff;border-radius:100%}.line-divide{color:#ccc;padding:0 6px}#map a{-webkit-box-shadow:unset;box-shadow:unset}.leaflet-popup-content-wrapper{border-radius:5px}.popup-text{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:13px;line-height:1.5}.popup-text .p-name{font-size:15px;font-weight:700}.popup-text .p-text{margin-bottom:5px}.popup-text .p-jump{margin-top:5px;font-weight:700;text-align:center;border-top:1px solid #eee;padding-top:5px;cursor:pointer}p{margin-bottom:15px}p:last-child{margin-bottom:none}.flexRow{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;overflow-x:hidden}.flexRow .flexSpacer{-webkit-box-flex:1;-ms-flex:1 1 10%;flex:1 1 10%}@media only screen and (max-width:800px){.flexRow .flexSpacer{-webkit-box-flex:0;-ms-flex:0 0 15px;flex:0 0 15px}}@media only screen and (max-width:480px){.flexRow .flexSpacer{-webkit-box-flex:0;-ms-flex:0 0 15px;flex:0 0 15px}}.flexRow .flexMainCol{-webkit-box-flex:1;-ms-flex:1 1 80%;flex:1 1 80%}.flexRow .flexMainCol .text-wrap{max-width:750px;margin:auto}h2{text-align:center;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:35px;color:#3b3b3b;font-weight:400}@media only screen and (max-width:480px){h2{font-size:30px}}h2 span{display:block;max-width:150px;margin:auto}@media only screen and (max-width:480px){h2 span{max-width:90px}}.hero{width:100%;text-align:center;margin-bottom:20px}@media only screen and (max-width:800px){.hero{margin-bottom:10px}}.hero .heroImage{margin:0 auto;max-height:60vh;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.hero .heroImage.small-cutout{max-height:none;display:block;margin-top:30px}.hero .heroImage.small-cutout img{max-width:320px}.hero .heroImage img{width:100%;height:auto}@media only screen and (max-width:480px){.hero .heroImage{margin-left:-15px;margin-right:-15px}}@media only screen and (min-width:1200px){.hero .heroImage{max-height:76vh}}.hero .heroCredit{text-align:right;margin-top:4px;color:#777;font-size:13px}.hero .heroTitle{font-size:38px;line-height:normal;color:#222;font-weight:900;letter-spacing:normal;line-height:1.2;padding-bottom:20px;max-width:700px;margin:auto;margin-top:30px}@media only screen and (max-width:800px){.hero .heroTitle{font-size:48px}}@media only screen and (max-width:480px){.hero .heroTitle{font-size:40px}}.hero .extratop{margin-top:20px;font-size:75px}@media only screen and (max-width:800px){.hero .extratop{font-size:55px}}@media only screen and (max-width:480px){.hero .extratop{font-size:50px;margin-top:8px}}.hero .headlinedescript{font-size:26px;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-weight:100;margin-bottom:30px;text-transform:uppercase}@media only screen and (max-width:480px){.hero .headlinedescript{font-size:20px;margin-bottom:10px}}.hero .subHead{margin-top:30px;margin-bottom:0;color:#333;font-size:22px;font-weight:400;letter-spacing:-.2px;line-height:1;padding-bottom:25px}.hero .subHead a{color:#333;text-decoration:none;border-bottom:1px solid rgba(0,97,162,.2)}.hero .subHead a:hover{color:#0061a2;border-bottom:2px solid rgba(0,97,162,.4)}@media only screen and (max-width:800px){.hero .subHead{font-size:18px}}@media only screen and (max-width:480px){.hero .subHead{font-size:18px;color:gray;letter-spacing:0;margin-left:auto;margin-right:auto;margin-top:15px;line-height:1.3;padding-bottom:15px;padding-top:10px}}.hero p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;line-height:1.3}.hero .heroText{max-width:500px;margin:0 auto;padding-top:20px}#share-bar-inline.leaf-page-share .viafoura .vf-share-bar ul{margin:auto}</style>
+<style>.restaurant-wrapper{max-width:880px;margin:auto;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper a{cursor:pointer;color:#333;-webkit-box-shadow:inset -2px -3px 0 -2px #ccc;box-shadow:inset -2px -3px 0 -2px #ccc;-webkit-transition:-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1);transition:-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1);-o-transition:box-shadow .3s cubic-bezier(.86,0,.07,1);transition:box-shadow .3s cubic-bezier(.86,0,.07,1);transition:box-shadow .3s cubic-bezier(.86,0,.07,1),-webkit-box-shadow .3s cubic-bezier(.86,0,.07,1)}.restaurant-wrapper a:hover{-webkit-box-shadow:inset -2px -20px 0 -3px #eee;box-shadow:inset -2px -20px 0 -3px #eee;text-decoration:none}.restaurant-wrapper .neighborhood-section{text-align:center;border:10px 0;margin:30px auto;font-size:16px;-webkit-box-sizing:border-box;box-sizing:border-box}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section{margin:10px 0}}.restaurant-wrapper .neighborhood-section .neighborhood-list{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-sizing:border-box;box-sizing:border-box}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section .neighborhood-list{-ms-flex-pack:distribute;justify-content:space-around}}.restaurant-wrapper .neighborhood-section .hood-item{text-transform:capitalize;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;text-align:center;cursor:pointer;margin:8px;margin-bottom:5px;padding:0 3px 2px 3px;border-bottom:2px solid #eee}.restaurant-wrapper .neighborhood-section .hood-item a{color:#333;font-weight:700;font-size:16px;-webkit-box-shadow:none;box-shadow:none}.restaurant-wrapper .neighborhood-section .hood-item a:hover{text-decoration:none;color:#c00}@media only screen and (max-width:800px){.restaurant-wrapper .neighborhood-section .hood-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0;-ms-flex-item-align:stretch;align-self:stretch;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-flex:0;-ms-flex:0 1 40%;flex:0 1 40%;border-bottom:none}}@media only screen and (max-width:480px){.restaurant-wrapper .neighborhood-section .hood-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0}}.restaurant-wrapper .neighborhood-section .hood-title{padding:0;padding-bottom:5px;text-transform:capitalize;font-weight:300;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:none;-moz-osx-font-smoothing:grayscale;color:#666}.restaurant-wrapper .neighborhood-box{border-top:40px;margin-top:0;margin-bottom:10px;background:#fff;padding:5px;width:auto;height:auto;text-align:center;position:relative}.restaurant-wrapper .neighborhood-box::before{content:"";position:absolute;top:-40px;left:0;right:0;width:100%;border-top:5px solid #eee}.restaurant-wrapper .neighborhood-box:first-child::before{border:none}.restaurant-wrapper .neighborhood-box h3.neighborhood-name{padding:0 40px 10px 40px;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:34px;text-align:center;display:inline-block;font-weight:300;letter-spacing:-.5px}@media only screen and (max-width:480px){.restaurant-wrapper .neighborhood-box{position:static}}.restaurant-wrapper .filter-section{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;margin:20px 10px;font-size:16px;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:15px;-webkit-box-sizing:border-box;box-sizing:border-box;-ms-flex-wrap:wrap;flex-wrap:wrap}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section{-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;margin:15px 0;padding:0}}@media only screen and (max-width:480px){.restaurant-wrapper .filter-section{-ms-flex-wrap:wrap;flex-wrap:wrap;position:static;-webkit-box-pack:start;-ms-flex-pack:start;justify-content:flex-start;display:block}}.restaurant-wrapper .filter-section .filter-title{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;padding:0;text-transform:capitalize;font-weight:300;-webkit-font-smoothing:antialiased;-moz-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-text-size-adjust:none;-moz-osx-font-smoothing:grayscale;color:#666;text-align:center;margin-bottom:10px}.restaurant-wrapper .filter-section .filter-item{-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;margin:0 3px 6px 3px;padding:6px 10px 4px 10px;color:#111;background:#fc9;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.2);box-shadow:0 2px 4px 0 rgba(0,0,0,.2);font-weight:700;letter-spacing:.2px;border-radius:3px;text-align:center;cursor:pointer;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;background:#e4e7eb;-webkit-box-shadow:0 2px 0 0 #cbd2d9;box-shadow:0 2px 0 0 #cbd2d9;border-radius:3px}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section .filter-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;padding:6px 15px 4px 15px}}@media only screen and (max-width:480px){.restaurant-wrapper .filter-section .filter-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-right:0}}.restaurant-wrapper .filter-section .filter-item.selected-filter{background:#069;-webkit-box-shadow:0 2px 0 0 #1f2933;box-shadow:0 2px 0 0 #1f2933;border-radius:3px;color:#fff}.restaurant-wrapper .filter-section .filter-item.ClearFilters{border:none;background:0 0;font-weight:400;-webkit-box-shadow:0 2px 0 0 rgba(0,102,153,.3);box-shadow:0 2px 0 0 rgba(0,102,153,.3);padding-left:4px;padding-right:4px;margin-left:10px;color:#444;font-weight:700;-webkit-box-flex:0;-ms-flex:0 1 auto;flex:0 1 auto;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;border-radius:0}@media only screen and (max-width:800px){.restaurant-wrapper .filter-section .filter-item.ClearFilters{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;background:0 0;-webkit-box-shadow:none;box-shadow:none}}.restaurant-wrapper .restaurant-list .list-item{margin-bottom:0;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;line-height:1.5;font-size:16px;-ms-flex-wrap:wrap;flex-wrap:wrap;padding:0 0 50px 0}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item{-ms-flex-wrap:wrap;flex-wrap:wrap;margin-bottom:30px}}.restaurant-wrapper .restaurant-list .list-item .intro{-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-ordinal-group:1;-ms-flex-order:0;order:0;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info{margin:10px 0 30px 0}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .r-filters{display:-webkit-box;display:-ms-flexbox;display:flex;margin:10px 0 5px 0;-ms-flex-wrap:wrap;flex-wrap:wrap}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .r-filters li{margin-bottom:10px;display:block;padding:4px 10px 3px 10px;margin-right:5px;background:#eee;font-weight:900;text-transform:uppercase;letter-spacing:.5px;font-size:15px;color:#444;-webkit-box-flex:0;-ms-flex:0 0 auto;flex:0 0 auto;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .contact-info{margin-left:5px}.restaurant-wrapper .restaurant-list .list-item .intro .intro-info .contact-info .address{text-transform:capitalize}.restaurant-wrapper .restaurant-list .list-item .r-name{font-size:24px;font-weight:700;color:#222}.restaurant-wrapper .restaurant-list .list-item p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .flex-left{-webkit-box-flex:1;-ms-flex:1 1 40%;flex:1 1 40%;padding-right:10px}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .flex-left{-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%;padding:0 0 20px;-webkit-box-ordinal-group:3;-ms-flex-order:2;order:2}}.restaurant-wrapper .restaurant-list .list-item .r-text{padding:5px 0 0;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .r-text p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif}.restaurant-wrapper .restaurant-list .list-item .r-address{font-size:15px;line-height:1.4;color:#444}.restaurant-wrapper .restaurant-list .list-item .float-right{float:right;max-width:60%;margin-left:30px;margin-bottom:10px}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .float-right{float:none;max-width:100%;margin-left:0;margin-bottom:10px}}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .float-right{float:none;max-width:100%;margin-left:0;margin-bottom:10px}}.restaurant-wrapper .restaurant-list .list-item .float-right .img-credit{color:#666;text-align:left;font-size:12px;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper{-webkit-box-ordinal-group:2;-ms-flex-order:1;order:1;-webkit-box-flex:1;-ms-flex:1 1 100%;flex:1 1 100%}.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper img{width:100%;border-radius:3px;height:auto}@media only screen and (max-width:800px){.restaurant-wrapper .restaurant-list .list-item .float-right .img-wrapper img{border:none}}.restaurant-wrapper .restaurant-list .list-item .contact-section{display:-webkit-box;display:-ms-flexbox;display:flex;padding:10px 0 0;-webkit-box-sizing:border-box;box-sizing:border-box;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;clear:both}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .contact-section{-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center}}.restaurant-wrapper .restaurant-list .list-item .contact-section .button{color:#444;font-weight:700;margin:15px 10px}.restaurant-wrapper .restaurant-list .list-item .contact-section .button .fa{color:#999}@media only screen and (max-width:480px){.restaurant-wrapper .restaurant-list .list-item .contact-section .button{font-weight:750}}.restaurant-wrapper .restaurant-list .list-item .r-dishes strong,.restaurant-wrapper .restaurant-list .list-item .r-gofor strong,.restaurant-wrapper .restaurant-list .list-item .r-note strong,.restaurant-wrapper .restaurant-list .list-item .r-text strong{text-transform:uppercase;font-weight:900;display:block;font-size:14px}.restaurant-wrapper .restaurant-list .clear-this{clear:both}.map-section{padding:20px 0 40px 0;position:relative;display:block}.map-outer{width:100%;padding-bottom:45%;position:relative}.map-inner{position:absolute;left:0;right:0;top:0;bottom:0;width:100%;height:100%;background:#eee}.map-inner .icon{background:rgba(0,102,153,.7);border:1px solid #fff;border-radius:100%}.line-divide{color:#ccc;padding:0 6px}#map a{-webkit-box-shadow:unset;box-shadow:unset}.leaflet-popup-content-wrapper{border-radius:5px}.popup-text{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:13px;line-height:1.5}.popup-text .p-name{font-size:15px;font-weight:700}.popup-text .p-text{margin-bottom:5px}.popup-text .p-jump{margin-top:5px;font-weight:700;text-align:center;border-top:1px solid #eee;padding-top:5px;cursor:pointer}p{margin-bottom:15px}p:last-child{margin-bottom:none}.flexRow{display:-webkit-box;display:-ms-flexbox;display:flex;-ms-flex-wrap:nowrap;flex-wrap:nowrap;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;overflow-x:hidden}.flexRow .flexSpacer{-webkit-box-flex:1;-ms-flex:1 1 10%;flex:1 1 10%}@media only screen and (max-width:800px){.flexRow .flexSpacer{-webkit-box-flex:0;-ms-flex:0 0 15px;flex:0 0 15px}}@media only screen and (max-width:480px){.flexRow .flexSpacer{-webkit-box-flex:0;-ms-flex:0 0 15px;flex:0 0 15px}}.flexRow .flexMainCol{-webkit-box-flex:1;-ms-flex:1 1 80%;flex:1 1 80%}.flexRow .flexMainCol .text-wrap{max-width:750px;margin:auto}h2{text-align:center;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-size:35px;color:#3b3b3b;font-weight:400}@media only screen and (max-width:480px){h2{font-size:30px}}h2 span{display:block;max-width:150px;margin:auto}@media only screen and (max-width:480px){h2 span{max-width:90px}}.hero{width:100%;text-align:center;margin-bottom:20px}@media only screen and (max-width:800px){.hero{margin-bottom:10px}}.hero .heroImage{margin:0 auto;max-height:60vh;overflow:hidden;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}.hero .heroImage.small-cutout{max-height:none;display:block;margin-top:30px}.hero .heroImage.small-cutout img{max-width:320px}.hero .heroImage img{width:100%;height:auto}@media only screen and (max-width:480px){.hero .heroImage{margin-left:-15px;margin-right:-15px}}@media only screen and (min-width:1200px){.hero .heroImage{max-height:76vh}}.hero .heroCredit{text-align:right;margin-top:4px;color:#777;font-size:13px}.hero .heroTitle{font-size:38px;line-height:normal;color:#222;font-weight:900;letter-spacing:normal;line-height:1.2;padding-bottom:20px;max-width:700px;margin:auto;margin-top:30px}@media only screen and (max-width:800px){.hero .heroTitle{font-size:48px}}@media only screen and (max-width:480px){.hero .heroTitle{font-size:40px}}.hero .extratop{margin-top:20px;font-size:75px}@media only screen and (max-width:800px){.hero .extratop{font-size:55px}}@media only screen and (max-width:480px){.hero .extratop{font-size:50px;margin-top:8px}}.hero .headlinedescript{font-size:26px;font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;font-weight:100;margin-bottom:30px;text-transform:uppercase}@media only screen and (max-width:480px){.hero .headlinedescript{font-size:20px;margin-bottom:10px}}.hero .subHead{margin-top:30px;margin-bottom:0;color:#333;font-size:22px;font-weight:400;letter-spacing:-.2px;line-height:1;padding-bottom:25px}.hero .subHead a{color:#333;text-decoration:none;border-bottom:1px solid rgba(0,97,162,.2)}.hero .subHead a:hover{color:#0061a2;border-bottom:2px solid rgba(0,97,162,.4)}@media only screen and (max-width:800px){.hero .subHead{font-size:18px}}@media only screen and (max-width:480px){.hero .subHead{font-size:18px;color:gray;letter-spacing:0;margin-left:auto;margin-right:auto;margin-top:15px;line-height:1.3;padding-bottom:15px;padding-top:10px}}.hero p{font-family:"Gotham Narrow SSm A","Gotham Narrow SSm B","Gotham Narrow Ssm",Arial,sans-serif;line-height:1.3}.hero .heroText{max-width:500px;margin:0 auto;padding-top:20px}#share-bar-inline.leaf-page-share .viafoura .vf-share-bar ul{margin:auto}</style>
 <div class="flexRow">
 <div class="flexSpacer"></div>
 <div class="flexMainCol">
@@ -25,30 +25,22 @@
 <div class="flexSpacer"></div>
 <div class="flexMainCol">
 <div class="text-wrap">
-<p>Philadelphia, home of the cheesesteak, the soft pretzel, and America’s ice cream maker, may not seem like the most welcoming place to the dietary-restricted eater — the many who must pass on pizza, go without grilled cheese, or abstain from asada. They’re the same people who have spent meals cajoling their partners into eating tofu or selling their families on the merits of almond-flour brownies. We feel your pain.</p>
-<p>But Philly is actually a haven for this crowd — it’s also home to a heap of vegan cheesesteaks (enough to hold a contest), gluten-free cupcakes, and at least one stellar dairy-free shake.</p>
-<p>So we’ve crafted a guide with the dietary-restricted eater and their omnivorous friends in mind. This list is full of restaurants, cafes, and bars with a number of vegan, dairy-free, or gluten-free offerings as well as dishes like pepperoni pizza and juicy, non-soy-based burgers.</p>
-<p>Use the filters to sort the list by type of diet as well as neighborhood. Other things to keep in mind:</p>
-<p>All of the following restaurants either offer a separate menu for dietary restrictions, have several items appropriate for that restriction, or can alter a standard offering to make it suitable.</p>
-<p>Nearly all of the restaurants with the gluten-free filter also offer some delicious, 100-percent wheat bread and pasta options as well.</p>
-<p>The ‘carnivore-friendly’ label shows restaurants that serve meat; some restaurants will be both “vegan” and “carnivore-friendly,” meaning they cater to both crowds.</p>
-<p><em>Editor’s note: Restaurants marked gluten-free offer dishes made with gluten-free ingredients, but we cannot certify that there is no cross-contamination from shared prep surfaces and airborne allergens. If you have a severe intolerance or allergy, please notify the restaurant.</em></p>
+<p></p><p>Philadelphia, home of the cheesesteak, the soft pretzel, and<a href="https://readingterminalmarket.org/merchant/bassetts-ice-cream/"> </a><a href="https://readingterminalmarket.org/merchant/bassetts-ice-cream/">America’s ice cream maker</a>, may not seem like the most welcoming place to the dietary-restricted eater — people who must pass on pizza, go without grilled cheese, or abstain from asada. We feel your pain.</p>
+<p></p>
+<p></p><p>But Philly is actually a haven for this crowd — it’s also home to a heap of vegan cheesesteaks (<a href="https://www.inquirer.com/philly/food/20160324_All_the_dish_from_the_3rd_annual_Best_Vegan_Cheesesteak_in_Philly_contest.html">enough to hold a contest</a>), gluten-free cupcakes, and oat-milk options. Whatever flavor of dietary restriction you have, the city has options for you, and some are so compellingly delicious, your omnivorous friends will join you without being cajoled.</p>
+<p></p>
+<p></p><p><strong>Allergy note</strong>: While the gluten-free label signifies restaurants with menu items that exclude ingredients containing gluten, we can’t guarantee that these restaurants entirely avoid cross-contamination from shared prep surfaces and airborne allergens. If you have a severe intolerance or allergy, please notify the restaurant before you order.</p>
+<p></p>
+<p></p><p><strong>How to use our filters</strong>:</p>
+<p></p>
+<p></p><p>Select as many filters as you like to customize your list.</p>
+<p></p>
 </div>
 </div>
 <div class="flexSpacer"></div>
 </div>
 <div class="body-wrapper">
 <div class="restaurant-wrapper">
-<div class="map-section">
-<div class="map-outer">
-<div class="map-inner" id="map"></div>
-</div>
-</div>
-<div class="neighborhood-section" id="neighborhood-section">
-<div class="hood-title">JUMP TO A NEIGHBORHOOD:</div>
-<div class="neighborhood-list">
-</div>
-</div>
 <div class="filter-section" id="filter-section">
 <div class="filter-title">ADD FILTERS:</div>
 </div>
@@ -70,8 +62,10 @@ Blackbird Pizzeria
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/613+N+2nd+St.,+Philadelphia,+PA,+19147">613 n 2nd st.</a>
-<span class="line-divide">|</span><a href="tel:2673245224">267-324-5224</a>
-<span class="line-divide">|</span><a href="http://www.blackbirdpizzeria.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2673245224">267-324-5224</a>
+<span class="line-divide">|</span>
+<a href="http://www.blackbirdpizzeria.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -86,25 +80,22 @@ The 2014 Best Vegan Cheesesteak in Philly winner, from Blackbird Pizzeria. (COLI
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A lively dinner among Philly’s vegan crowd
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Seitan cheesesteak, haymaker pizza, their most popular pizza, complete with Violife cheese, oregano, red onions, and seitan sausage; and habanero buffalo wings
+<strong>Go for</strong><p>A lively dinner among Philly’s vegan crowd</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Blackbird Pizzeria, an all-vegan BYOB bar food joint, is a well-recognized staple for Philadelphia vegans -- its seitan cheesesteak earned it the title of Winner of the Best Vegan Cheesesteak in Philly contest in both 2016 and 2017, and it also made the top 10 vegan wings in the U.S. in 2014. Rather than using the ubiquitous Daiya cheese, a commercially available vegan cheese made of coconut oil and tapioca, owner Mark Mebus uses Violife cheese, as the Inquirer reported in 2018. According to Mebus, Violife is ‘the most meltable and convincing plant-based cheese he has yet discovered.’ He would know - he was part of the opening team for a past endeavor, Horizons, by Philly vegan scene pioneers, Rich Landau and Kate Jacoby.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Blackbird does not carry gluten-free bread or crusts, so the only options for gluten-free diners there are the arugula and green salads.
+<p>Blackbird Pizzeria, an all-vegan BYOB is a well-recognized staple for Philadelphia vegans. Its seitan cheesesteak won the <a href="https://www.inquirer.com/philly/blogs/v-for-vegan/Blackbird-squeaks-past-challenger-Wiz-Kid-to-retain-vegan-cheesesteak-title.html">Best Vegan Cheesesteak in Philly</a> title in 2016 and 2017, and the spot also made<a href="https://www.inquirer.com/philly/blogs/food_department/Philly-shops-wings-are-ranked-among-best-in-US.html"> the top 10 vegan wings in the U.S. in 2014</a>. Their most popular pizza, the haymaker, comes with Violife cheese, oregano, red onions, and seitan sausage. Rather than using the ubiquitous Daiya cheese, owner Mark Mebus uses Violife brand, which he says is “the most meltable and convincing plant-based cheese” he has yet discovered. Mebus was <a href="https://www.gridphilly.com/grid-magazine/2014/3/19/blackbird-pizzeria-serves-up-100-percent-vegan-pizzas.html">part of the opening team</a> for Horizons, alongside Philly vegan scene pioneers Rich Landau and Kate Jacoby.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.blackbirdpizzeria.com/menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.blackbirdpizzeria.com/menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="FrontStreetCafe">
 <div class="intro">
@@ -112,15 +103,18 @@ The 2014 Best Vegan Cheesesteak in Philly winner, from Blackbird Pizzeria. (COLI
 Front Street Cafe
 </div>
 <div class="intro-info">
-<div class="r-filters" data-filter="Vegan  Dairy-free  Carnivore-friendly ">
+<div class="r-filters" data-filter="Vegan  Gluten-free  Dairy-free  Carnivore-friendly ">
 <li class="Vegan">Vegan</li>
+<li class="Gluten-free">Gluten-free</li>
 <li class="Dairy-free">Dairy-free</li>
 <li class="Carnivore-friendly">Carnivore-friendly</li>
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1253+N+Front+St.,+Philadelphia,+PA">1253 n front st.</a>
-<span class="line-divide">|</span><a href="tel:2155153073">215-515-3073</a>
-<span class="line-divide">|</span><a href="https://frontstreetcafe.net/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2155153073">215-515-3073</a>
+<span class="line-divide">|</span>
+<a href="https://frontstreetcafe.net/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -135,21 +129,22 @@ The Front Street Benedict with tofu scramble over mushroom scrapple and hollanda
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Boozy Sunday brunch date
+<strong>Go for</strong><p>Boozy Sunday brunch</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Front Street benedict with tofu scramble and mushroom scrapple (vegan, can be made gluten-free), as featured in Craig LaBan’s review; chicken bites (gluten-free, dairy free); buffalo cauliflower (vegan, gluten-free); cheesecake (vegan and gluten-free)
-</div>
-<div class="r-note">
-<strong>A tip</strong>Their menu notes whether items contain dairy, fish, meat, etc., as well as which are gluten-free.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Just a block from the Girard stop on the El, you can’t miss Front Street Cafe, a sprawling, rustic-modern restaurant that’s a little bit of everything: coffee shop, bar, farm-to-table restaurant. In the warmer months, you can sit in the garden and sip a smoothie and some iced tea from the outdoor bar, and in the winter, come to the bar for beer, wine and fruit- and herb-inspired cocktails. They serve New American fare with an emphasis on vegetarian-, vegan- and allergy- friendly dishes like vegan waffle bites, their Front Street Benedict with tofu scramble and mushroom scrapple, and eggplant terrine. (They even have vegan, gluten-free mac and cheese with parmesan and mushroom “bacon.”)</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://frontstreetcafe.net/#!/menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://frontstreetcafe.net/#!/menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="SliCE">
 <div class="intro">
@@ -165,8 +160,10 @@ SliCE
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/431+E+Girard+Ave.,+Philadelphia,+PA">431 e girard ave.</a>
-<span class="line-divide">|</span><a href="tel:2154251555">215-425-1555</a>
-<span class="line-divide">|</span><a href="http://www.slicepa.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2154251555">215-425-1555</a>
+<span class="line-divide">|</span>
+<a href="http://www.slicepa.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -181,25 +178,22 @@ The vegan meatless meat lover's pizza on a 10" crust at Slice Pizza, 431 E Girar
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Late-night munchies
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Truffle pizza (can be made gluten free and vegan), gluten-free Fig pizza, vegan lemon bar, gluten-free tiramisu
+<strong>Go for</strong><p>Late-night munchies</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>At this relaxed BYOB with counter service, don’t expect to be confined to the salads section (though they have some good options, like the kale + apple). They offer creative pizzas like the popular truffled ribeye (mozzarella ribeye, caramelized onions, white truffle oil) as well as calzones and strombolis. As for special options, unlike some pizza places, they don’t skimp on the Daiya cheese, and the gluten-free pizza, while small (10”), is a great option for a pizza that’s less heavy (and won’t kill your stomach, if you have a gluten sensitivity). Most of their business comes from delivery.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Slice offers gluten-free crusts and vegan cheese. However, just because it’s on a gluten free crust doesn’t mean a pizza is gluten-free -- make sure to check toppings with the cashier or a manager before ordering. Another note is that their gluten-free pizzas only come in what some would consider personal-pizza size (10 inches, 6 small slices). Oh, and you can make your pizza heart-shaped (if it isn’t gluten free). Just ask.
+<p>At this relaxed BYOB with counter service, don’t expect to be confined to the salads section (though they have some good options, like the kale and apple). They offer creative pizzas as well as calzones and strombolis. Unlike some pizza places, they don’t skimp on the Daiya cheese. Oh, and you can make your pizza heart-shaped on demand (but only if it isn’t gluten-free). Make sure to check the gluten status of toppings with the cashier or a manager before ordering. The gluten-free pizzas only come personal-pizza size (10 inches, 6 small slices).</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.slicepa.com/fishtown-menu/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.slicepa.com/fishtown-menu/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="neighborhood-box" id="SpringGardenFairmount">
 <span>
@@ -218,8 +212,10 @@ Goldie
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/Whole+Foods+Market,+2101+Pennsylvania+Ave.+Philadelphia,+19130">whole foods market, 2101 pennsylvania ave.</a>
-<span class="line-divide">|</span><a href="tel:">no phone listed</a>
-<span class="line-divide">|</span><a href="https://www.goldiefalafel.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:">no phone listed</a>
+<span class="line-divide">|</span>
+<a href="https://www.goldiefalafel.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -234,21 +230,22 @@ Falafel from Goldie. (CRAIG LABAN/Staff)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Lunch or a quick, casual dinner.
+<strong>Go for</strong><p>Mid-afternoon snack or a quick, casual dinner.</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Tehina shakes, falafel sandwiches and salads
-</div>
-<div class="r-note">
-<strong>A tip</strong>Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the addictively tasty tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free (they’re made with almond milk). Order at the counter for a quick pickup, and take your mediterranean feast to go, or dine in in the low-lit space, filled with an unexpectedly moody interior. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Owned by Michael Solomonov and Steve Cook — the same team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but includes fluffy-crisp falafel served in pillowy pita bread (or over chopped salad), shawarma-spiced fries, and <a href="https://twitter.com/craiglaban/status/850036488683347969?lang=en">addictive dairy-free tehina milkshakes</a>. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.goldiefalafel.com/menu/whole-foods" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.goldiefalafel.com/menu/whole-foods" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="neighborhood-box" id="CenterCityRittenhouse">
 <span>
@@ -269,8 +266,10 @@ Bao-logy
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1829+John+F.+Kennedy+Blvd.,+Philadelphia,+PA">1829 john f. kennedy blvd.</a>
-<span class="line-divide">|</span><a href="tel:2159992263">215-999-2263</a>
-<span class="line-divide">|</span><a href="https://www.baology.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2159992263">215-999-2263</a>
+<span class="line-divide">|</span>
+<a href="https://www.baology.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -285,21 +284,22 @@ A vegetable dumpling at baology, 1829 JFK Blvd. (MICHAEL KLEIN/Staff)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Bring-your-own Champagne brunch with an Asian twist
+<strong>Go for</strong><p>BYOB egg-and-toastless brunch (on Saturday, it’s closed Sunday)</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>For breakfast: Shi Fan (congee/rice porridge); for lunch: vegan and organic King Oyster Mushroom Gwa Boa (which won the 2019 StarChefs sustainability award); for dessert: sweet potato donut holes
-</div>
-<div class="r-note">
-<strong>A tip</strong>Bao-logy marks up their menus so that customers know which items are vegan and which are gluten-free; however, as owner Judy Ni states, it is possible for cross-contamination to occur from airborne flour. For lactose-intolerant diners, all items on their menu can be made dairy-free, and the majority of them don’t have dairy in the first place.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>With iPad ordering and angular booths, this modern Taiwanese street food BYOB serves up a budget-friendly filling meal. As the name implies, Baology knows how to do gwa bao: the fluffy buns contain a variety of fillings, including King Oyster mushrooms (which won the <a href="https://www.inquirer.com/food/starchefs-awards-philadelphia-chefs-curtis-atrium-20190319.html">2019 StarChefs sustainability award</a>). The ruen bing, a gluten-free wrap made of thin rice paper and filled with meat or bean curd, hoisin sauce and peanut powder, is also a specialty, as well as their tender dumplings and Forbidden Rice bento boxes. For lactose-intolerant diners, all items on their menu can be made dairy-free. Closed Sundays.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.baology.com/menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.baology.com/menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="BarBombon">
 <div class="intro">
@@ -314,8 +314,10 @@ Bar Bombon
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/133+S.+18th+St.,+Philadelphia,+PA">133 s. 18th st.</a>
-<span class="line-divide">|</span><a href="tel:2676066612">267-606-6612</a>
-<span class="line-divide">|</span><a href="http://barbombon.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2676066612">267-606-6612</a>
+<span class="line-divide">|</span>
+<a href="http://barbombon.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -330,25 +332,22 @@ Bar Bombon, vegan Latin cuisine near Rittenhouse Square, tacos with blue tortill
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>After-work happy hour Mon- Fri 3-6 p.m.
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Vegan Philly steak empanadas; gluten free Buffalo cauliflower tacos; jalapeno rellenos
+<strong>Go for</strong><p>After-work happy hour Mon- Fri 3-6 p.m.</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Nicole Marquis' Puerto Rican heritage shines in her bustling corner bar-restaurant near Rittenhouse Square, a few doors from her original eatery, the casual HipCityVeg. Bar Bombon is similarly plant-based (aka vegan), and the 3 p.m. Happy Hour start may inspire you to knock off early from work for drinks. https://www.inquirer.com/philly/blogs/the-insider/happy-hour-pick-bar-bombon-20180626.html</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Ask your waiter to make items marked with an asterisk on the menu gluten-free.
+<p>Nicole Marquis&#39; Puerto bustling corner bar-restaurant near Rittenhouse Square is only a few doors from her original eatery, the casual HipCityVeg. Bar Bombon is similarly plant-based, and the 3 p.m. happy hour start may inspire you to knock off early from work for drinks.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://barbombon.com/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://barbombon.com/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Bareburger">
 <div class="intro">
@@ -364,8 +363,10 @@ Bareburger
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1109+Walnut+St.,+Philadelphia,+PA">1109 walnut st.</a>
-<span class="line-divide">|</span><a href="tel:2156272273">215-627-2273</a>
-<span class="line-divide">|</span><a href="http://bareburger.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2156272273">215-627-2273</a>
+<span class="line-divide">|</span>
+<a href="http://bareburger.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -380,25 +381,22 @@ The Duchess, featured on Bareburger's extensive vegan menu, is one of their most
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>An Impossible Burger
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The Duchess, an Impossible burger with garlic aioli, mushrooms, caramelized onions, baby kale and smoked vegan gouda; the Uptown fries; and a coconut-and-hemp milk milkshake.
+<strong>Go for</strong><p>An Impossible Burger</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>The Philly location of international burger chain Bareburger has table service and a beer and wine menu, and one of the largest menus you’ll ever see (they claim it’s possible to create 81 million different burgers). Though they offer a large array of meat options as well — bison and buttermilk-fried chicken, for example — vegans rave about its separate vegan menu with options like vegan gouda, plant-based eggs, Beyond bratwurst, and five different types of vegan burgers (including from both Impossible and Beyond Meat). Their emphasis on organic ingredients makes it a bit on the pricier end of the spectrum for burger joints, but most if not all of their food, including vegan options, is hearty and rich, and they have everything vegans usually miss out on.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>The menu is clearly marked to show which items are vegan and gluten-free, which have nuts or GMOs, and which are celiac-safe gluten-free options, including buns and a collard green wrap.
+<p>The Philly location of the international burger chain has one of the largest menus you’ll ever see (they claim it’s possible to create 81 million different burgers). Though Bareburger offers an array of meat options — bison and buttermilk-fried chicken, for example — <a href="https://www.instagram.com/explore/locations/719969541546437/bareburger-philadelphia/">vegans rave</a> about its separate menu that features plant-based “eggs,” Beyond bratwurst, and five types of vegan burgers (including Impossible and Beyond Meat). A popular choice is the Duchess, an Impossible burger with garlic aioli, mushrooms, caramelized onions, baby kale and smoked vegan “gouda.” Bareburger’s emphasis on organic ingredients makes it a bit on the pricier side for burger joints.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.bareburger.com/wp-content/uploads/2019/07/BareburgerMenu2019_Tier002.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.bareburger.com/wp-content/uploads/2019/07/BareburgerMenu2019_Tier002.pdf" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="BarraRossa">
 <div class="intro">
@@ -414,8 +412,10 @@ Barra Rossa
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/929+Walnut+St.,+Philadelphia,+PA+19107">929 walnut st.</a>
-<span class="line-divide">|</span><a href="tel:2156449074">215-644-9074</a>
-<span class="line-divide">|</span><a href="http://www.barrarossa.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2156449074">215-644-9074</a>
+<span class="line-divide">|</span>
+<a href="http://www.barrarossa.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -430,25 +430,22 @@ The vegan hemp pasta pignoli is pictured at Barra Rossa in Center City Philadelp
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Happy hour drink specials, or a late dinner
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Try their vegan hemp pasta pignoli and their taco ‘meat’ pizza
+<strong>Go for</strong><p>Happy hour drink specials, or a late dinner</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>The upscale Italian restaurant and bar offers a vegan happy hour menu on Wednesday nights from 4 to 6 p.m, and a bustling atmosphere with friendly bartenders and servers to go along with it. Hit the half-price Monday-night pizza deal for the thin-crust vegan taco pizza (made with coconut-based Violife vegan cheese and Impossible “meat”). If you’re so inclined, try it gluten free, too. For a slightly more filling meal, order the hemp pignoli pasta with gluten-free hemp pasta noodles and flavorful sundried tomatoes. The heart-healthy soft noodles with melted vegan cheese and spinach are an interesting shade of gray-green, but that shouldn’t deter you from ordering — they can easily go head-to-head with the gluten and dairy version. You can sit down for the full experience — and the comfortable luxurious white booths and the mini chandeliers make it appealing to — or sit at the bar, where you can get happy hour deals and items from the dinner menu, too.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Barra Rossa has it all — vegan cheese, gluten-free penne pasta and pizza crust, as well as the more conventional versions. Gluten-free items are very clearly marked, and there is an entire plant-based section of the menu, too.
+<p>The upscale Italian restaurant and bar offers a vegan <a href="https://www.inquirer.com/food/michael-klein/barra-rossa-philadelphia-happy-hour-jefferson-20190618.html">happy hour menu</a> on Wednesday nights from 4 to 6 p.m, and a bustling atmosphere with friendly bartenders and servers to go along with it. Hit the half-price Monday-night pizza deal for the thin-crust vegan taco pizza (made with coconut-based Violife vegan cheese and Impossible “meat”). If you’re so inclined, try it gluten free, too.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.barrarossa.com/menu/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.barrarossa.com/menu/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="CharliewasaSinner">
 <div class="intro">
@@ -463,8 +460,10 @@ Charlie was a Sinner
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/131+S+13th+St.,+Philadelphia,+PA+19107">131 s 13th st.</a>
-<span class="line-divide">|</span><a href="tel:2677585372">267-758-5372</a>
-<span class="line-divide">|</span><a href="http://charliewasasinner.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2677585372">267-758-5372</a>
+<span class="line-divide">|</span>
+<a href="http://charliewasasinner.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -479,26 +478,22 @@ Bucatini & Meatballs with chickpea ragout as served at Charlie was a sinner. (DA
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A night out with friends.
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>For gluten-free diners, try ‘Our ricotta’; the spinach bakoula; and the chocolate pot de crème. Gluten-eaters, see Craig LaBan’s recommendations.
+<strong>Go for</strong><p>A night out with friends.</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Far from being a vegan-only enclave, this low-lit bar and restaurant from HipCityVeg and Bar Bombon owner Nicole Marquis attracts all different kinds of hip Philadelphians eager to taste creative cocktails like the spicy Fire Island and the ‘East of Eden.’ (So don’t forget to make reservations.) Like the drinks, the flavors in the food are strong instead of subtle in small plates like the tofu-based ‘Our Ricotta’ with crunchy sourdough, the spicy Korean fried tofu on pickled cauliflower and the Moroccan creamed ‘spinach bakoula’ (gluten-free) with salty olives. You won’t leave feeling hungry.</p>
-<p>[Another quote I could substitute for the first two sentences: Charlie’s is a “casual, stylish piece in Midtown Village's gallery of nightlife options, strong on low-commitment nibbles and drinks for a youthful crossroads where attention spans and budgets are not large,” Craig writes.]</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Tell your waiter about any allergies. The restaurant has full ingredient lists in the kitchen as well as soy-free and gluten-free menus. Everything on their gluten-free menu is Celiac safe, but if your gluten intolerance is mild rather than severe, more fried options are available to you as well (they don’t have a separate gluten-free fryer).
+<p>Far from being a vegans-only enclave, this low-lit bar and restaurant from HipCityVeg and Bar Bombon owner Nicole Marquis those eager to taste creative cocktails like the spicy Road Less Traveled (single barrel bourbon, tangerine marmalade, amaro, Lillet Rouge and cherry bitters) and the East of Eden (with bourbon, tea-infused Dolin blanc, lillet and fig). Like the drinks, the food is strong on flavor in small plates like the tofu-based “ricotta” with crunchy sourdough, the spicy Korean fried tofu with pickled cauliflower, and the gluten-free Moroccan creamed spinach bakoula with salty olives. Come hungry.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://charliewasasinner.com/menu.pdf" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://charliewasasinner.com/menu.pdf" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="FoxSonFancyCorndogs">
 <div class="intro">
@@ -514,8 +509,10 @@ Fox & Son Fancy Corndogs
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/Reading+Terminal+Market,+51+N+12th+St,+Philadelphia,+PA">reading terminal market, 51 n 12th st</a>
-<span class="line-divide">|</span><a href="tel:2153727935">215-372-7935</a>
-<span class="line-divide">|</span><a href="http://www.foxandsonphilly.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2153727935">215-372-7935</a>
+<span class="line-divide">|</span>
+<a href="http://www.foxandsonphilly.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -526,29 +523,26 @@ Fox & Son Fancy Corndogs
 <img src="https://www.inquirer.com/resizer/jMM7yRTj_7kbU0PjTdyvla5u_HA=/arc-anglerfish-arc2-prod-pmn/FYRFOPABF5DRFA62SWLBZ7B2CA.jpg" alt>
 </div>
 <div class="img-credit">
-The Classic funnel cake topped with strawberries and whipped cream at Fox & Son Fancy Corndogs, an entirely gluten-free stand in Reading Terminal Market. (MICHAEL CHANEY )
+The Classic funnel cake topped with strawberries and whipped cream at Fox & Son Fancy Corndogs, an entirely gluten-free stand in Reading Terminal Market. (MICHAEL CHANEY /Courtesy)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A rare indulgence in childhood memories, if you’re gluten-intolerant
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Banana funnel cake (vegan and gluten-free); vegan corn dog with royale sauce (a sauce similar to Thousand Island dressing); ‘fancy’ sweet potato battered corndog with chorizo (gluten-free).
+<strong>Go for</strong><p>A rare indulgence in childhood memories</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Fox & Sons Fancy Corndogs, a carnival-esque food stand that opened at Reading Terminal in Feb. 2017, struck a happy medium when they found a batter for their fried foods that happened to be gluten-free. The owners were inspired by the texture of Japanese and Chinese pastries, co-owner Rebecca Foxman said, which typically use a blend of rice flour and corn starch. Their entirely gluten-free menu includes corn dogs, fried broccoli bites, fried cheese curds, funnel cake, and poutine (including a vegan option). The vegan iteration of their funnel cake, the owners report, also saves food waste: they use ripe bananas that produce stands at Reading Terminal would get rid of at the end of the day to replace the buttermilk and eggs in their traditional funnel cake recipe. The store also recently appeared on the Rachael Ray Show.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>For those who eat meat but not dairy, you can order a regular corndog with vegan batter. They have many dairy-free extras like Daiya cheese that you can use to customize your order.
+<p>Fox &amp; Sons Fancy Corndogs, a carnival-esque food stand that <a href="https://www.inquirer.com/philly/blogs/the-insider/Fox-and-son-corndog-stand-is-coming-to-Reading-Terminal-Market.html">opened at Reading Terminal</a> in Feb. 2017, struck a happy medium when they found a batter that happened to be gluten-free. The owners were inspired by the texture of Japanese and Chinese pastries, co-owner Rebecca Foxman says, which typically uses a blend of rice flour and corn starch. Their entirely gluten-free menu includes corn dogs, fried broccoli bites, fried cheese curds, funnel cake, and poutine (including a vegan option). The vegan funnel cake also saves food waste: they use ripe bananas that produce stands at Reading Terminal toss at the end of the day to replace the buttermilk and eggs in their traditional funnel cake recipe. The store also <a href="https://www.rachaelrayshow.com/articles/check-out-fancy-corn-dogs-fox-son-philly">appeared on the Rachael Ray Show</a>.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.foxandsonphilly.com/menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.foxandsonphilly.com/menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Goldie">
 <div class="intro">
@@ -562,8 +556,10 @@ Goldie
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1526+Sansom+St.,+Philadelphia,+PA+19102">1526 sansom st.</a>
-<span class="line-divide">|</span><a href="tel:2672390777">267-239-0777</a>
-<span class="line-divide">|</span><a href="https://www.goldiefalafel.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2672390777">267-239-0777</a>
+<span class="line-divide">|</span>
+<a href="https://www.goldiefalafel.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -578,21 +574,22 @@ A bag of falafel balls at Goldie, 1526 Sansom St. (MICHAEL KLEIN/Staff)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Lunch or a quick, casual dinner.
+<strong>Go for</strong><p>Mid-afternoon snack or a quick, casual dinner.</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Tehina shakes, falafel sandwiches and salads
-</div>
-<div class="r-note">
-<strong>A tip</strong>Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the addictively tasty tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free (they’re made with almond milk). Order at the counter for a quick pickup, and take your mediterranean feast to go, or dine in in the low-lit space, filled with an unexpectedly moody interior. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Owned by Michael Solomonov and Steve Cook — the same team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but includes fluffy-crisp falafel served in pillowy pita bread (or over chopped salad), shawarma-spiced fries, and <a href="https://twitter.com/craiglaban/status/850036488683347969?lang=en">addictive dairy-free tehina milkshakes</a>. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.goldiefalafel.com/menu/center-city" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.goldiefalafel.com/menu/center-city" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="HipCityVeg">
 <div class="intro">
@@ -607,47 +604,46 @@ HipCityVeg
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/127+S+18th+St.,+Philadelphia,+Pa">127 s 18th st.</a>
-<span class="line-divide">|</span><a href="tel:2152787605">215-278-7605</a>
-<span class="line-divide">|</span><a href="https://hipcityveg.com/menu/burgers-sandwiches">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2152787605">215-278-7605</a>
+<span class="line-divide">|</span>
+<a href="https://hipcityveg.com/menu/burgers-sandwiches">Restaurant website</a>
 <span class="line-divide">|</span>$$
-<br><span style="font-style:italic">Also at </span><a class="address" target="_blank" href="https://www.google.com/maps/dir/121+S+Broad+St.,+Philadelphia,+Pa">121 s broad st.</a>
-<span class="line-divide">|</span><a href="tel:2672969001">267-296-9001</a>
+<br>
+<span style="font-style:italic">
+Also at
+</span>
+<a class="address" target="_blank" href="https://www.google.com/maps/dir/121+S+Broad+St.,+Philadelphia,+Pa">121 s broad st.</a>
+<span class="line-divide">|</span>
+<a href="tel:2672969001">267-296-9001</a>
 </div>
 </div>
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/T-cBWjBYB4R2QRTZQUB_TOuj1Kc=/arc-anglerfish-arc2-prod-pmn/YKGTHBSSNZEJPPEWXUMXFQKOKI.jpg" alt>
+<img src="https://www.inquirer.com/resizer/FZU1CCzcxozWpE6W4CvzhW8196Q=/arc-anglerfish-arc2-prod-pmn/public/YKGTHBSSNZEJPPEWXUMXFQKOKI.jpg" alt>
 </div>
 <div class="img-credit">
 HipCityVeg's Smokey Sweet Chick'n Wrap — 100% vegan. (HIPCITYVEG/Hipcityveg)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A quick vegan bite
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The banana whip (add multiple toppings for a sundae), vegan version of the Philly cheesesteak, plus sweet potato fries and dairy-free milkshakes
+<strong>Go for</strong><p>A quick vegan bite</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>HipCityVeg — the homegrown, fast-casual eatery serving vegan burgers, fries, salads, drinks, and desserts opened by Philadelphia’s own vegan restaurateur extraordinaire Nicole Marquis — took off quickly from its debut in 2012. With four Philly locations, two Pa. suburb locations, and two Washington, D.C. locations, it’s clear that the restaurant has attracted more than just the vegan population. Go for the sauces: any vegan or lactose-intolerant eater</p>
-<p>You’ll eat mouthwatering fried “chick’n” sandwiches with buttermilk ranch dressing and crispy sweet potato fries with their homemade ketchup in an upscale retro-mod interior, if you’re not ordering from UberEats. Their range of options is what makes HipCity Veg so great for varied groups: they have everything from curry tofu wraps with vegetables</p>
-<p>on 18th Street near Rittenhouse Square and now boasts multiple locations. Read our latest story from Michael Klein about HipCityVeg here.</p>
-<p>Opened in 2012 by Philadelphia’s own vegan restaurateur extraordinaire Nicole Marquis, HipCityVeg has since expand With roughly three to six percent of the U.S. population identifying as vegan, HipCityVeg’s success is a testament to the fact</p>
-<p>3% of U.S. population identifies as vegan (2018 Gallup poll)</p>
-<p>6% of U.S. consumer population identifies as vegan (2017 Report Buyer’s study, cited in a WHYY story) https://www.reportbuyer.com/product/4959853/top-trends-in-prepared-foods-2017-exploring-trends-in-meat-fish-and-seafood-pasta-noodles-and-rice-prepared-meals-savory-deli-food-soup-and-meat-substitutes.html</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>While the chain is plentiful in the city, your omnivorous friends may not be fooled by the meat substitutes. There are an array of salad options, as well as a handful of burgers and shakes.
+<p>Philly vegan restaurateur Nicole Marquis opened the first fast-casual burger joint HipCityVeg in 2012. HipCityVeg serves up creamy vegan and lactose-free sauces: filling, crunchy salads with creamy caesar dressing, fried “chick’n” sandwiches with peppercorn ranch, garlic aioli, or chipotle crema, and curry tofu wraps with cumin raita. But the restaurant’s fast expansion, with four Philly locations, two locations in the Pa. suburbs and Washington, D.C., is a testament to its broad appeal.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://hipcityveg.com/menu/burgers-sandwiches" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://hipcityveg.com/menu/burgers-sandwiches" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="LuhvVeganDeli">
 <div class="intro">
@@ -662,8 +658,10 @@ Luhv Vegan Deli
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/Reading+Terminal+Market,+51+N+12th+St.,+Philadelphia,+PA">reading terminal market, 51 n 12th st.</a>
-<span class="line-divide">|</span><a href="tel:2677585779">267-758-5779</a>
-<span class="line-divide">|</span><a href="https://deli.luhvfood.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2677585779">267-758-5779</a>
+<span class="line-divide">|</span>
+<a href="https://deli.luhvfood.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -678,25 +676,22 @@ Tuna salad on Taffet's Bakery gluten-free bread at Luhv Vegan Deli in Reading Te
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A quick, healthy lunch
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>reuben sandwich (vegan); energy soup (vegan and gluten-free); deli cheeses (vegan and gluten-free)
+<strong>Go for</strong><p>A quick, healthy lunch</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Though Luhv Vegan Deli has only been open in Reading Terminal Market for a year, the family behind it has operated since 2016, when they began selling their black bean and plantain burgers at local markets. Now available up and down the east coast (in markets from Connecticut to Virginia), the burger doesn’t crumble like other meatless burgers, and it even earned a thumbs up from Craig Laban, who called it “a well-crafted mouthful of sweet and spicy.” At the deli, it comes with remarkably smoky gouda, sauteed mushrooms and ‘mushroom mayo.’ Another specialty is their gluten-free energy soup, a warming blend of beans, kale, quinoa, seaweed, and flax seed.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>The deli offers gluten-free sandwich bread, specially made to be vegan by local staple Taffet’s Bakery, for an extra $2. All of their burgers and soups are gluten-free, but the seitan, chicken salad, sausage, and all cold cuts contain gluten.
+<p>Though Luhv Vegan Deli has only been <a href="https://www.inquirer.com/philly/blogs/the-insider/luhv-food-vegan-deli-reading-terminal-market-20180914.html">open in Reading Terminal Market</a> since 2018, <a href="https://www.inquirer.com/philly/food/20161006_Luhv_Food_Philly-area_family_puts_money_on_vegan_food.html">the family behind it has been cooking for customers since 2016</a>, when they began selling black bean and plantain burgers at local markets. Now available up and down the east coast (in markets from Connecticut to Virginia), the burger doesn’t crumble like other meatless burgers. At the deli, it comes with smoky vegan “gouda,” sauteed mushrooms and “mushroom mayo.” Another specialty is their gluten-free energy soup, a warming blend of beans, kale, quinoa, seaweed, and flax seed. The deli offers gluten-free sandwich bread, specially made to be vegan by local staple <a href="https://www.inquirer.com/philly/food/20120315_A_rare_gluten-free_bread_bakery.html">Taffet’s Bakery</a>, for an extra $2. All of their burgers and soups are gluten-free, but the seitan, chicken salad, sausage, and all cold cuts contain gluten.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://deli.luhvfood.com/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://deli.luhvfood.com/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="PSCo">
 <div class="intro">
@@ -711,8 +706,10 @@ P.S. & Co.
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1706+Locust+St.,+Philadelphia,+PA">1706 locust st.</a>
-<span class="line-divide">|</span><a href="tel:2159851706">215-985-1706</a>
-<span class="line-divide">|</span><a href="https://puresweets.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2159851706">215-985-1706</a>
+<span class="line-divide">|</span>
+<a href="https://puresweets.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -720,32 +717,29 @@ P.S. & Co.
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/FyCM1aUHX0dv8ZaiYsI1eOtOGds=/arc-anglerfish-arc2-prod-pmn/GXCTIKPWUVD3TA6FR635DJJ77E.jpg" alt>
+<img src="https://www.inquirer.com/resizer/lYZ-76ouEuh19g5WUnmUarSPBhw=/arc-anglerfish-arc2-prod-pmn/public/GXCTIKPWUVD3TA6FR635DJJ77E.jpg" alt>
 </div>
 <div class="img-credit">
 The organic vegan and gluten free breakfast tacos are photographed at P.S. & Co. in Rittenhouse Square on Thursday, Aug. 08, 2019. (HEATHER KHALIFA/Staff Photographer)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>While Pure Sweets and Company is open for breakfast, lunch and dinner, brunch is definitely the main event. (The Rittenhouse hotspot is packed for brunch on the weekends.) The space is airy and photogenic but not the best bet for large groups — it’s a better bet for a few friends. And reservations are definitely a plus.
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Breakfast nachos and brioche french toast. Or grab a few fresh-baked pastries.
+<strong>Go for</strong><p>Brunch</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>P.S. and Co. is a great bet for those with dietary restrictions. The Rittenhouse restaurant has a wide-ranging breakfast and lunch menu that includes everything from breakfast tacos to hearty chocolate-chip pancakes — all 100% vegan, gluten-free, kosher, and almost all organic. Andrea Kyan founded the restaurant after she went vegan in 2007, and found a lack of sweets to eat — so she started experimenting. The restaurant avoids what they call “unhealthful forms of soy and pea protein,” so they don’t make or sell any processed meat substitutes.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Let your server know if you have any other dietary restrictions; they will happily help you out.
+<p>Rittenhouse hotspot P.S. and Co. is <a href="https://www.inquirer.com/philly/blogs/the-insider/Vegan-PS--Co-opens-in-Rittenhouse.html">a good bet</a> for those with dietary restrictions: the entire menu is plant-based and gluten-free. Andrea Kyan founded the restaurant after she went vegan in 2007, and found a lack of sweets to eat — so she started experimenting. The restaurant avoids what they call “<a href="https://puresweets.com/pages/faq">unhealthful forms of soy and pea protein</a>,” so they don’t make or sell any processed meat substitutes. The space is airy and photogenic but not the best bet for large groups — it’s a better bet for a few friends. It’s packed for brunch on weekends, so reservations are a plus.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://puresweets.com/pages/menus" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://puresweets.com/pages/menus" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Strangeloves">
 <div class="intro">
@@ -760,8 +754,10 @@ Strangelove's
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/216+S+11th+St.,+Philadelphia,+PA+19107">216 s 11th st.</a>
-<span class="line-divide">|</span><a href="tel:2158730404">215-873-0404</a>
-<span class="line-divide">|</span><a href="http://www.strangelovesbeerbar.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2158730404">215-873-0404</a>
+<span class="line-divide">|</span>
+<a href="http://www.strangelovesbeerbar.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -772,25 +768,26 @@ Strangelove's
 <img src="https://www.inquirer.com/resizer/JpK6IwmNld7wRAlgqV2iH3UsevM=/arc-anglerfish-arc2-prod-pmn/IWN6NSAT7BD35GQWOPQG4JFTUU.jpg" alt>
 </div>
 <div class="img-credit">
-The vegetarian huevos rancheros, which can be made vegan, at Strangelove's. (STRANGELOVE'S)
+The vegetarian huevos rancheros, which can be made vegan, at Strangelove's. (STRANGELOVE'S/Strangelove's)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Quizzo at 9pm on Monday nights, or weekend brunch with ~free Mimosas~
+<strong>Go for</strong><p>Quizzo at 9pm on Monday nights, or weekend brunch.</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Try their $15 weekday two-course lunch special with fried brussels sprouts or the vegetarian nachos with Daiya cheese as your first course and a LaBan-approved Russian kale salad or vegan veggie burger with harissa mayo and cucumber slaw (all vegan and dairy-free). (Carnivore friends can get chicken on the salad.) And don’t leave out a draft beer.
-</div>
-<div class="r-note">
-<strong>A tip</strong>Strangelove’s menu is rare in that its vegan and vegetarian options nearly equal non-vegan-or-vegetarian in number. The menu is clearly marked to delineate between the two, and some dishes can be made dairy-free.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>With weekly events like quizzo Strangelove’s has the feel of a quirky neighborhood bar. They serve pub-style food, like fried calamari and burgers, with more vegan options than your typical beer joint. Try the $15 weekday two-course lunch special with fried Brussels sprouts or the vegetarian nachos with Daiya cheese or the Craig <a href="https://www.inquirer.com/philly/food/20130825_Southern_comforts_and_intriguing_craft_beers.html">LaBan-approved</a> Russian kale salad, or vegan veggie burger. There’s also a weekend brunch with plenty of allergy- and vegan- friendly options.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.strangelovesbeerbar.com/menus" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.strangelovesbeerbar.com/menus" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="VStreet">
 <div class="intro">
@@ -805,8 +802,10 @@ V Street
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/126+South+19th+St.,+Philadelphia,+PA">126 south 19th st.</a>
-<span class="line-divide">|</span><a href="tel:2152787943">215-278-7943</a>
-<span class="line-divide">|</span><a href="https://www.vstreetfood.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2152787943">215-278-7943</a>
+<span class="line-divide">|</span>
+<a href="https://www.vstreetfood.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -821,25 +820,22 @@ Fried Korean tempeh tacos, with gochujang chile paste and radish kimchi, served 
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Boozy Saturday lunch date
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Cauliflower ‘65,’ Peruvian potatoes (gluten-free), Falooda
+<strong>Go for</strong><p>Boozy Saturday lunch date</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>You won’t see ‘tempeh sausage’ or ‘soy-based chicken’ on the menu at V Street, a plant-based, vegan restaurant and bar. James Beard-nominated chefs Rich Landau and Kate Jacoby opened V Street in 2014 as a lower-cost (but still pricey) offshoot of the wildly successful Vedge. They took inspiration from street foods around the world to create a menu that touches India (Cauliflower ‘65,’ made of crunchy papadum crackers and fried cauliflower florets in a spicy sauce), Peru (fried potato wedges with a spicy aioli), Jamaica (jerk tofu over creamy sweet potato aioli), Ethiopia and Eritrea (berbere broccoli), and Iran (Falooda, their take on the traditional Persian rosewater ice cream dish). In his glowing three-bell review of V Street, Inquirer food critic Craig LaBan writes, ‘The way Rich Landau sees it, with animal products off his vegan table, he can't cook with half the ingredients that other chefs do: ‘So why limit ourselves to one ethnicity?’”</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>V Street offers soy-free and gluten-free menus to guests with dietary restrictions. They also can modify their menu to accommodate other allergies if you call in advance.
+<p>You won’t see ‘tempeh sausage’ or ‘soy-based chicken’ on the menu at vegan bar/restaurant V Street. James Beard-nominated chefs Rich Landau and Kate Jacoby opened the place in 2014 as a lower-cost (but still pricey) offshoot of the wildly successful Vedge. They took inspiration from street foods around the world to create a menu that touches Southeast Asias, South American, Caribbean and African subcontinental flavors. V Street offers soy-free and gluten-free menus to guests with dietary restrictions. They also can modify their menu to accommodate other allergies if you call in advance.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.vstreetfood.com/menus" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.vstreetfood.com/menus" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="neighborhood-box" id="WashingtonSquareSouthStreet">
 <span>
@@ -858,8 +854,10 @@ Giorgio on Pine
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1328+Pine+St.,+Philadelphia,+PA">1328 pine st.</a>
-<span class="line-divide">|</span><a href="tel:2155456265">215-545-6265</a>
-<span class="line-divide">|</span><a href="http://www.giorgioonpine.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2155456265">215-545-6265</a>
+<span class="line-divide">|</span>
+<a href="http://www.giorgioonpine.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$$
 <br>
 </div>
@@ -867,28 +865,29 @@ Giorgio on Pine
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/5z_9OWqpxqh8P3Yrxu-bD7Hd5_Q=/arc-anglerfish-arc2-prod-pmn/Z2V2KJFVANAKXHYQ2T3PKAONPY.jpg" alt>
+<img src="https://www.inquirer.com/resizer/vqXmDpe8CnyhLpA_Szab8d-7cvI=/arc-anglerfish-arc2-prod-pmn/public/Z2V2KJFVANAKXHYQ2T3PKAONPY.jpg" alt>
 </div>
 <div class="img-credit">
 The Fusilli Primavera is photographed at Giorgio On Pine in Center City, Philadelphia on Thursday, Aug. 08, 2019. (HEATHER KHALIFA/Staff Photographer)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A filling Italian meal with a group
+<strong>Go for</strong><p>A filling Italian meal with a group</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Flourless chocolate cake, gluten-free spaghetti and ziti
-</div>
-<div class="r-note">
-<strong>A tip</strong>This BYOB allows you to eat Italian but skip the gluten. With gluten-free pizza and pasta, the restaurant also will serve you up a basket of gluten-free bread and oil to dip.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>This cozy BYOB, at the corner of Pine and S. Juniper Streets, lets you eat Italian but skip the gluten. The restaurant offers both a regular menu and a menu with gluten-free substitutions, so there’s a variety of appetizers, pizzas and pasta dishes that suit everyone’s needs. Along with the pizza and pasta, they offer gluten-free classics like mussels, calamari, a prosciutto platter, ribeye with mushroom sauce and veal prosciutto. Even the breadcrumbs in the kale salad and the Parmesan-crusted chicken breast are gluten-free. There are homemade desserts as well, like their flourless chocolate cake, cannoli, and creme bruleé. Make sure to book a reservation before you go.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.giorgioonpine.com/menus/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.giorgioonpine.com/menus/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="TattooedMom">
 <div class="intro">
@@ -902,8 +901,10 @@ Tattooed Mom
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/530+South+St.,+Philadelphia,+PA+19147">530 south st.</a>
-<span class="line-divide">|</span><a href="tel:2152389880">215-238-9880</a>
-<span class="line-divide">|</span><a href="https://www.tattooedmomphilly.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2152389880">215-238-9880</a>
+<span class="line-divide">|</span>
+<a href="https://www.tattooedmomphilly.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -911,32 +912,29 @@ Tattooed Mom
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/v9ygAIpr4y7w0_O9xWuedMuE58o=/arc-anglerfish-arc2-prod-pmn/PDCIHW7Z4VBGPBJNC4XKIKJ6N4.jpeg" alt>
+<img src="https://www.inquirer.com/resizer/By63U72xPh5jBVJZVRqpzQxI_lM=/arc-anglerfish-arc2-prod-pmn/public/PDCIHW7Z4VBGPBJNC4XKIKJ6N4.jpeg" alt>
 </div>
 <div class="img-credit">
 A vegan cajun blackened "chicken" burger from Tattooed Mom in South Philly. (ELIJAH SNYDER-VIDMAR/Tattooed Mom)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A playful and affordable night out, especially on Meatless Mondays
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Vegan jalapeno cheese whiz tots, fried pickle-topped “chickn” sammy, inventive drinks like the cotton candy-laced Cosmo Cloud
+<strong>Go for</strong><p>A playful and affordable night out, Meatless Mondays</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>A South Street staple since 1997, Tattooed Mom’s kitchen turns out bar food for vegans and for carnivores alike, making it the perfect hangout for eaters of all stripes. The vegan menu is thanks in part to how staff members own diets have evolved. It has plenty of bar food that people with dietary restrictions can enjoy — complete with specials like Meatless Mondays (half off the full plant-based menu) and taco Tuesdays. It also boasts a daily late night happy hour from 10-11 p.m., perfect for a late night snack and drink.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Tattooed Mom’s menu contains half vegan eats and half non-vegan bites. Choose wisely, but they all are Instagram-ready.
+<p>A South Street staple since 1997, Tattooed Mom’s kitchen turns out bar food for vegans and for carnivores alike, making it the perfect hangout for eaters of all stripes. The vegan menu is thanks, in part, to how staff members’ own diets have evolved. It has plenty of bar food that people with dietary restrictions can enjoy — complete with specials like Meatless Mondays (half off the full plant-based menu) and taco Tuesdays. It also boasts a daily late night happy hour from 10-11 p.m., perfect for a late night snack and drink.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.tattooedmomphilly.com/menu/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.tattooedmomphilly.com/menu/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Vedge">
 <div class="intro">
@@ -951,8 +949,10 @@ Vedge
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1221+Locust+St.,+Philadelphia,+PA">1221 locust st.</a>
-<span class="line-divide">|</span><a href="tel:2153207500">215-320-7500</a>
-<span class="line-divide">|</span><a href="https://www.vedgerestaurant.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2153207500">215-320-7500</a>
+<span class="line-divide">|</span>
+<a href="https://www.vedgerestaurant.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$$
 <br>
 </div>
@@ -963,25 +963,26 @@ Vedge
 <img src="https://www.inquirer.com/resizer/NE40TJkn0-kOSa7UeGkoo6CxE_Q=/arc-anglerfish-arc2-prod-pmn/O4WSK3BTQFCTLGZRDXMOW22QKM.jpg" alt>
 </div>
 <div class="img-credit">
-Sour cherry cheesecake with cola gel and potato chip ice cream at Vedge. (VEDGE)
+Sour cherry cheesecake with cola gel and potato chip ice cream at Vedge. (VEDGE/Vedge)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Dinner on a special occasion with foodie friends
+<strong>Go for</strong><p>Dinner on a special occasion with foodie friends</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Mushroom carpaccio, wood roasted carrot (it has a ‘Reubenesque’ flavor, according to Craig LaBan, who awarded Vedge the elusive four bells), stuffed avocado, and rutabaga fondue (all dishes but the fondue are gluten-free)
-</div>
-<div class="r-note">
-<strong>A tip</strong>Vedge offers separate soy- and gluten-free menus for customers with allergies.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Awarded <a href="https://www.inquirer.com/philly/columnists/craig_laban/vedge-best-restaurants-philadelphia-20171209.html">the elusive four bells</a> by Craig LaBan, the all-vegan bar and restaurant Vedge is a national landmark of vegan cuisine. “More than enough carnivore minds have been blown” by its seasonally rotating menu, which features small plates with intense flavors that are ordered to share as well as creative drinks. It’s a fine dining experience, as you enjoy your multiple courses and dessert in the spacious, modern dining room, but don’t expect to find seats unless you book at least a week in advance. Vedge offers separate soy- and gluten-free menus and can accommodate other allergies if diners call ahead.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.vedgerestaurant.com/menus" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.vedgerestaurant.com/menus" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Zavino">
 <div class="intro">
@@ -995,8 +996,10 @@ Zavino
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/112+S+13th+St.,+philadelphia,+Pa+">112 s 13th st.</a>
-<span class="line-divide">|</span><a href="tel:2157322400">215-732-2400</a>
-<span class="line-divide">|</span><a href="https://cc.zavino.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2157322400">215-732-2400</a>
+<span class="line-divide">|</span>
+<a href="https://cc.zavino.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -1011,25 +1014,22 @@ The vegetarian spaghetti squash, which can be made vegan without cheese, is pict
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A slightly-fancier version of the college pizza + beer night out (replace beer with wine, pepperoni with prosciutto, and pop with blues).
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The Diavolo pizza on a gluten-free crust; the spaghetti squash; and the gluten-free cheesecake.
+<strong>Go for</strong><p>A slightly-fancier version of a pizza + beer night out.</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Zavino, while known for its pizza, is not a pizza joint. The white marble tables, fully-stocked bar and antipasti station in the restaurant tell you immediately that though they serve reasonably priced pies, they also cater to those who seek to try their $23 tasting board. Though they have very few vegan options, their spaghetti squash small plate, which might sound like something from a deprivation diet, has an incredibly hearty flavor from the sage, garlic, roasted pine nuts in its tomato sauce. “Surely these pies are better than 98 percent of the competition,” Craig LaBan wrote in 2010, but “the pizzas aren't even nearly the best things to eat at Zavino.” The pizza is a must-try for gluten-intolerant diners, however: at the University City location, you can watch a chef spin their made-on-site gluten-free crust behind the bar (fluffy with a crunch from the wood-fired oven, it’s known in the gluten-free community as the best crust in the city).</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>They don’t carry vegan cheese, but their pizzas can be made vegan and/or dairy free. They can make other items dairy-free, such as the brussels sprouts, spaghetti squash, the roasted cauliflower, the almond cake, and all of their salads. Their gluten-free crusts, however, contain milk.
+<p>Zavino, while known for its pizza, is not a regular pizza joint. The white marble tables, fully-stocked bar and antipasti station signal that while they serve reasonably priced pies, they also cater to those who would seek out the pricier tasting board. At the University City location, you can watch a chef spin the gluten-free crust behind the bar (fluffy but crunchy and baked in a wood-fired oven). They don’t carry vegan cheese, but their pizzas can be made vegan and/or dairy free. (They can make other items dairy-free.) Their gluten-free crusts, however, contain milk.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://cc.zavino.com/#menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://cc.zavino.com/#menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="neighborhood-box" id="SouthPhilly">
 <span>
@@ -1048,8 +1048,10 @@ Grindcore House
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1515+S+4th+St.,+Philadelphia,+PA+19147">1515 s 4th st.</a>
-<span class="line-divide">|</span><a href="tel:2158393333">215-839-3333</a>
-<span class="line-divide">|</span><a href="https://www.grindcorehouse.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2158393333">215-839-3333</a>
+<span class="line-divide">|</span>
+<a href="https://www.grindcorehouse.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -1064,25 +1066,22 @@ A gluten-free, vegan cheesecake brownie at Grindcore House on Sun., July 21. (BA
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Coffee with a side of communist literature
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Dottie’s donuts, scallion cream cheese, kropotkin sandwich (all vegan)
+<strong>Go for</strong><p>Coffee with a side of communist literature</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Grindcore House is the most hardcore all-vegan cafe you’ll find in Philadelphia. Heavy metal music greets visitors who step into the store, which has a glass case full of vegan treats including the popular Dottie’s donuts -- and vegan pastries are hard to find. Deeper in the cafe’s space is an extensive library of radical literature. Their menu features many bagels, sandwiches and salads, like the popular kropotkin, which includes field roast, pesto, mixed greens, roasted red peppers, onion, and vegan mayonnaise on ciabatta, and their gourmet vegan cream cheeses, including olive, jalapeno and scallion.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>The cafe offers bottomless drip coffee for the day for only $3.35.
+<p>Grindcore House is the most hardcore all-vegan cafe you’ll find in Philadelphia. Heavy metal music greets visitors who step into the store, which has a glass case full of vegan treats — including the popular Dottie’s Donuts. Deeper in the cafe’s space is an extensive library of radical literature. Their menu features many bagels, sandwiches and salads, like the popular kropotkin, which includes field roast, pesto, mixed greens, roasted red peppers, onion, and vegan mayonnaise on ciabatta, as well as their vegan cream cheeses, including olive, jalapeño and scallion.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://places.singleplatform.com/grindcore-house/menu?ref=google" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://places.singleplatform.com/grindcore-house/menu?ref=google" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="SliCE">
 <div class="intro">
@@ -1098,8 +1097,10 @@ SliCE
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1180+South+10th+St.,+Philadelphia,+PA">1180 south 10th st.</a>
-<span class="line-divide">|</span><a href="tel:2154630868">215-463-0868</a>
-<span class="line-divide">|</span><a href="http://www.slicepa.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2154630868">215-463-0868</a>
+<span class="line-divide">|</span>
+<a href="http://www.slicepa.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -1107,32 +1108,29 @@ SliCE
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/WUn35j4xsAXqQ-ECTvjx39_gfOc=/arc-anglerfish-arc2-prod-pmn/OWMQPGZ4PBDBZCLSWCKUN6TR6M.jpg" alt>
+<img src="https://www.inquirer.com/resizer/HlVPcFKotwf2x64fnnJkgljA8xU=/arc-anglerfish-arc2-prod-pmn/public/OWMQPGZ4PBDBZCLSWCKUN6TR6M.jpg" alt>
 </div>
 <div class="img-credit">
 The vegan meatless meat lover's pizza on a 10" gluten-free crust (toppings not gluten free) at Slice Pizza. Though the Daiya mozzarella on the pizza is not as stringy as real cheese, it is gooey and rich. (TOM GRALISH/Staff Photographer)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Late-night munchies
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Truffle pizza (can be made gluten free and vegan), gluten-free Fig pizza, vegan lemon bar, gluten-free tiramisu
+<strong>Go for</strong><p>Late-night munchies</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>At this relaxed BYOB with counter service, don’t expect to be confined to the salads section (though they have some good options, like the kale + apple). They offer creative pizzas like the popular truffled ribeye (mozzarella ribeye, caramelized onions, white truffle oil) as well as calzones and strombolis. As for special options, unlike some pizza places, they don’t skimp on the Daiya cheese, and the gluten-free pizza, while small (10”), is a great option for a pizza that’s less heavy (and won’t kill your stomach, if you have a gluten sensitivity). Most of their business comes from delivery.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>Slice offers gluten-free crusts and vegan cheese. However, just because it’s on a gluten free crust doesn’t mean a pizza is gluten-free -- make sure to check toppings with the cashier or a manager before ordering. Another note is that their gluten-free pizzas only come in what some would consider personal-pizza size (10 inches, 6 small slices). Oh, and you can make your pizza heart-shaped (if it isn’t gluten free). Just ask.
+<p>At this relaxed BYOB with counter service, don’t expect to be confined to the salads section (though they have some good options, like the kale and apple). They offer creative pizzas as well as calzones and strombolis. Unlike some pizza places, they don’t skimp on the Daiya cheese. Oh, and you can make your pizza heart-shaped on demand (but only if it isn’t gluten-free). Make sure to check the gluten status of toppings with the cashier or a manager before ordering. The gluten-free pizzas only come personal-pizza size (10 inches, 6 small slices).</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.slicepa.com/italian-market-menu/" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.slicepa.com/italian-market-menu/" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="SweetFreedomBakery">
 <div class="intro">
@@ -1147,8 +1145,10 @@ Sweet Freedom Bakery
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1424+South+St.,+Philadelphia,+PA+19146">1424 south st.</a>
-<span class="line-divide">|</span><a href="tel:2155451899">215-545-1899</a>
-<span class="line-divide">|</span><a href="https://sweetfreedombakery.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2155451899">215-545-1899</a>
+<span class="line-divide">|</span>
+<a href="https://sweetfreedombakery.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -1156,32 +1156,29 @@ Sweet Freedom Bakery
 </div>
 <div class="float-right">
 <div class="img-wrapper">
-<img src="https://www.inquirer.com/resizer/w6JatrZDxutV-V73zC6HODL8g5c=/arc-anglerfish-arc2-prod-pmn/RCHXSWF7IRGO3OOLBPJ5OPX2UU.jpg" alt>
+<img src="https://www.inquirer.com/resizer/68pbvna7DYphHPMWhWIdhKw38Rk=/arc-anglerfish-arc2-prod-pmn/public/RCHXSWF7IRGO3OOLBPJ5OPX2UU.jpg" alt>
 </div>
 <div class="img-credit">
 Tiramisu cupcake, a special that day, at Sweet Freedom Bakery in South Philly on July 27. (BAYLISS WAGNER/Staff)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A major sweet fix
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The Samoa cupcake (if you love chocolate and coconut), or the salted caramel cupcake (for even more chocolate). For something (very slightly) healthier, try one of the fruit oat crumble bars.
+<strong>Go for</strong><p>A major sweet fix</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Sweet Freedom brands itself as Philadelphia’s first all-around dietary-restriction-friendly bakery. And, somehow, this quiet South Street joint manages to do it, with plenty of substitutions along the way that will make you forget what’s not in the food. Sweet Freedom replaces dairy, animal, and gluten products with a variety of ingredients, many of them coconut products, — oil, milk, and sugar — as well as sorghum flour, potato starch and rice flour. Sweet Freedom was featured on the Food Network’s Cupcake Wars, and earned stellar reviews for some of their clever creations. The bakery takes orders by phone, and both ships and delivers.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>This is a great place to order sweets for a group with allergies or restrictions — the bakery is vegan, gluten-free, soy free, nut free, kosher, and refined-sugar free: A mouthful in more ways than one.
+<p>Sweet Freedom brands itself as Philadelphia’s first all-around dietary-restriction-friendly bakery. The bakery is vegan, gluten-free, soy free, nut free, kosher, and refined-sugar free. And, somehow, <a href="https://www.inquirer.com/philly/entertainment/20101121_Sweet_Freedom_bakery_on_South_Street__vegan_and_gluten-free.html">this quiet South Street joint</a> manages to make you forget what’s not in the food. Sweet Freedom replaces dairy, animal, and gluten products with a variety of ingredients, many of them coconut products, — oil, milk, and sugar — as well as sorghum flour, potato starch and rice flour. Sweet Freedom was featured on the Food Network’s Cupcake Wars, and earned stellar reviews for some of their clever creations. The bakery takes orders by phone, and both ships and delivers.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://sweetfreedombakery.com/whatwehave.html" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://sweetfreedombakery.com/whatwehave.html" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="TheTasty">
 <div class="intro">
@@ -1196,8 +1193,10 @@ The Tasty
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/1401+S.+12th+St.,+Philadelphia,+PA">1401 s. 12th st.</a>
-<span class="line-divide">|</span><a href="tel:2674575670">267-457-5670</a>
-<span class="line-divide">|</span><a href="http://www.thetastyphilly.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2674575670">267-457-5670</a>
+<span class="line-divide">|</span>
+<a href="http://www.thetastyphilly.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -1212,25 +1211,22 @@ Chick'n and Waffles at The Tasty, a South Philly vegan diner, on Sun., July 21. 
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A low-key breakfast or lunch with a classic diner no-frills vibe
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Try the waffles or their hearty (and bestselling) deluxe breakfast burrito, tofu scramble, loaded with tempeh “bacun,” jalepeno and vegan sour cream. You can also order it as a tot bowl — the secret menu item where all the burrito fillings come on top of a big bowl of tater tots.
+<strong>Go for</strong><p>Breakfast or lunch with a no-frills, classic diner vibe</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Co-owner Sofia Baltopoulos and her business partner opened The Tasty three years ago, after noticing that none of the area’s diners had more than one or two vegan options. “We looked at diner menus from all over and made vegan versions of all of the dishes,” she says. “We wanted to have a space where everyone and anyone could come and enjoy the food in a relaxed environment.” Stop by the South Philly vegan staple, and enjoy custom coffee drinks, colorful donuts and pastries atop their swivel bar chairs and homey booths.</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>The Tasty is 100% vegan, and also offers an additional gluten-free menu — not everything can be made gluten-free, but there a quite a few options, including gluten-free bread and buns.
+<p>Co-owner Sofia Baltopoulos and her business partner opened The Tasty three years ago, after noticing that none of the area’s diners had more than one or two vegan options. The Tasty is 100% vegan, and also offers an additional gluten-free menu. The South Philly spot has custom coffee drinks, colorful doughnuts and pastries and a classic diner vibe of swivel bar chairs and homey booths. They serve all the classics, veganized: cheesy omelets and scrambles, Tex-Mex breakfast burritos, pancakes, French toast, and waffles,which stand up to regular diner food.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://www.thetastyphilly.com/menu-1" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://www.thetastyphilly.com/menu-1" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="neighborhood-box" id="WestPhilly">
 <span>
@@ -1251,8 +1247,10 @@ Dim Sum House by Jane G's
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/3939+Chestnut+St.,+Philadelphia,+PA">3939 chestnut st.</a>
-<span class="line-divide">|</span><a href="tel:2159215377">215-921-5377</a>
-<span class="line-divide">|</span><a href="http://dimsum.house/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2159215377">215-921-5377</a>
+<span class="line-divide">|</span>
+<a href="http://dimsum.house/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -1267,21 +1265,22 @@ Hot and sour soup from Dim Sum House. (KOREY AVERSA/Staff Photographer)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A nice dinner date in a dimly-lit restaurant
+<strong>Go for</strong><p>A late-night group hangout</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Pad thai, scallion pancakes, and any noodle dish
-</div>
-<div class="r-note">
-<strong>A tip</strong>The restaurant and bar offers both a vegan and gluten-free section at the back of their menu — alongside dishes for the meat-eaters at the table.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Opened by the owners of the popular Jane G’s Authentic Sichuan, Dim Sum House by Jane G’s opened in 2016. The restaurant has a laid-back, but sleek, design, with old Shanghai-inspired decor, a pool table, a full bar, two dining rooms and a private dining space. Almost everything here is dairy-free, plenty is gluten-free, and there are many unique Cantonese- and Shanghai-inspired dim sum dishes that are vegan. They have happy hour from 5-7 p.m. daily, and are open 1 a.m. every day except Monday.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="http://dimsum.house/#anchor-u1062" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="http://dimsum.house/#anchor-u1062" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Goldie">
 <div class="intro">
@@ -1295,8 +1294,10 @@ Goldie
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/Franklin's+Table,+3401+Walnut+St.,+Philadelphia,+PA,+19104">franklin's table, 3401 walnut st.</a>
-<span class="line-divide">|</span><a href="tel:2155570015">215-557-0015</a>
-<span class="line-divide">|</span><a href="https://www.goldiefalafel.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2155570015">215-557-0015</a>
+<span class="line-divide">|</span>
+<a href="https://www.goldiefalafel.com/">Restaurant website</a>
 <span class="line-divide">|</span>$
 <br>
 </div>
@@ -1311,21 +1312,22 @@ A bag of falafel balls at Goldie, 1526 Sansom St. (MICHAEL KLEIN/Staff)
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Lunch or a quick, casual dinner.
+<strong>Go for</strong><p>Mid-afternoon snack or a quick, casual dinner.</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Tehina shakes, falafel sandwiches and salads
-</div>
-<div class="r-note">
-<strong>A tip</strong>Owned by Michael Solomonov and Steve Cook — the same award-winning team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but interesting: fluffy-crisp falafel served in Dizengoff’s pillowy pita bread (or over chopped salad), shawarma-spiced fries, and sour cherry iced tea. Even the addictively tasty tehina milkshakes, which come in flavors like Turkish coffee and mint-chocolate, are dairy-free (they’re made with almond milk). Order at the counter for a quick pickup, and take your mediterranean feast to go, or dine in in the low-lit space, filled with an unexpectedly moody interior. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>Owned by Michael Solomonov and Steve Cook — the same team behind Zahav, Federal Donuts, and Abe Fisher — Goldie is 100 percent vegan and kosher and exceptionally accommodating of dietary restrictions. The menu is small but includes fluffy-crisp falafel served in pillowy pita bread (or over chopped salad), shawarma-spiced fries, and <a href="https://twitter.com/craiglaban/status/850036488683347969?lang=en">addictive dairy-free tehina milkshakes</a>. Besides the eat-in space on Sansom Street, find Goldie at the Whole Foods’ food court on Pennsylvania Avenue as well as UPenn food hall Franklin’s Table.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.goldiefalafel.com/menu/west-philly" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.goldiefalafel.com/menu/west-philly" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="HipCityVeg">
 <div class="intro">
@@ -1340,8 +1342,10 @@ HipCityVeg
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/214+S+40th+St.,+Philadelphia,+Pa">214 s 40th st.</a>
-<span class="line-divide">|</span><a href="tel:2672444342">267-244-4342</a>
-<span class="line-divide">|</span><a href="https://hipcityveg.com/menu/burgers-sandwiches">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2672444342">267-244-4342</a>
+<span class="line-divide">|</span>
+<a href="https://hipcityveg.com/menu/burgers-sandwiches">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -1356,30 +1360,22 @@ The Buffalo Bella sandwich with sweet potato fries at HipCityVeg in Center City.
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A quick vegan bite
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The banana whip (add multiple toppings for a sundae), vegan version of the Philly cheesesteak, plus sweet potato fries and dairy-free milkshakes
+<strong>Go for</strong><p>A quick vegan bite</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>HipCityVeg — the homegrown, fast-casual eatery serving vegan burgers, fries, salads, drinks, and desserts opened by Philadelphia’s own vegan restaurateur extraordinaire Nicole Marquis — took off quickly from its debut in 2012. With four Philly locations, two Pa. suburb locations, and two Washington, D.C. locations, it’s clear that the restaurant has attracted more than just the vegan population. Go for the sauces: any vegan or lactose-intolerant eater</p>
-<p>You’ll eat mouthwatering fried “chick’n” sandwiches with buttermilk ranch dressing and crispy sweet potato fries with their homemade ketchup in an upscale retro-mod interior, if you’re not ordering from UberEats. Their range of options is what makes HipCity Veg so great for varied groups: they have everything from curry tofu wraps with vegetables</p>
-<p>on 18th Street near Rittenhouse Square and now boasts multiple locations. Read our latest story from Michael Klein about HipCityVeg here.</p>
-<p>Opened in 2012 by Philadelphia’s own vegan restaurateur extraordinaire Nicole Marquis, HipCityVeg has since expand With roughly three to six percent of the U.S. population identifying as vegan, HipCityVeg’s success is a testament to the fact</p>
-<p>3% of U.S. population identifies as vegan (2018 Gallup poll)</p>
-<p>6% of U.S. consumer population identifies as vegan (2017 Report Buyer’s study, cited in a WHYY story) https://www.reportbuyer.com/product/4959853/top-trends-in-prepared-foods-2017-exploring-trends-in-meat-fish-and-seafood-pasta-noodles-and-rice-prepared-meals-savory-deli-food-soup-and-meat-substitutes.html</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>While the chain is plentiful in the city, your omnivorous friends may not be fooled by the meat substitutes. There are an array of salad options, as well as a handful of burgers and shakes.
+<p>Philly vegan restaurateur Nicole Marquis opened the first fast-casual burger joint HipCityVeg in 2012. HipCityVeg serves up creamy vegan and lactose-free sauces: filling, crunchy salads with creamy caesar dressing, fried “chick’n” sandwiches with peppercorn ranch, garlic aioli, or chipotle crema, and curry tofu wraps with cumin raita. But the restaurant’s fast expansion, with four Philly locations, two locations in the Pa. suburbs and Washington, D.C., is a testament to its broad appeal.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://hipcityveg.com/menu/burgers-sandwiches" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://hipcityveg.com/menu/burgers-sandwiches" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="WhiteDogCafe">
 <div class="intro">
@@ -1395,8 +1391,10 @@ White Dog Cafe
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/3420+Sansom+St.,+Philadelphia,+PA">3420 sansom st.</a>
-<span class="line-divide">|</span><a href="tel:2153869224">215-386-9224</a>
-<span class="line-divide">|</span><a href="https://whitedog.com/location/?University-City-1">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2153869224">215-386-9224</a>
+<span class="line-divide">|</span>
+<a href="https://whitedog.com/location/?University-City-1">Restaurant website</a>
 <span class="line-divide">|</span>$$$
 <br>
 </div>
@@ -1409,21 +1407,22 @@ White Dog Cafe
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>Martinis, fancy brunch
+<strong>Go for</strong><p>Martinis, celebratory brunch</p>
 </div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>Mushroom soup; pan-roasted duck breast; medjool date and almond tart (dairy-free)
-</div>
-<div class="r-note">
-<strong>A tip</strong>White Dog offers vegetarian and vegan menus upon request.
+<div class="r-text">
+<strong>The lowdown</strong>
+<p>White Dog Cafe is more than just a kitschy, canine-themed bistro. This upscale standby, which has been around for nearly four decades and has multiple suburban locations,<a href="https://www.inquirer.com/philly/blogs/the-insider/white-dog-cafes-expansion-is-quite-fetching-20171201.html"> expanded</a> to become one of the largest restaurants in UCity. The 12-seat parlor bar and an elegant staircase leading to the second level complement the plush booths and lush greenery that fill the restaurant. White Dog offers vegetarian and vegan menus upon request.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://www.whitedog.com/location/?1#anchor" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://www.whitedog.com/location/?1#anchor" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 <div class="list-item" id="Zavino">
 <div class="intro">
@@ -1437,8 +1436,10 @@ Zavino
 </div>
 <div class="contact-info">
 <a class="address" target="_blank" href="https://www.google.com/maps/dir/3200+Chestnut+St.,+Philadelphia,+PA">3200 chestnut st.</a>
-<span class="line-divide">|</span><a href="tel:2158236897">215-823-6897</a>
-<span class="line-divide">|</span><a href="https://uc.zavino.com/">Restaurant website</a>
+<span class="line-divide">|</span>
+<a href="tel:2158236897">215-823-6897</a>
+<span class="line-divide">|</span>
+<a href="https://uc.zavino.com/">Restaurant website</a>
 <span class="line-divide">|</span>$$
 <br>
 </div>
@@ -1453,25 +1454,22 @@ The stache pizza with gluten-free crust is pictured at Zavino in Philadelphia's 
 </div>
 </div>
 <div class="r-gofor">
-<strong>Go for</strong>A slightly-fancier version of the college pizza + beer night out (replace beer with wine, pepperoni with prosciutto, and pop with blues).
-</div>
-<br>
-<div class="r-dishes">
-<strong>Dishes to try</strong>The Diavolo pizza on a gluten-free crust; the spaghetti squash; and the gluten-free cheesecake.
+<strong>Go for</strong><p>A slightly-fancier version of a pizza + beer night out.</p>
 </div>
 <div class="r-text">
 <strong>The lowdown</strong>
-<p>Zavino, while known for its pizza, is not a pizza joint. The white marble tables, fully-stocked bar and antipasti station in the restaurant tell you immediately that though they serve reasonably priced pies, they also cater to those who seek to try their $23 tasting board. Though they have very few vegan options, their spaghetti squash small plate, which might sound like something from a deprivation diet, has an incredibly hearty flavor from the sage, garlic, roasted pine nuts in its tomato sauce. “Surely these pies are better than 98 percent of the competition,” Craig LaBan wrote in 2010, but “the pizzas aren't even nearly the best things to eat at Zavino.” The pizza is a must-try for gluten-intolerant diners, however: at the University City location, you can watch a chef spin their made-on-site gluten-free crust behind the bar (fluffy with a crunch from the wood-fired oven, it’s known in the gluten-free community as the best crust in the city).</p>
-</div>
-<div class="r-note">
-<strong>A tip</strong>They don’t carry vegan cheese, but their pizzas can be made vegan and/or dairy free. They can make other items dairy-free, such as the brussels sprouts, spaghetti squash, the roasted cauliflower, the almond cake, and all of their salads. Their gluten-free crusts, however, contain milk.
+<p>Zavino, while known for its pizza, is not a regular pizza joint. The white marble tables, fully-stocked bar and antipasti station signal that while they serve reasonably priced pies, they also cater to those who would seek out the pricier tasting board. At the University City location, you can watch a chef spin the gluten-free crust behind the bar (fluffy but crunchy and baked in a wood-fired oven). They don’t carry vegan cheese, but their pizzas can be made vegan and/or dairy free. (They can make other items dairy-free.) Their gluten-free crusts, however, contain milk.</p>
 </div>
 <div class="contact-section">
-<a class="menu button" href="https://uc.zavino.com/#menu" target="_blank"><i class="fa fa-book" aria-hidden="true"></i> See Full Menu</a>
-<a class="jump button" href="#filter-section"><i class="fa fa-arrow-up" aria-hidden="true"></i> Jump to Top </a>
+<a class="menu button" href="https://uc.zavino.com/#menu" target="_blank">
+<i class="fa fa-book" aria-hidden="true"></i>
+See Full Menu</a>
+<a class="jump button" href="#filter-section">
+<i class="fa fa-arrow-up" aria-hidden="true"></i>
+Jump to Top
+</a>
 </div>
-<div class="clear-this">
-</div>
+<div class="clear-this"></div>
 </div>
 </div>
 </div>
